@@ -4,5 +4,11 @@ theme:
   name: material
 
 nav:
+  - Home: "index.md"
+  - Projeto:  
+    - Visão do Produto: "product-vision.md"
   - Gerência:
     - Metodologia: "methodology.md"
+    - Engenharia de Requisitos: "requirements-engineering.md"
+  - Resultados:
+    - Unidade 1: "results/unit-1.md"
