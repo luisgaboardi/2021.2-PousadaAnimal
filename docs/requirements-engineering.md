@@ -5,9 +5,14 @@
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
 | 02/02/2021 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona primeira versão da engenharia de requisitos | 1.0    |
 
-A equipe decidiu em uma abordagem em espiral, ou seja, interativa e incremental, no qual primeiro iremos fazer a elicitação de requisitos, a análise dos requisitos, documentação de requisitos e verificações e validações dos mesmos. Terminando as atividades do processo de engenharia de requisitos, a equipe tem a cada início de sprint a liberdade de corrigir um requisito ou incrementar mais de acordo com as necessidades do projeto.
+A equipe decidiu em uma **abordagem em espiral**, ou seja, interativa e incremental, no qual primeiro iremos fazer a elicitação de requisitos, a análise dos requisitos, documentação de requisitos e verificações e validações dos mesmos. Terminando as atividades do processo de engenharia de requisitos, a equipe tem a cada início de sprint a liberdade de corrigir um requisito ou incrementar mais de acordo com as necessidades do projeto.
+
+<img src="../images/spiral.png" alt="Spiral">
 
 ## Elicitação de Requisitos
+
+<img src="../images/brainstorm.png" alt="BrainStorm">
+
 O levantamento dos requisitos será feito pelo método BrainStorm, onde todos discutem quais serão os requisitos necessários para o sistema. Também teremos a histórias e usuário e o levantamento dos requisitos não funcionais que serão elucidados em workshops online.
 
 | Atividade | Método | Ferramenta

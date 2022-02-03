@@ -16,9 +16,15 @@ Se tratando das **questões organizacionais**, não existe a necessidade de extr
 Diante das reflexões acima, a equipe decidiu utilizar uma **abordagem metodológica mista**, utilizando alguns recursos de Scrum, Extreme Programming, desenvolvimento ágil e KanBan.
 
 ### Scrum
+
+<img src="../images/scrum.png" alt="Scrum">
+
 Do Scrum, realizaremos as Dailys, as Sprints, a elaboração do Product Backlog, assim como a cada Sprint, uma Sprint Review e uma Sprint Planning para verificar o andamento do projeto e definir as prioridades da equipe. Essas escolhas se basearam em uma experiência prévia da equipe, que valoriza o encontro diário, o desenvolvimento baseado em Sprints e o fato de que apesar de termos um planejamento geral, podermos definir quais atividades serão desenvolvidas na Sprint. Além disso, não usaremos os papéis do Scrum ao pé da letra, principalmente pelo fato de sermos somente 4 pessoas. A proposta é que ao trabalharmos em duplas (como será explicado no ponto de Extreme Programming), que uma dupla seja o Proprietário do Produto da outra dupla, avaliando se o resultado daquela Sprint está condizente com os requisitos levantados. Seremos todos membros da Equipe de Desenvolvimento e alternaremos a cada Sprint quem será o Mestre do Scrum.
 
 ### Desenvolvimento Ágil
+
+<img src="../images/agile-development.png" alt="Desenvolvimento Ágil">
+
 Do Desenvolvimento Ágil, utilizaremos o conceito de MVP (Mínimo Produto Viável) e as Histórias de Usuário, para auxiliar na definição dos requisitos do produto. Não só por conta das exigências da disciplina, mas a equipe acredita que o foco em desenvolver um MVP garante um melhor andamento para o projeto e que o uso de Histórias de Usuário nos ajuda a não desenvolver funcionalidades que não são necessárias. Dessa forma, os dois conceitos se complementam. Além disso, faremos uso de um quadro Kanban para controlar o que ainda precisa ser feito, o que ainda precisa ser revisado, o que está em desenvolvimento na Sprint atual e, por fim, o que já foi concluído. Acreditamos que a visualização e acompanhamento do quadro por conta da equipe nos dará mais informações acerca do andamento do projeto, de forma que a equipe poderá analisar de forma mais clara se o ritmo de trabalho atual satisfará as exigências da disciplina.
 
 ### Extreme Programming
