@@ -2,3 +2,7 @@ site_name: Pousada Animal
 
 theme:
   name: material
+
+nav:
+  - Gerência:
+    - Metodologia: "methodology.md"
