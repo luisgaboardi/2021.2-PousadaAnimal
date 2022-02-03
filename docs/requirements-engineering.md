@@ -43,32 +43,21 @@ A documentação seguirá o critério adotado pelos fornecedores do sistema, o m
 ## Verificação e Validação de Requisitos
 A verificação, isto é, a revisão do documento, terá como método a inspeção. Será feita pela dupla que não participou da elaboração do documento.
 A validação será feita através dos clientes aparentes, o dono de uma pousada para pets e o utilizador, que deixa o seu pet sob cuidados da pousada. A aprovação dos requisitos poderá ser feita de forma presencial ou online a depender da localização.
-Atividade
-Método
-Ferramenta
-Verificação
-Inspeção
-Microsoft Teams e Google Docs
-Validação
-Questionário com terceiros
-Por questionários
+
+| Atividade | Método | Ferramenta
+| --------- | ------ | -------
+| Verificação | Inspeção | Microsoft Teams e Google Docs
+| Validação | Questionário com terceiros | Por questionários
 
 
 ## Gerenciamento de Requisitos 
 O uso das Baseline de requisitos tornará possível diferenciar o que era o requisito original, o que foi colocado e descartado. Assim, possibilitará melhor entendimento das alterações feitas.
 
-Atividade
-Método
-Ferramenta
-Atualizar o status dos requisitos
-Reuniões estruturadas
-Microsoft Teams,Google Sheet e Github Pages
-Garantir que a documentação está em dia com a mudança dos requisitos
-Reuniões estruturadas
-Microsoft Teams, Google Sheet e Github Pages
-Avaliar impactos das mudanças de requisitos
-Uso de baseline
-Microsoft Teams, Google Sheet e Github Pages
+| Atividade | Método | Ferramenta
+| --------- | ------ | -------
+Atualizar o status dos requisitos | Reuniões estruturadas | Microsoft Teams,Google Sheet e Github Pages
+| Garantir que a documentação está em dia com a mudança dos requisitos | Reuniões estruturadas | Microsoft Teams, Google Sheet e Github Pages
+| Avaliar impactos das mudanças de requisitos | Uso de baseline | Microsoft Teams, Google Sheet e Github Pages
 
 ## REFERÊNCIAS BIBLIOGRÁFICAS
 1. https://www.scrum.org/
