@@ -18,8 +18,11 @@
 O nosso produto, chamado Pousada Animal, é um website administrativo a ser desenvolvido para pousadas que trabalham com pets, que incluem serviços de hotel e cuidados físicos e emocionais de animais. Além disso, funciona não só como um sistema interno da empresa, mas também como um website para os seus usuários, sendo o acesso a cada funcionalidade restrito mediante cadastro e login.
 
 O diferencial da solução, como já citado acima, é a capacidade de administração do sistema por parte do próprio contratante, possibilitando ações tais como:
+
 - Alterar quais informações podem ser registradas, de acordo com a infraestrutura da sua empresa/organização.
+
 - Adicionar ou remover campos no registro dos animais por parte dos clientes de acordo com a presença ou não de profissionais da área.
+
 - Se a contratante dispor de tal tecnologia, promover um meio de compartilhar o acesso às câmeras locais com os donos dos pets.
 
 |||
