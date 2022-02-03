@@ -1,2 +1,3 @@
-# 2021.2-PousadaAnimal
-Repositório da Equipe Pets, para o desenvolvimento do seu projeto durante a disciplina de Requisitos de Software.
+# Pousada Animal
+
+Documentação consta na [Wiki do repositório](https://fgaunb-req-gm.github.io/2021.2-PousadaAnimal/).
