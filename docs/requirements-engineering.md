@@ -27,8 +27,8 @@ A análise de requisitos será feita através do Workshop de requisitos, onde o 
 
 | Atividade | Método | Ferramenta
 | --------- | ------ | -------
-| Refinamento e reconsideração dos requisitos levantados | Reuniões estruturadas | Microsoft Teams e Google Sheet
-| Definição das tarefas em cima de cada requisito | Reuniões estruturadas | Microsoft Teams e Google Sheet
+| Refinamento e reconsideração dos requisitos levantados | Reuniões estruturadas | Microsoft Teams, Google Sheet e Github Pages
+| Definição das tarefas em cima de cada requisito | Reuniões estruturadas | Microsoft Teams, Google Sheet e Github Pages
 
 
 ## Documentação de Requisitos
@@ -36,8 +36,8 @@ A documentação seguirá o critério adotado pelos fornecedores do sistema, o m
 
 | Atividade | Método | Ferramenta
 | --------- | ------ | -------
-| Documentar os requisitos aprovados | Escrita pareada | Microsoft Teams e Google Sheet
-| Documentar a alteração ou remoção de requisitos | Escrita pareada | Microsoft Teams e Google Sheet
+| Documentar os requisitos aprovados | Escrita pareada | Microsoft Teams, Google Sheet e Github Pages
+| Documentar a alteração ou remoção de requisitos | Escrita pareada | Microsoft Teams, Google Sheet e Github Pages
 
 
 ## Verificação e Validação de Requisitos
@@ -62,13 +62,13 @@ Método
 Ferramenta
 Atualizar o status dos requisitos
 Reuniões estruturadas
-Microsoft Teams e Google Sheet
+Microsoft Teams,Google Sheet e Github Pages
 Garantir que a documentação está em dia com a mudança dos requisitos
 Reuniões estruturadas
-Microsoft Teams e Google Sheet
+Microsoft Teams, Google Sheet e Github Pages
 Avaliar impactos das mudanças de requisitos
 Uso de baseline
-Microsoft Teams e Google Sheet
+Microsoft Teams, Google Sheet e Github Pages
 
 ## REFERÊNCIAS BIBLIOGRÁFICAS
 1. https://www.scrum.org/
