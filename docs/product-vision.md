@@ -7,6 +7,8 @@
 
 ## Declaração do Problema
 
+<span style="color:red">Por favor, façam os ajustes conforme conversado na atividade síncrona.</span>
+
 |||
 | - | - |
 | O problema | Sistemas incompletos ou incapazes de reagirem de acordo com a mudança de cenário e/ou requisitos do negócio, ainda mais em tempos de pandemia |
@@ -15,6 +17,9 @@
 |Uma solução de sucesso seria|Um sistema capaz de se adaptar à mudanças rápidas do negócio e que essa adaptação possa ser feita pelos próprios contratantes|
 
 ## Declaração de Posição do Produto
+
+<span style="color:red">Reflitam sobre o produto de vcs. Qual o público e a que, de fato, se propõe a fazer</span>
+
 O nosso produto, chamado Pousada Animal, é um website administrativo a ser desenvolvido para pousadas que trabalham com pets, que incluem serviços de hotel e cuidados físicos e emocionais de animais. Além disso, funciona não só como um sistema interno da empresa, mas também como um website para os seus usuários, sendo o acesso a cada funcionalidade restrito mediante cadastro e login.
 
 O diferencial da solução, como já citado acima, é a capacidade de administração do sistema por parte do próprio contratante, possibilitando ações tais como:
@@ -30,6 +35,9 @@ O diferencial da solução, como já citado acima, é a capacidade de administra
 | Nosso produto | Busca entregar um sistema que permita que o administrador e seus funcionários coordenem o seu negócio de acordo com a capacidade de atendimento da pousada, podendo alterar os tipos de serviço disponíveis e os seus respectivos custos facilmente. Ao mesmo tempo, permite que os clientes da pousada possam adiantar burocracias, tais como pagamento e registro das informações do pet, através do website, além de poderem acompanhar o seu animal pelas câmeras do estabelecimento (se houverem). |
 
 ## Objetivos do Produto
+
+<span style="color:red">proponho que seja estabelecido um objetivo geral e objetivos específicos. Lembrem-se, os objetivos devem ser verificáveis.</span>
+
 O seu objetivo é facilitar e agilizar a troca de informações entre a pousada e os seus clientes, de forma a promover um melhor atendimento às necessidades do cliente. Ademais, é fornecer um sistema interno capaz de ser gerido pela própria administração da pousada, sem a necessidade de um desenvolvedor.
 
 ## REFERÊNCIAS BIBLIOGRÁFICAS
