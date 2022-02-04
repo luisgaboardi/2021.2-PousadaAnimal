@@ -3,7 +3,8 @@
 ## Histórico de revisão
 | Data       | Autor                                        | Modificações                      | Versão |
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
-| 02/02/2021 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona primeira versão da visão do produto | 1.0    |
+| 02/02/2021 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona primeira versão da visão do produto | 1.0 |
+| 04/02/2021 | [Luís Lins](https://github.com/luisgaboardi), Laís Portela, Lara Murussi, Ana Julia | Atualiza declaração do problema | 1.1 |
 
 ## Declaração do Problema
 
