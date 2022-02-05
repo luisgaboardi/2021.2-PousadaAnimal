@@ -1,0 +1,112 @@
+[33mcommit 281ed22ddc22482a0211582a021899786ae51b6a[m[33m ([m[1;36mHEAD -> [m[1;32mIdentidadeVisual[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: MDS-REQ-FGA <98027799+MDS-REQ-FGA@users.noreply.github.com>
+Date:   Fri Feb 4 18:10:46 2022 -0300
+
+    Update requirements-engineering.md
+
+[33mcommit 01fee895142aed6c18312ea2e7eb958233c4a14e[m
+Author: MDS-REQ-FGA <98027799+MDS-REQ-FGA@users.noreply.github.com>
+Date:   Fri Feb 4 18:08:29 2022 -0300
+
+    Update methodology.md
+
+[33mcommit 6eb9d957b423df984641fc3256374ff9b2b1d0b4[m
+Author: MDS-REQ-FGA <98027799+MDS-REQ-FGA@users.noreply.github.com>
+Date:   Fri Feb 4 18:05:19 2022 -0300
+
+    Update product-vision.md
+
+[33mcommit e382c3a49fbfeb6c5d7a6fa943b3b666fb78eda6[m[33m ([m[1;33mtag: v1.0[m[33m)[m
+Merge: 795a863 5b61388
+Author: Luís Guilherme <45673358+luisgaboardi@users.noreply.github.com>
+Date:   Wed Feb 2 23:56:48 2022 -0300
+
+    Merge pull request #3 from FGAUnB-REQ-GM/dev
+    
+    Add documentation link to ReadMe file
+
+[33mcommit 5b613882d3b5f2cab164b76c0ab5f0ec98adc8d0[m
+Merge: fef40f9 159e26d
+Author: Luís Guilherme <45673358+luisgaboardi@users.noreply.github.com>
+Date:   Wed Feb 2 23:55:42 2022 -0300
+
+    Merge pull request #2 from FGAUnB-REQ-GM/doc-update-readme
+    
+    Doc update readme
+
+[33mcommit 159e26dcf7f956459ad9cc9580b6946aeb5b6f76[m
+Author: Luís Guilherme <45673358+luisgaboardi@users.noreply.github.com>
+Date:   Wed Feb 2 23:54:44 2022 -0300
+
+    Update README.md
+    
+    Add link to the Github pages documentation
+
+[33mcommit 795a863d380ea8b62f50092308336b030527f438[m
+Merge: bbfd561 fef40f9
+Author: Luís Guilherme <45673358+luisgaboardi@users.noreply.github.com>
+Date:   Wed Feb 2 23:49:15 2022 -0300
+
+    Merge pull request #1 from FGAUnB-REQ-GM/dev
+    
+    Unidade 1 - Documentação Inicial
+
+[33mcommit fef40f9b2e4c808f274e20bdce36b0b8f2066ccf[m
+Author: luisgaboardi <luis.ggaboardi@gmail.com>
+Date:   Wed Feb 2 23:46:55 2022 -0300
+
+    Add video presentation of unit 1
+
+[33mcommit 4464fbf6364a0282d45f1dec4e057f87ebefc371[m
+Author: luisgaboardi <luis.ggaboardi@gmail.com>
+Date:   Wed Feb 2 22:32:31 2022 -0300
+
+    Fix table sintax in markdown
+
+[33mcommit 134e845d136efe7ffd7f7fccd61ad80c08faf430[m
+Author: luisgaboardi <luis.ggaboardi@gmail.com>
+Date:   Wed Feb 2 22:13:44 2022 -0300
+
+    Add Github pages as tool used in RE
+
+[33mcommit 5b6572581a13af96a6ac57af67f02fd9acaed0ad[m
+Author: luisgaboardi <luis.ggaboardi@gmail.com>
+Date:   Wed Feb 2 22:12:11 2022 -0300
+
+    Add images
+
+[33mcommit f0fae68a778a33643485f48cbcb5d5d5e0c87b12[m
+Author: luisgaboardi <luis.ggaboardi@gmail.com>
+Date:   Wed Feb 2 21:57:20 2022 -0300
+
+    Add first version of product vision, methodology and requirements-engineering documentation
+
+[33mcommit 93c5e4b4a48b45a7bf3cdecba746e520e5ff73e0[m
+Author: luisgaboardi <luis.ggaboardi@gmail.com>
+Date:   Wed Feb 2 21:17:54 2022 -0300
+
+    Add first version of methodology document
+
+[33mcommit 0b36a06d636e39a3a6bde04618304117a752a69a[m
+Author: luisgaboardi <luis.ggaboardi@gmail.com>
+Date:   Wed Feb 2 21:09:56 2022 -0300
+
+    FIX file extension
+
+[33mcommit fc326a8a147f68c3097f386656c1b2a6ddd1d75b[m
+Author: luisgaboardi <luis.ggaboardi@gmail.com>
+Date:   Tue Feb 1 13:01:03 2022 -0300
+
+    Create md files to the first release
+
+[33mcommit 711848fab770cae9e6b870ccf56e2a09e2f3e871[m
+Author: luisgaboardi <luis.ggaboardi@gmail.com>
+Date:   Thu Jan 27 12:44:30 2022 -0300
+
+    Add documentation using MkDocs
+
+[33mcommit bbfd561c53d15ce67ba1d6a64893785d86103015[m
+Author: MDS-REQ-FGA <98027799+MDS-REQ-FGA@users.noreply.github.com>
+Date:   Wed Jan 26 14:58:01 2022 -0300
+
+    Initial commit
