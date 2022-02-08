@@ -8,6 +8,7 @@
 ## Declaração do Problema
 
 <span style="color:red">Por favor, façam os ajustes conforme conversado na atividade síncrona.</span>
+<span style="color:red">Test</span>
 
 |||
 | - | - |
