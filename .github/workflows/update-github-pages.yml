@@ -6,7 +6,7 @@ name: MKDOCS
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main, dev, automate-documentation-upload ] # Add this branch for testing
+    branches: [ main, dev ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -26,8 +26,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Upload mkdocs documentation to Github Pages
         run: |
-          echo "Uploading mkdocs documentation to Github Pages"
-          echo git branch -a
           git pull
           python3 -m pip install -r requirements.txt
           mkdocs gh-deploy
