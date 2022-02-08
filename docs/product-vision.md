@@ -3,7 +3,8 @@
 ## Histórico de revisão
 | Data       | Autor                                        | Modificações                      | Versão |
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
-| 02/02/2021 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona primeira versão da visão do produto | 1.0    |
+| 02/02/2021 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona primeira versão da visão do produto | 1.0 |
+| 04/02/2021 | [Luís Lins](https://github.com/luisgaboardi), Laís Portela, Lara Murussi, Ana Julia | Atualiza declaração do problema | 1.1 |
 
 ## Declaração do Problema
 
@@ -11,10 +12,10 @@
 
 |||
 | - | - |
-| O problema | Sistemas incompletos ou incapazes de reagirem de acordo com a mudança de cenário e/ou requisitos do negócio, ainda mais em tempos de pandemia |
+| O problema | Os clientes não se sentem confortáveis em hospedar o seu animal em uma pousada para pets, já que não sabem como serão os cuidados e se de fato darão atenção ao animal quando o dono não estiver lá |
 | Afeta | Pousadas para pets que realizam serviços de hotel e cuidado físico e emocional
-| Cujo impacto é | Atendimento insuficiente ou insatisfatório por parte das pousadas, que passam a depender de um sistema desatualizado, seja a respeito dos serviços oferecidos ou pela falta de pessoal ou renda para refazer o sistema|
-|Uma solução de sucesso seria|Um sistema capaz de se adaptar à mudanças rápidas do negócio e que essa adaptação possa ser feita pelos próprios contratantes|
+| Cujo impacto é | Diminuição de hospedagens de pets e consequente inviabilização da forma que esse serviço é oferecido |
+| Uma solução de sucesso seria | Um sistema capaz de promover uma melhor comunicação entre a pousada e o cliente, através de feedback do status do pet |
 
 ## Declaração de Posição do Produto
 
@@ -23,8 +24,11 @@
 O nosso produto, chamado Pousada Animal, é um website administrativo a ser desenvolvido para pousadas que trabalham com pets, que incluem serviços de hotel e cuidados físicos e emocionais de animais. Além disso, funciona não só como um sistema interno da empresa, mas também como um website para os seus usuários, sendo o acesso a cada funcionalidade restrito mediante cadastro e login.
 
 O diferencial da solução, como já citado acima, é a capacidade de administração do sistema por parte do próprio contratante, possibilitando ações tais como:
+
 - Alterar quais informações podem ser registradas, de acordo com a infraestrutura da sua empresa/organização.
+
 - Adicionar ou remover campos no registro dos animais por parte dos clientes de acordo com a presença ou não de profissionais da área.
+
 - Se a contratante dispor de tal tecnologia, promover um meio de compartilhar o acesso às câmeras locais com os donos dos pets.
 
 |||
