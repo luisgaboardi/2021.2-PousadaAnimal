@@ -7,6 +7,7 @@ nav:
   - Home: "index.md"
   - Projeto:  
     - Visão do Produto: "product-vision.md"
+    - Rich Picture: "rich-picture.md"
   - Gerência:
     - Metodologia: "methodology.md"
     - Engenharia de Requisitos: "requirements-engineering.md"
