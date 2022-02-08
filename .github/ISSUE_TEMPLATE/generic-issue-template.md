@@ -1,7 +1,7 @@
 ---
 name: Template de Issue genérica
 about: Template para criação de novas funcionalidades ou pendências técnicas
-title: "[#Nº da issue] Título"
+title: "Título"
 labels: ''
 assignees: ''
 ---
