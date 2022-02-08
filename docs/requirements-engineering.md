@@ -1,5 +1,7 @@
 # ABORDAGEM DE ENGENHARIA DE REQUISITOS
 
+<span style="color:red">Nesta seção é preciso que sejam feitos ajustes conceituais e metodológicos para que fique adequado a utilização da abordagem de desenvolvimento de software com a abordagem de requisitos. Revejam nossa conversa no vídeo da atividade síncrona.</span>
+
 ## Histórico de revisão
 | Data       | Autor                                        | Modificações                      | Versão |
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
