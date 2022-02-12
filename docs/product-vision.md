@@ -10,8 +10,6 @@
 
 ## Declaração do Problema
 
-<span style="color:red">Por favor, façam os ajustes conforme conversado na atividade síncrona.</span>
-
 |||
 | - | - |
 | O problema | Os clientes não se sentem confortáveis em hospedar o seu animal em uma pousada para pets, já que não sabem como serão os cuidados e se de fato darão atenção ao animal quando o dono não estiver lá |
@@ -20,8 +18,6 @@
 | Uma solução de sucesso seria | Um sistema capaz de promover uma melhor comunicação e serviço entre a pousada e o cliente, principalmente através de um melhor feedback do status do pet |
 
 ## Declaração de Posição do Produto
-
-<span style="color:red">Reflitam sobre o produto de vcs. Qual o público e a que, de fato, se propõe a fazer</span>
 
 O nosso produto, chamado Pousada Animal, é um website administrativo a ser desenvolvido para pousadas que trabalham com pets, que incluem serviços de hotel e cuidados físicos e emocionais de animais. Além disso, funciona não só como um sistema interno da empresa, mas também como um website para os seus usuários, sendo o acesso a cada funcionalidade restrito mediante cadastro e login.
 
@@ -43,4 +39,4 @@ O seu objetivo é permitir uma melhor troca de informações entre a pousada e o
 
 ## Referências Bibliográficas
 1. Sommerville, Ian Engenharia de software/ Ian Sommerville; tradução Luiz Cláudio Queiroz; revisão técnica Fábio Levy Siqueira. -- 10. ed. -- São Paulo: Pearson Education do Brasil, 2018.
-2. Material de aula do professor George Marsicano, FGA/UnB
+2. Material de aula do professor **George Marsicano**, FGA/UnB
