@@ -7,6 +7,7 @@
 | 08/02/2022 | [Laís Portela](https://github.com/laispa)|Correção da abordagem de requisitos e ajuste|1.1           |
 | 11/02/2022 | [Ana Júlia](https://github.com/aluzianobriceno) | Ajustando o metódo de desenvolvimento com a engenharia de requisitos | 1.2 |
 | 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Remove comentários desnecessários | 1.3 |
+| 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Muda ferramentas | 1.4 |
 
 A equipe decidiu, a abordagem da engenharia de Requisitos no contexto ágil, pois o método escolhido para o desenvolvimento de software tem técnicas que tratam da E.R. No seu contexto ágil o principal responsável é o Product Owner. No nosso time, ao longo do semestre, todos farão o papel de um P.O. Além disso, a metodogia ágil conta com a criação do product backlog, em que será listado todos os requisitos. Como o desenvolvimento é dividido em um ciclo de Sprints, os requisitos não terão necessidade de serem detalhados logo no início do projeto, e sim quando estiverem proxímos de seu desenvolvimento.
 
@@ -21,7 +22,7 @@ O levantamento dos requisitos será feito pelo método BrainStorm, onde todos di
 | Levantamento de requisitos funcionais | BrainStorm | Microsoft Teams
 | Criação das histórias de usuário | Reuniões estruturadas | Microsoft Teams
 | Levantamento de requisitos não funcionais | Reuniões estruturadas | Microsoft Teams
-| Identificação do Backlog do Produto | Reunião estruturada | Microsoft Teams e Google Sheets
+| Identificação do Backlog do Produto | Reunião estruturada | Microsoft Teams
 
 
 ## Análise de Requisitos
@@ -29,8 +30,8 @@ A análise de requisitos será feita através do Workshop de requisitos, onde o 
 
 | Atividade | Método | Ferramenta
 | --------- | ------ | -------
-| Refinamento e reconsideração dos requisitos levantados | Reuniões estruturadas | Microsoft Teams, Google Sheet e Github Pages
-| Definição das tarefas em cima de cada requisito | Reuniões estruturadas | Microsoft Teams, Google Sheet e Github Pages
+| Refinamento e reconsideração dos requisitos levantados | Reuniões estruturadas | Microsoft Teams e Github Pages
+| Definição das tarefas em cima de cada requisito | Reuniões estruturadas | Microsoft Teams e Github Pages
 
 
 ## Documentação de Requisitos
@@ -38,7 +39,7 @@ A documentação seguirá o critério adotado pelos fornecedores do sistema, o m
 
 | Atividade | Método | Ferramenta
 | --------- | ------ | -------
-| Construção do Backlog do Produto | Escrita pareada | Microsoft Teams, Google Sheet e Github Pages 
+| Construção do Backlog do Produto | Escrita pareada | Microsoft Teams e Github Pages 
 
 
 ## Verificação e Validação de Requisitos
@@ -53,7 +54,7 @@ A validação será feita através dos clientes aparentes, o dono de uma pousada
 
 | Atividade | Método | Ferramenta
 | --------- | ------ | -------
-| Verificação | Inspeção | Microsoft Teams e Google Docs
+| Verificação | Inspeção | Microsoft Teams
 | Validação | Questionário com terceiros | Por questionários
 
 
@@ -62,9 +63,9 @@ O uso das Baseline de requisitos tornará possível diferenciar o que era o requ
 
 | Atividade | Método | Ferramenta
 | --------- | ------ | -------
-Atualizar o status dos requisitos | Reuniões estruturadas | Microsoft Teams,Google Sheet e Github Pages
-| Garantir que a documentação está em dia com a mudança dos requisitos | Reuniões estruturadas | Microsoft Teams, Google Sheet e Github Pages
-| Manter registro das mudanças de requisitos | Uso de baseline | Microsoft Teams, Google Sheet e Github Pages
+Atualizar o status dos requisitos | Reuniões estruturadas | Microsoft Teams e Github Pages
+| Garantir que a documentação está em dia com a mudança dos requisitos | Reuniões estruturadas | Microsoft Teams e Github Pages
+| Manter registro das mudanças de requisitos | Uso de baseline | Microsoft Teams e Github Pages
 
 ## REFERÊNCIAS BIBLIOGRÁFICAS
 1. **Scrum.org** . Disponível em: <<https://www.scrum.org/>>
