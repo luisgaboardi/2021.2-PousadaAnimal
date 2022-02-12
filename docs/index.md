@@ -1,7 +1,7 @@
-# Pousada Animal :dog: :cat:
+# Pousada Animal
 
 <div align="center">
-  <img src="./../docs/images/pa.png" > <!-- trocar o endereço da imagem -->
+  <img src="https://github.com/FGAUnB-REQ-GM/2021.2-PousadaAnimal/blob/apresenta%C3%A7%C3%A3o-do-projeto/docs/images/pa.png" > <!-- trocar o endereço da imagem -->
 </div>
 
   **Pousada Animal** <!-- adicionar link pro site quando estiver pronto --> é um website administrativo desenvolvido para empresas que trabalham com a hospedagem e cuidados físicos e emocionais de pets.
@@ -13,36 +13,12 @@
    Este site é destinado  para a documentação do projeto da matéria de **Requisitos de Software** da Universidade de Brasília ministrada pelo professor **George Marsicano Corrêa**. Nosso objetivo é criar um software utilizando os conceitos, técnicas e ferramentas ensinadas ao longo do semestre.
 
 
-## Equipe :technologist:
+## Equipe
 
-<div class="container">
-	<div class="row">
-        <div class="col-4">
-            <figure class="figure">
-                <a href="https://github.com/aluzianobriceno"><img class="figure-img img-fluid img-thumbnail rounded-circle" src="https://avatars.githubusercontent.com/u/70165772?v=4" width="200"><figcaption class="figure-caption text-center"> Ana Júlia </figcaption></a>
-            </figure>
-		</div>
-		<div class="col-4">
-            <figure class="figure">
-                <a href="https://github.com/klmurussi">
-                    <img class="figure-img img-fluid img-thumbnail rounded-circle" src="https://avatars.githubusercontent.com/u/52364259?v=4" width="200">
-                    <figcaption class="figure-caption text-center"> Kathlyn Lara </figcaption>
-                </a>
-            </figure>
-		</div>
-		<div class="col-4">
-            <figure class="figure">
-			    <a href="https://github.com/laispa"><img class="figure-img img-fluid img-thumbnail rounded-circle" src="https://avatars.githubusercontent.com/u/54222696?v=4" width="200">
-                <figcaption class="figure-caption text-center"> Laís Portela <figcaption></a>
-            </figure>
-		</div>
-	</div>
-	<div class="row justify-content-center">
-		<div class="col-4">
-            <figure class="figure">
-			    <a href="https://github.com/luisgaboardi"><img src="https://avatars.githubusercontent.com/u/45673358?v=4" width="200" class="figure-img img-fluid img-thumbnail rounded-circle"><figcaption class="figure-caption text-center"> Luís Guilherme </figcaption></a>
-            </figure>
-		</div>
-	</div>
-</div>
+| Foto         | Nome            | GitHub      |
+|------------|-----------------|-------------|
+|<img src="https://avatars.githubusercontent.com/u/70165772?v=4" width="100">| Ana Júlia | [aluzianobriceno](https://github.com/aluzianobriceno) |
+|<img src="https://avatars.githubusercontent.com/u/52364259?v=4" width="100">| Kathlyn Lara | [klmurussi](https://github.com/klmurussi) |
+|<img src="https://avatars.githubusercontent.com/u/54222696?v=4" width="100">| Laís Portela  | [laispa](https://github.com/laispa) |
+|<img src="https://avatars.githubusercontent.com/u/45673358?v=4" width="100">| Luís Guilherme | [luisgaboardi](https://github.com/luisgaboardi) |
 
