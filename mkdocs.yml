@@ -9,8 +9,10 @@ nav:
     - Visão do Produto: "product-vision.md"
     - Identidade Visual: "visual-identity.md"
     - Rich Picture: "rich-picture.md"
+    - Backlog do Produto: "product-backlog.md"
   - Gerência:
     - Metodologia: "methodology.md"
     - Engenharia de Requisitos: "requirements-engineering.md"
+    - Lista de Requisitos inicial: "requirements-list.md"
   - Resultados:
     - Unidade 1: "results/unit-1.md"
