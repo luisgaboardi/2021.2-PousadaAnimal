@@ -4,7 +4,7 @@
 | Data       | Autor                                        | Modificações                      | Versão |
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
 | 11/02/2022 | [Ana Júlia](https://github.com/aluzianobriceno) | Adição do documento de identidade visual inicial | 1.0  |
-| 12/02/2022 | [Luís](https://github.com/aluzianobriceno) | Adição do documento de identidade visual inicial | 1.1  |
+| 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Adição do documento de identidade visual inicial | 1.1  |
 
 ## Introdução
 

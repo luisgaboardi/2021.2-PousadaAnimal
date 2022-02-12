@@ -1,13 +1,12 @@
 # ABORDAGEM DE ENGENHARIA DE REQUISITOS
 
-<span style="color:red">Nesta seção é preciso que sejam feitos ajustes conceituais e metodológicos para que fique adequado a utilização da abordagem de desenvolvimento de software com a abordagem de requisitos. Revejam nossa conversa no vídeo da atividade síncrona.</span>
-
 ## Histórico de revisão
 | Data       | Autor                                        | Modificações                      | Versão |
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
 | 02/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona primeira versão da engenharia de requisitos | 1.0  |
 | 08/02/2022 | [Laís Portela](https://github.com/laispa)|Correção da abordagem de requisitos e ajuste|1.1           |
 | 11/02/2022 | [Ana Júlia](https://github.com/aluzianobriceno) | Ajustando o metódo de desenvolvimento com a engenharia de requisitos | 1.2 |
+| 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Remove comentários desnecessários | 1.3 |
 
 A equipe decidiu, a abordagem da engenharia de Requisitos no contexto ágil, pois o método escolhido para o desenvolvimento de software tem técnicas que tratam da E.R. No seu contexto ágil o principal responsável é o Product Owner. No nosso time, ao longo do semestre, todos farão o papel de um P.O. Além disso, a metodogia ágil conta com a criação do product backlog, em que será listado todos os requisitos. Como o desenvolvimento é dividido em um ciclo de Sprints, os requisitos não terão necessidade de serem detalhados logo no início do projeto, e sim quando estiverem proxímos de seu desenvolvimento.
 
