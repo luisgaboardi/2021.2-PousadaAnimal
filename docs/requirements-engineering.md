@@ -8,12 +8,13 @@
 | 11/02/2022 | [Ana Júlia](https://github.com/aluzianobriceno) | Ajustando o metódo de desenvolvimento com a engenharia de requisitos | 1.2 |
 | 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Remove comentários desnecessários | 1.3 |
 | 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Muda ferramentas | 1.4 |
+| 14/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Mudar o endereço da imagem | 1.5 |
 
 A equipe decidiu, a abordagem da engenharia de Requisitos no contexto ágil, pois o método escolhido para o desenvolvimento de software tem técnicas que tratam da E.R. No seu contexto ágil o principal responsável é o Product Owner. No nosso time, ao longo do semestre, todos farão o papel de um P.O. Além disso, a metodogia ágil conta com a criação do product backlog, em que será listado todos os requisitos. Como o desenvolvimento é dividido em um ciclo de Sprints, os requisitos não terão necessidade de serem detalhados logo no início do projeto, e sim quando estiverem proxímos de seu desenvolvimento.
 
 ## Elicitação de Requisitos
 
-<img src="../images/brainstorm.png" alt="BrainStorm">
+<img src="https://github.com/FGAUnB-REQ-GM/2021.2-PousadaAnimal/blob/main/docs/images/brainstorm.png" alt="BrainStorm">
 
 O levantamento dos requisitos será feito pelo método BrainStorm, onde todos discutem quais serão os requisitos necessários para o sistema. Também teremos a histórias e usuário e o levantamento dos requisitos não funcionais que serão elucidados em workshops online.
 
