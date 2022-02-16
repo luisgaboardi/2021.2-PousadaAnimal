@@ -2,6 +2,12 @@ site_name: Pousada Animal
 
 theme:
   name: material
+  logo: /images/favicon-medio.png
+  favicon: /images/favicon-medio.png
+  palette:
+    scheme: slate
+    primary: lime
+    accent: light-green
 
 nav:
   - Home: "index.md"
