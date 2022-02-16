@@ -4,10 +4,9 @@ theme:
   name: material
   logo: /images/favicon-medio.png
   favicon: /images/favicon-medio.png
-  palette:
-    scheme: slate
-    primary: lime
-    accent: light-green
+
+extra_css:
+  - stylesheets/extra.css
 
 nav:
   - Home: "index.md"
