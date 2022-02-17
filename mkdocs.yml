@@ -3,7 +3,6 @@ site_name: Pousada Animal
 theme:
   name: material
   logo: /images/favicon-medio.png
-  favicon: /images/favicon-medio.png
 
 extra_css:
   - stylesheets/extra.css
