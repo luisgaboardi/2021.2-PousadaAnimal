@@ -18,6 +18,8 @@ nav:
   - Gerência:
     - Metodologia: "methodology.md"
     - Engenharia de Requisitos: "requirements-engineering.md"
-    - Lista de Requisitos inicial: "requirements-list.md"
+    - Requisitos:
+      - Requisitos v1.0: "requirements-list-1.md"
+      - Requisitos v2.0: "requirements-list-2.md"
   - Resultados:
     - Unidade 1: "results/unit-1.md"
