@@ -6,6 +6,7 @@
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
 | 02/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona primeira versão da metodologia da equipe | 1.0    |
 | 14/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Correção do endereço das imagens | 2.0 |
+| 17/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Padrão CamelCase nos títulos dos tópicos | 2.1 |
 
 ## Metodologia
 Em relação às **questões técnicas**, o sistema a ser desenvolvido é pequeno, envolvendo poucas funcionalidades e as que existem não são complexas. Funcionará como um sistema de registro e controle de clientes, ademais como um website de divulgação, que estará sujeito a controle externo por parte dos contratantes e tem vida útil prevista de menos de 1 mês, já que não há cliente e nem interesse em manter a manutenção do produto.
@@ -35,7 +36,7 @@ Do Desenvolvimento Ágil, utilizaremos o conceito de MVP (Mínimo Produto Viáve
 ### Extreme Programming
 Do Extreme Programming, a equipe realizará a abordagem de programação em pares, já que a nossa equipe possui 4 pessoas. Acreditamos que isso vai promover maior produtividade e facilidade de acompanhamento.
 
-## REFERÊNCIAS BIBLIOGRÁFICAS
+## Referências Bibliográficas
 1. https://www.scrum.org/
 1. https://www.agilealliance.org/agile101/agile-glossary/
 1. http://www.extremeprogramming.org/rules.html
