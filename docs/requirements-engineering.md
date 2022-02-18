@@ -9,6 +9,7 @@
 | 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Remove comentários desnecessários | 1.3 |
 | 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Muda ferramentas | 1.4 |
 | 14/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Mudar o endereço da imagem | 1.5 |
+| 17/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Adicionando padrão CamelCase nas referências bibliográficas |
 
 A equipe decidiu, a abordagem da engenharia de Requisitos no contexto ágil, pois o método escolhido para o desenvolvimento de software tem técnicas que tratam da E.R. No seu contexto ágil o principal responsável é o Product Owner. No nosso time, ao longo do semestre, todos farão o papel de um P.O. Além disso, a metodogia ágil conta com a criação do product backlog, em que será listado todos os requisitos. Como o desenvolvimento é dividido em um ciclo de Sprints, os requisitos não terão necessidade de serem detalhados logo no início do projeto, e sim quando estiverem proxímos de seu desenvolvimento.
 
@@ -68,7 +69,7 @@ Atualizar o status dos requisitos | Reuniões estruturadas | Microsoft Teams e G
 | Garantir que a documentação está em dia com a mudança dos requisitos | Reuniões estruturadas | Microsoft Teams e Github Pages
 | Manter registro das mudanças de requisitos | Uso de baseline | Microsoft Teams e Github Pages
 
-## REFERÊNCIAS BIBLIOGRÁFICAS
+## Referências Bibliográficas
 1. **Scrum.org** . Disponível em: <<https://www.scrum.org/>>
 1. Agille Glossary. **Agille Alliance**. Disponível em: <<https://www.agilealliance.org/agile101/agile-glossary/>>
 1. The Rules of Extreme Programming. **Extreme Programming**. <<http://www.extremeprogramming.org/rules.html>>
