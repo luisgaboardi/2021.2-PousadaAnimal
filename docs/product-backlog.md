@@ -31,4 +31,4 @@ Serviços promovidos pelo sistema para cumprir com as necessidades do usuário. 
 
 # Referências Bibliográficas
 1. MARSICANO, George. Requisitos de Software: Identificando Histórias de Usuário. Brasília. 2021. Apresentação em PowerPoint. 64 slides, color, Material de aula do curso de Engenharia de Software da FGA/UNB. Disponível em: https://aprender3.unb.br/pluginfile.php/1624530/mod_resource/content/0/REQ_Aula%20-%20Identificando%20Hist%C3%B3rias%20de%20Usuarios.pdf. Acesso em: 18 fev 2022.
-2. REHKOPF, Max. Histórias de usuários com exemplos e um template. **Atlassian Agile Coach**. Disponível em: https://www.atlassian.com/br/agile/project-management/user-stories Acesso em 12 fev 2022.
+2. REHKOPF, Max. Histórias de usuários com exemplos e um template. **Atlassian Agile Coach**. Disponível em: https://www.atlassian.com/br/agile/project-management/user-stories. Acesso em 12 fev 2022.
