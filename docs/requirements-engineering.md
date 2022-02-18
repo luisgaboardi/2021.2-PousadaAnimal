@@ -9,7 +9,8 @@
 | 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Remove comentários desnecessários | 1.3 |
 | 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Muda ferramentas | 1.4 |
 | 14/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Mudar o endereço da imagem | 1.5 |
-| 17/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Adicionando padrão CamelCase nas referências bibliográficas |
+| 17/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Adicionando padrão CamelCase nas referências bibliográficas | 1.6 |
+| 18/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Adicionando padrão ABNT nas referências | 1.7 |
 
 A equipe decidiu, a abordagem da engenharia de Requisitos no contexto ágil, pois o método escolhido para o desenvolvimento de software tem técnicas que tratam da E.R. No seu contexto ágil o principal responsável é o Product Owner. No nosso time, ao longo do semestre, todos farão o papel de um P.O. Além disso, a metodogia ágil conta com a criação do product backlog, em que será listado todos os requisitos. Como o desenvolvimento é dividido em um ciclo de Sprints, os requisitos não terão necessidade de serem detalhados logo no início do projeto, e sim quando estiverem proxímos de seu desenvolvimento.
 
@@ -70,10 +71,10 @@ Atualizar o status dos requisitos | Reuniões estruturadas | Microsoft Teams e G
 | Manter registro das mudanças de requisitos | Uso de baseline | Microsoft Teams e Github Pages
 
 ## Referências Bibliográficas
-1. **Scrum.org** . Disponível em: <<https://www.scrum.org/>>
-1. Agille Glossary. **Agille Alliance**. Disponível em: <<https://www.agilealliance.org/agile101/agile-glossary/>>
-1. The Rules of Extreme Programming. **Extreme Programming**. <<http://www.extremeprogramming.org/rules.html>>
-1. Sommerville, Ian Engenharia de software/ Ian Sommerville; tradução Luiz Cláudio Queiroz; revisão técnica Fábio Levy Siqueira. -- 10. ed. *-- São Paulo: **Pearson Education do Brasil**, 2018. Título original: Software engineering ISBN 978-65-5011-048-2 1. Engenharia de software I. Siqueira.
-1. Material de aula do professor **George Marsicano**, FGA/UnB
-1. Infra-estrutura Computacional para Apoio ao Processo de Inspeção de Software. **ISPIS**. Disponível em: <http://www-di.inf.puc-rio.br/~kalinowski//publications/KalinowskiST04.pdf>. Acesso em: 2 de fev. de 2022.
-
+1. ABC EDUCATION SERVICES. **Scrum.org**, 2022. Treinamento para a prática de scrum. Disponível em https://www.scrum.org/. Acesso em 17 fev. 2022.
+2. AGILE Glossary. **Agile Alliance**, 2022. Disponível em https://www.agilealliance.org/agile101/agile-glossary/. Acessado em 18 fev. 2022.
+3. DON WELLS. **Extreme Programming.org**, 1999. Valores do extreme programming. Disponível em http://www.extremeprogramming.org/rules.html. Acesso em 18 fev. 2022.
+4. SOMMERVILLE, Ian. **Engenharia de software**. 10 ed. Tradução Luiz Cláudio Queiroz; revisão técnica Fábio Levy Siqueira. São Paulo: Pearson Education do Brasil, 2018.
+5. MARSICANO, George. Requisitos de Software: Atividades de ER - Parte II. Brasília. 2021. Apresentação em PowerPoint. 39 slides, color, Material de aula do curso de Engenharia de Software da FGA/UNB. Disponível em: https://aprender3.unb.br/pluginfile.php/1624524/mod_resource/content/0/REQ_Aula%203%20-%20Atividades%20da%20ER%20-%20parte%202.pdf. Acesso em: 18 fev 2022.
+3. Marcos Kalinowski, Rodrigo Oliveira Spinola, Guilherme Horta Travassos
+6. KALINOWSKI, Marcos; SPINOLA, Rodrigo O., TRAVASSOS, Guilherme H. **Infra-estrutura Computacional para Apoio ao Processo de Inspeção de Software**. Brasília. 2004. Disponível em: http://www-di.inf.puc-rio.br/~kalinowski//publications/KalinowskiST04.pdf. Acesso em: 2 de fev. de 2022.
