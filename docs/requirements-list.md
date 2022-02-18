@@ -4,6 +4,7 @@
 | Data       | Autor                                        | Modificações                      | Versão |
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
 | 11/02/2022 | [Luís Lins](https://github.com/luisgaboardi), [Lais Portela](https://github.com/laispa), [Ana Julia](https://github.com/aluzianobriceno), [Lara Murussi](https://github.com/klmurussi) | Adiciona primeira versão da lista de requisitos do Produto | 1.0 |
+| 18/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Padrão ABNT nas referências | 1.1 |
 
 ## Requisitos Funcionais
 
@@ -90,5 +91,5 @@
 - O layout do sistema deve ser em português de fácil compreensão. 
 
 ## Referências Bibliográficas
-1. Material de aula do professor **George Marsicano**, FGA/UnB
-1. SAFe 5 for Lean Enterprises. **SAFe**. Disponível em: <<https://www.scaledagileframework.com/>>. Acesso dia 11 de Fev de 2022.
+1. MARSICANO, George. Requisitos de Software: Tipos e Característica de Requisitos. Brasília. 2021. Apresentação em PowerPoint. 36 slides, color, Material de aula do curso de Engenharia de Software da FGA/UNB. Disponível em: https://aprender3.unb.br/pluginfile.php/1624498/mod_resource/content/0/REQ_Aula%202.1%20-%20Introdu%C3%A7%C3%A3o%20a%20ER-atualizado.pdf. Acesso em: 18 fev 2022
+2. SAFE 5 for Lean Enterprises. **SAFe**. 2021. Disponível em: https://www.scaledagileframework.com/. Acesso dia 11 de Fev de 2022.
