@@ -4,8 +4,9 @@
 | Data       | Autor                                        | Modificações                      | Versão |
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
 | 02/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona primeira versão da visão do produto | 1.0 |
-| 04/02/2022 | [Luís Lins](https://github.com/luisgaboardi), Laís Portela, Lara Murussi, Ana Julia | Atualiza declaração do problema | 1.1 |
+| 04/02/2022 | [Luís Lins](https://github.com/luisgaboardi), Laís Portela, [Lara Murussi](https://github.com/klmurussi), Ana Julia | Atualiza declaração do problema | 1.1 |
 | 07/02/2022 | [Luís Lins](https://github.com/luisgaboardi), [Kathlyn Lara](https://github.com/klmurussi) | Atualização da declaração de produto e objetivo | 2.0 |
+| 18/02/2022 | [Kathlyn Lara](https://github.com/klmurussi) | Mudança das referências para as regras da ABNT | 2.1 |
 
 
 ## Declaração do Problema
@@ -38,5 +39,4 @@ Os diferenciais da solução são:
 O seu objetivo é permitir uma melhor troca de informações entre a pousada e os donos dos pets, facilitando a hospedagem dos animais, assim como um serviço personalizado na medida da capacidade da pousada, de forma a promover um maior conforto e segurança aos clientes da pousada no ato de hospedagem.
 
 ## Referências Bibliográficas
-1. Sommerville, Ian Engenharia de software/ Ian Sommerville; tradução Luiz Cláudio Queiroz; revisão técnica Fábio Levy Siqueira. -- 10. ed. -- São Paulo: Pearson Education do Brasil, 2018.
-2. Material de aula do professor **George Marsicano**, FGA/UnB
+1. SOMMERVILLE, Ian. **Engenharia de software**. 10 ed. Tradução Luiz Cláudio Queiroz; revisão técnica Fábio Levy Siqueira. São Paulo: Pearson Education do Brasil, 2018.
