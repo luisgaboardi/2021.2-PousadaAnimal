@@ -35,6 +35,23 @@
 
 ## Matriz de Comunicação
 
+| Descrição         | Envolvidos            | Periodicidade      | Artefatos Gerados      |
+|:-:|:-:|:-:|:-:|
+| Scrum Daily | Equipe do projeto | Diária | Relatório falado do andamento da sprint |
+| Sprint Review | Equipe do projeto | Semanal | Fechamento de Issues e PRs |
+| Sprint Planning | Equipe do projeto | Semanal | Issues, atualização do cronograma |
+| Comunicados e Dúvidas pelo Telegram | Equipe do projeto | Diária | - |
+
 ## Gerenciamento de Riscos
 
-## Critérios de Replajenamento
+### Falta de domínio tecnológico
+No caso de a equipe detectar que existe uma incapacidade de realizar as atividades do produto por conta de falta de conhecimento das tecnologias, será organizado um Dojô com uma demonstração prática da utilização delas. Além disso, o membro da equipe que apresentar essa dificuldade será colocado para parear com um outro membro que apresente um nível de conhecimento maior, a fim de transmitir esse conhecimento até que o primeiro ganhe certa autonomia.
+
+### Estouro de prazo devido a falhas de desenvolvimento
+Na presença de bugs que a equipe não saiba resolver de forma rápida, a atividade que estava sendo desenvolvida será pausada em seu último estado estável e uma nova atividade será iniciada ou continuada, a fim de a equipe não perder tanto tempo e confiança diante de um problema.
+
+### Menor comprometimento por parte da equipe por conta de outros compromissos
+Como todos os membros do time de desenvolvimento são universitários, haverá momentos em que as obrigações de outras disciplinas ou compromissos externos ocuparão mais tempo do que o previsto e com isso, menos tempo será dedicado para o desenvolvimento do produto. Diante disso, a cada Scrum Daily é perguntado para cada um se naquela sprint existe algum fator que comprometeria o desenvolvimento das atividades, a fim de prever momentos/dias em que o membro da equipe estaria indisponível, e com isso, adaptar a quantidade de trabalho daquela sprint.
+
+### Complexidade do sistema, não devidamente percebida nas etapas iniciais
+A equipe de desenvolvimento não conhece a fundo as tecnologias a serem utilizadas, por isso existe a possiblidade de o time estar propondo o desenvolvimento de algo acima das suas capacidades. Caso isso ocorra, a tarefa em questão será simplificada, os critérios de aceitação serão revistos ou, em em último caso, a atividade em questão será descartada do backlog.
