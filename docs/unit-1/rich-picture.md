@@ -15,9 +15,9 @@ Essa forma de representação foi escolhida tendo em vista o estágio atual do d
 
 ## Rich Picture
 
-![Rich Picture Atual](images/rich-picture-v2.png)
+![Rich Picture Atual](../images/rich-picture-v2.png)
 
 ## Versões Anteriores
 
 ### Versão 1.0
-![Rich Picture v.1.0](images/rich-picture-v1.png)
+![Rich Picture v.1.0](../images/rich-picture-v1.png)
