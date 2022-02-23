@@ -13,11 +13,16 @@ nav:
   - Unidade 1:  
     - Visão do Produto: "unit-1/product-vision.md"
     - Engenharia de Requisitos: "unit-1/requirements-engineering.md"
-    - Lista de Requisitos inicial: "unit-1/requirements-list.md"
+    - Lista de Requisitos: "unit-1/requirements-list.md"
     - Backlog do Produto: "unit-1/product-backlog.md"
     - Rich Picture: "unit-1/rich-picture.md"
     - Identidade Visual: "unit-1/visual-identity.md"
     - Metodologia: "unit-1/methodology.md"
     - Apresentação: "unit-1/presentation.md"
   - Unidade 2:
+    - Visão do Produto: "unit-2/product-vision.md"
+    - Gerenciamento do Projeto: "unit-2/project-management.md"
+    - Lista de Requisitos: "unit-2/requirements-list.md"
+    - Backlog do Produto: "unit-2/product-backlog.md"
+    - Rich Picture: "unit-2/rich-picture.md"
     - Canvas MVP: "unit-2/canvas-mvp.md"

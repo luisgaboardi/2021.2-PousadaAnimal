@@ -17,7 +17,7 @@ A equipe decidiu, a abordagem da engenharia de Requisitos no contexto ágil, poi
 ## Elicitação de Requisitos
 
 <div align="center">
-  <img src="../images/brainstorm.png" alt="Scrum" width="500" >
+  <img src="../../images/brainstorm.png" alt="Scrum" width="500" >
 </div>
 
 O levantamento dos requisitos será feito pelo método BrainStorm, onde todos discutem quais serão os requisitos necessários para o sistema. Também teremos a histórias e usuário e o levantamento dos requisitos não funcionais que serão elucidados em workshops online.

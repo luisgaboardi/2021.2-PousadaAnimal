@@ -4,7 +4,7 @@
 
 | Data       | Autor                                        | Modificações                      | Versão |
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
-| 08/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona primeira versão da Rich Picture | 1.0 |
+| 17/02/2022 | [Luís Lins](https://github.com/luisgaboardi) | Adiciona segunda versão da Rich Picture | 1.0 |
 
 ## Introdução
 
@@ -14,4 +14,4 @@ Essa forma de representação foi escolhida tendo em vista o estágio atual do d
 
 ## Rich Picture
 
-![Rich Picture Atual](../images/rich-picture-v1.png)
+![Rich Picture Atual](../images/rich-picture-v2.png)
