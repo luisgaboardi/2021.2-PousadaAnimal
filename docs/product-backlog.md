@@ -6,6 +6,7 @@
 | 12/02/2022 | [Luís Lins](https://github.com/luisgaboardi), [Lais Portela](https://github.com/laispa), [Ana Júlia](https://github.com/aluzianobriceno), [Lara Murussi](https://github.com/klmurussi) | Adiciona primeira versão do Backlog do Produto | 1.0 |
 | 15/02/2022 | [Ana Júlia](https://github.com/aluzianobriceno) | Atualização dos títulos no sumário | 1.1 | 
 | 18/02/2022 | [Luís Lins](https://github.com/luisgaboardi), [Ana Júlia](https://github.com/aluzianobriceno) | Atualiza Backlog do Produto | 2.0 |
+| 22/02/2022 | [Ana Júlia](https://github.com/aluzianobriceno) | Adiciona Personas | 2.1 |
 
 ## Introdução
 O Backlog do Produto faz parte da metodologia Scrum, onde é colocado todas os requisitos necessarios para o desenvolvimento do projeto. Para a organização do backlog foi utilizado a estrutura de organização de requisitos do SAFe, que é divida em quatro partes: Temas de investimento, épicos, features e histórias de usuário.
