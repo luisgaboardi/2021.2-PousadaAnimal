@@ -20,6 +20,8 @@ nav:
     - Metodologia: "unit-1/methodology.md"
     - Apresentação: "unit-1/presentation.md"
   - Unidade 2:
+    - Visão do Produto: "unit-2/product-vision.md"
+    - Gerenciamento do Projeto: "unit-2/project-management.md"
     - Lista de Requisitos: "unit-2/requirements-list.md"
     - Backlog do Produto: "unit-2/product-backlog.md"
     - Rich Picture: "unit-2/rich-picture.md"

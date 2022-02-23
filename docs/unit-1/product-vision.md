@@ -1,4 +1,4 @@
-# VISÃO GERAL DO PRODUTO
+# Visão Geral do Produto
 
 ## Histórico de revisão
 | Data       | Autor                                        | Modificações                      | Versão |
