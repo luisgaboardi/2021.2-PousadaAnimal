@@ -1,10 +1,10 @@
 # Pousada Animal :dog: :cat:
 
 <div align="center">
-  <img src="./docs/images/pa.png" > <!-- trocar o endereço da imagem -->
+  <img src="./docs/images/pa.png" >
 </div>
 
-  **Pousada Animal** <!-- adicionar link pro site quando estiver pronto --> é um website administrativo desenvolvido para empresas que trabalham com a hospedagem e cuidados físicos e emocionais de pets.
+  **Pousada Animal** é um website administrativo desenvolvido para empresas que trabalham com a hospedagem e cuidados físicos e emocionais de pets.
   
   Ouvimos e analisamos as reclamações e/ou descontentamentos de donos de pets sobre algumas outras empresas do mesmo ramo, como a burocracia exagerada ou como elas não demonstram confiança ao cuidar de seus queridos animais de estimação enquanto estão fora. A partir disso, nasceu o **Pousada Animal**, onde nos propusemos tornar a experiência mais relaxante, para os donos, para os funcionários da empresa e para os próprios pets. 
   
@@ -21,21 +21,6 @@
    
    Documentação consta na [Wiki do repositório](https://fgaunb-req-gm.github.io/2021.2-PousadaAnimal/).
    
-<!--
-
-O projeto é open source? Não sei.
-
-## Como Instalar
-
-## Requisitos
-Python
-Django
-JavaScript/TypeScript
-Angular
-
-## Como contribuir
-
--->
 
 ## Equipe :technologist:
 
@@ -45,8 +30,3 @@ Angular
 |<img src="https://avatars.githubusercontent.com/u/52364259?v=4" width="100">| Kathlyn Lara | [klmurussi](https://github.com/klmurussi) |
 |<img src="https://avatars.githubusercontent.com/u/54222696?v=4" width="100">| Laís Portela  | [laispa](https://github.com/laispa) |
 |<img src="https://avatars.githubusercontent.com/u/45673358?v=4" width="100">| Luís Guilherme | [luisgaboardi](https://github.com/luisgaboardi) |
-
-<!--
-## License
-adicionar depois se tiver
--->
