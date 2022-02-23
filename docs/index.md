@@ -4,7 +4,7 @@
   <img src="./images/logo-transparente.png" width="500" >
 </div>
 
-  **Pousada Animal** <!-- adicionar link pro site quando estiver pronto --> é um website administrativo desenvolvido para empresas que trabalham com a hospedagem e cuidados físicos e emocionais de pets.
+  **Pousada Animal** é um website administrativo desenvolvido para empresas que trabalham com a hospedagem e cuidados físicos e emocionais de pets.
   
   Ouvimos e analisamos as reclamações e/ou descontentamentos de donos de pets sobre algumas outras empresas do mesmo ramo, como a burocracia exagerada ou como elas não demonstram confiança ao cuidar de seus queridos animais de estimação enquanto estão fora. A partir disso, nasceu o **Pousada Animal**, onde nos propusemos tornar a experiência mais relaxante, para os donos, para os funcionários da empresa e para os próprios pets. 
   
@@ -19,5 +19,3 @@
 |<img src="https://avatars.githubusercontent.com/u/52364259?v=4" width="100">| Kathlyn Lara | [klmurussi](https://github.com/klmurussi) |
 |<img src="https://avatars.githubusercontent.com/u/54222696?v=4" width="100">| Laís Portela  | [laispa](https://github.com/laispa) |
 |<img src="https://avatars.githubusercontent.com/u/45673358?v=4" width="100">| Luís Guilherme | [luisgaboardi](https://github.com/luisgaboardi) |
-
-</div>

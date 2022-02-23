@@ -21,7 +21,7 @@ O documento de identidade visual tem como principal objetivo definir os parâmet
 
 A paleta de cores escolhida é a seguinte:
 
-![exemplo_paleta ](images/paleta-cores.png)
+![exemplo_paleta ](../images/paleta-cores.png)
 
 ## Tipografia
 
@@ -32,8 +32,8 @@ Para textos normais, a tipografia escolhida foi a *Sans serif*, que é mais mini
 ## Logomarca
 
 A logomarca escolhida é: 
-![logo](images/logo-transparente.png)
+![logo](../images/logo-transparente.png)
 
 Também foi feita uma logo minimalista para ficar como favicon do website:
 
-![favicon](images/favicon-medio.png)
+![favicon](../images/favicon-medio.png)

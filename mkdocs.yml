@@ -2,24 +2,25 @@ site_name: Pousada Animal
 
 theme:
   name: material
-  logo: /images/favicon-medio.png
-  favicon: /images/favicon-medio.png
+  logo: images/favicon-medio.png
+  favicon: images/favicon-medio.png
 
 extra_css:
   - stylesheets/extra.css
 
 nav:
   - Home: "index.md"
-  - Projeto:  
-    - Visão do Produto: "product-vision.md"
-    - Identidade Visual: "visual-identity.md"
-    - Rich Picture: "rich-picture.md"
-    - Backlog do Produto: "product-backlog.md"
-  - Gerência:
-    - Metodologia: "methodology.md"
-    - Engenharia de Requisitos: "requirements-engineering.md"
-    - Requisitos:
-      - Requisitos v1.0: "requirements-list-1.md"
-      - Requisitos v2.0: "requirements-list-2.md"
-  - Resultados:
-    - Unidade 1: "results/unit-1.md"
+  - Unidade 1:  
+    - Visão do Produto: "unit-1/product-vision.md"
+    - Engenharia de Requisitos: "unit-1/requirements-engineering.md"
+    - Lista de Requisitos: "unit-1/requirements-list.md"
+    - Backlog do Produto: "unit-1/product-backlog.md"
+    - Rich Picture: "unit-1/rich-picture.md"
+    - Identidade Visual: "unit-1/visual-identity.md"
+    - Metodologia: "unit-1/methodology.md"
+    - Apresentação: "unit-1/presentation.md"
+  - Unidade 2:
+    - Lista de Requisitos: "unit-2/requirements-list.md"
+    - Backlog do Produto: "unit-2/product-backlog.md"
+    - Rich Picture: "unit-2/rich-picture.md"
+    - Canvas MVP: "unit-2/canvas-mvp.md"
