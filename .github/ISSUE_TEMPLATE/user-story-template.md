@@ -1,14 +1,13 @@
 ---
 name: Template de História de Usuário
 about: Template para descrição de Histórias de Usuário
-title: "[RFx - USy] Como <persona> eu quero <ação> para <objetivo>"
+title: "[USx/TSy] Como <persona>, eu quero <ação> para <objetivo>"
 ---
 
 ## Tarefas
 
 <!-- Enumerar as tarefas necessárias para a conclusão da história de usuário -->
-<!-- - [ ] Tarefa 1 (Caso seja uma atividade simples) -->
-<!-- - [ ] [Tarefa 2](Link para outra issue). (Caso seja uma atividade simples) -->
+<!-- - [ ] Tarefa 1 -->
 
 
 ## Critérios de Aceitação
@@ -23,4 +22,4 @@ title: "[RFx - USy] Como <persona> eu quero <ação> para <objetivo>"
 
 <!-- ## Lembretes -->
 
-<!-- - Caso a história de usuário seja formada por várias issues, as issues oriunduas dela devem ser referenciadas aqui e na própria sub-issue. A sub-issue deve ter somente título com a descrição, sem as siglas de RF ou US -->
+<!-- Durante o desenvolvimento da história de usuário, manter atualizado o andamento das tarefas/critérios de aceitação -->
