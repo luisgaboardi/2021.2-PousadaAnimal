@@ -22,7 +22,7 @@ Diante das reflexões acima, a equipe decidiu utilizar uma **abordagem metodoló
 ### Scrum
 
 <div align="center">
-  <img src="../images/scrum.png" alt="Scrum" width="500" >
+  <img src="../../images/scrum.png" alt="Scrum" width="500" >
 </div>
 
 <center>Imagem de [Witix](https://www.witix.com.br/blog-postagens/9/metodologia-scrum-tudo-o-que-voce-precisa-para-nao-atrasar-seus-projetos)</center>
@@ -32,7 +32,7 @@ Do Scrum, realizaremos as Dailys, as Sprints, a elaboração do Product Backlog,
 ### Desenvolvimento Ágil
 
 <div align="center">
-  <img src="../images/agile-development.png" alt="Desenvolvimento Ágil" width="500" >
+  <img src="../../images/agile-development.png" alt="Desenvolvimento Ágil" width="500" >
 </div>
 
 Do Desenvolvimento Ágil, utilizaremos o conceito de MVP (Mínimo Produto Viável) e as Histórias de Usuário, para auxiliar na definição dos requisitos do produto. Não só por conta das exigências da disciplina, mas a equipe acredita que o foco em desenvolver um MVP garante um melhor andamento para o projeto e que o uso de Histórias de Usuário nos ajuda a não desenvolver funcionalidades que não são necessárias. Dessa forma, os dois conceitos se complementam. Além disso, faremos uso de um quadro Kanban para controlar o que ainda precisa ser feito, o que ainda precisa ser revisado, o que está em desenvolvimento na Sprint atual e, por fim, o que já foi concluído. Acreditamos que a visualização e acompanhamento do quadro por conta da equipe nos dará mais informações acerca do andamento do projeto, de forma que a equipe poderá analisar de forma mais clara se o ritmo de trabalho atual satisfará as exigências da disciplina.

@@ -15,7 +15,7 @@ O Canvas MVP é um template de _startup lean_ para a validação de ideias de pr
 
 [Link para o Miro](https://miro.com/app/board/uXjVOU3NO04=/?invite_link_id=342459343443)
 
-![Canvas MVP](images/canvas-mvp.jpg)
+![Canvas MVP](../images/canvas-mvp.jpg)
 
 ## Referências Bibliográficas
 1. The MVP Canvas. **Paulo Caroli**. 2015. Disponível em: https://www.caroli.org/en/the-mvp-canvas/. Acesso dia 22 de Fev de 2022.
