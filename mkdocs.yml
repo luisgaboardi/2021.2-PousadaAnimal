@@ -1,9 +1,14 @@
 site_name: Pousada Animal
 
+repo_url: https://github.com/FGAUnB-REQ-GM/2021.2-PousadaAnimal
+repo_name: FGAUnB-REQ-GM/2021.2-PousadaAnimal
+
 theme:
   name: material
   logo: images/favicon-medio.png
   favicon: images/favicon-medio.png
+  icon:
+    repo: fontawesome/brands/github
 
 extra_css:
   - stylesheets/extra.css
