@@ -7,7 +7,7 @@
 
 ## Resultado
 
-<iframe width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CBM5viV_lVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
 
 ## Lições Aprendidas
 
@@ -15,5 +15,5 @@
 * Uso de personas ajuda a deixar o produto backlog mais claro;
 * Separar os requisitos dos critérios de aceitação;
 * Daily no horário do almoço talvez não seja tão prático;
-* Criar um mecanismo melhor de contato com os integrantes, pois as vezes precisamos contatar e estão indisponíveis.
-* Utilização do ZenHub para facilitar o gerenciamento do projeto;
+* Criar um mecanismo melhor de contato com os integrantes, pois as vezes precisamos contatar e estão indisponíveis;
+* Utilização do ZenHub para facilitar o gerenciamento do projeto.
