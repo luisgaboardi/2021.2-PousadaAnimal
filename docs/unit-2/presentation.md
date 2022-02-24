@@ -3,7 +3,8 @@
 ## Histórico de revisão
 | Data       | Autor                                        | Modificações                      | Versão |
 | ---------- | -------------------------------------------- | --------------------------------- | ------ |
-| 02/02/2021 | [Laís Portela](https://github.com/laispa) | Adiciona lições aprendidas da unidade 2 | 1.0    |
+| 23/02/2022 | [Laís Portela](https://github.com/laispa) | Adiciona lições aprendidas da unidade 2 | 1.0    |
+| 24/02/2022 | [Laís Portela](https://github.com/laispa) | Adição de video e mudança no lições aprendidas | 1.1    |
 
 ## Resultado
 
@@ -14,6 +15,6 @@
 * A diferença entre requisitos e regras de negócio foi muito importante;
 * Uso de personas ajuda a deixar o produto backlog mais claro;
 * Separar os requisitos dos critérios de aceitação;
-* Daily no horário do almoço talvez não seja tão prático;
+* Daily no horário do almoço talvez não esteja funcionando;
 * Criar um mecanismo melhor de contato com os integrantes, pois as vezes precisamos contatar e estão indisponíveis;
 * Utilização do ZenHub para facilitar o gerenciamento do projeto.
