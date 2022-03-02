@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # Our apps
     'rest_framework', # For endpoints and serializers
     'knox', # For authentication
+
+    'accounts',
 ]
 
 MIDDLEWARE = [
