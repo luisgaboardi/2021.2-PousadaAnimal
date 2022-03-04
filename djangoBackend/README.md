@@ -16,7 +16,7 @@ python3 -m pip install -r requirements.txt
 
 3. No terminal, gere as migrações pendentes do Django com o comando abaixo:
 ```
-python3 manage.py makemigrations
+python3 manage.py makemigrations users
 ```
 
 4. Passe as migrações para o banco de dados SQLite com o comando:
