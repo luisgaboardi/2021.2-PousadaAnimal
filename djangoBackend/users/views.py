@@ -1,11 +1,12 @@
+from django.http import Http404
 from users.hash import hash_password
 from users.models import User
 from users.serializers import UserSerializer
 from rest_framework import generics
 from rest_framework.views import APIView
-from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.authtoken.models import Token
 
 
 class UserList(APIView):
@@ -31,6 +32,18 @@ class UserList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class UserDetail(generics.RetrieveAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    """
+    Ger one user detail by pk.
+    """
+    def get_object(self, pk):
+        try:
+            return User.objects.get(pk=pk)
+        except User.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        if request.user in User.objects.all():
+            user = self.get_object(pk)
+            serializer = UserSerializer(user)
+            return Response(serializer.data)
+        return Response(status=status.HTTP_403_FORBIDDEN)
