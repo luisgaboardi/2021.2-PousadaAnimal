@@ -1,7 +1,7 @@
 from os import system
 
 # Database
-system('python3 manage.py makemigrations users')
+system('python3 manage.py makemigrations users pets')
 system('python3 manage.py migrate')
 
 # Server
