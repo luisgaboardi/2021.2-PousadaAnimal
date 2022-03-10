@@ -1,27 +1,27 @@
-# Pousada Animal - Frontend
+# AngularFrontend
 
-## Execução do Projeto Localmente
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
-### Requisitos
-* Node Packager Manager (npm) versão *8.4* ou superior
-* Angular CLI versão *13.2* ou superior
+## Development server
 
-### Instruções
-1. No diretório base do projeto Angular, denominado _angularFrontend_, instale as dependências da solução por meio do npm:
-```
-npm install
-```
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-2. Execute o projeto com o seguinte comando no terminal:
-```
-ng serve
-```
+## Code scaffolding
 
-3. Você verá algo tal com o abaixo, isso significa que o projeto foi executado corretamente. Para acessar, acesse o link gerado em um navegador.
-```
-Build at: 2022-03-03T18:14:00.773Z - Hash: f45b5b838e4fd223 - Time: 12868ms
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+## Build
 
-✔ Compiled successfully.
-```
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

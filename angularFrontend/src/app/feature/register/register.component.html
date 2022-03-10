@@ -1,0 +1,74 @@
+<div class="register">
+  <div class="container">
+    <div class="register-form input" [formGroup]="formRegister">
+
+      <div class="col-md-4">
+        <label>Nome</label>
+        <input type="text" placeholder="Digite o seu primeiro nome" formGroupName="firstName">
+      </div>
+
+      <div class="col-md-8">
+        <label>Sobrenome</label>
+        <input type="text" placeholder="Digite o seu sobrenome"  formGroupName="lastName">
+      </div>
+
+      <div class="col-md-3">
+        <label>Gênero</label>
+        <select class="form-select" formControlName="gender">
+          <option *ngFor="let gender of genderList" value="{{gender.nome}}">
+            {{gender.nome}}
+          </option>
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <label>CPF</label>
+        <input type="text" placeholder="Digite o seu CPF" formGroupName="cpf" mask="000.000.000-00">
+      </div>
+
+      <div class="col-md-3">
+        <label>Telefone</label>
+        <input type="text" placeholder="Digite o seu número de telefone" formGroupName="phone" ngxPhoneMaskBr>
+        <!-- verificar ngxPhoneMaskBr ngxmask não funciona -->
+      </div>
+
+      <div class="col-md-3">
+        <label>CEP</label>
+        <input type="text" placeholder="Digite o seu cep" formGroupName="cep" mask="00.000-000">
+      </div>
+
+      <div class="col-md-12">
+        <label>Endereço</label>
+        <input type="text" placeholder="Digite o seu Endereço" formGroupName="adress">
+      </div>
+
+      <div class="col-md-12">
+        <label>Data de Nascimento</label>
+        <input type="text" placeholder="DD/MM/AAAA" formControlName=dateBirth mask="d0/M0/0000">
+      </div>
+
+      <div class="col-md-12">
+        <label>Email</label>
+        <input type="text" placeholder="Digite o seu email" formGroupName="email">
+      </div>
+
+      <div class="col-md-12">
+        <div class="field-wrapper">
+          <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
+          <button type="button" class="btn-icon" (click)="showPassword()" tabindex="-1">
+            <em [class]="isTextField ? 'icone eye' : 'icone eye-slash' "></em>
+          </button>
+          <label>Senha</label>
+        </div>
+      </div>
+
+      <div>
+        <button [class]="formRegister.invalid ? 'btn-custom btn-block disabled' : 'btn-custom btn-block default'"
+          (click)="cadastrarCliente()" [disabled]="formRegister.invalid">
+          Cadastrar Cliente
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
