@@ -37,7 +37,11 @@
           </a>
         </li>
         <li class="nav-item" >
-          <a class="nav-link" href="#">Cliente</a>
+          <a class="nav-link" [routerLink]="['/auth/login']">Cliente</a>
+        </li>
+        <!-- Provisório, quando o login ficar pronto vai ter um link nele para ir direto pro registro -->
+        <li class="nav-item" >
+          <a class="nav-link" [routerLink]="['/auth/cadastro-cliente']">Cliente</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Serviços</a>
