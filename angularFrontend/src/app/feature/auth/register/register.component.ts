@@ -1,6 +1,7 @@
 import { RegisterService } from '../../../core/services/register.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -33,8 +34,8 @@ export class RegisterComponent implements OnInit {
   })
 
   constructor(
-    private readonly formBuilder: FormBuilder,
-    private readonly registerServiceClient: RegisterService
+    private readonly registerServiceClient: RegisterService,
+    private readonly router : Router
   ) { }
 
   ngOnInit(): void { }
@@ -61,7 +62,7 @@ export class RegisterComponent implements OnInit {
   }
 
   redirect(){
-    console.log("Redirecionar p/ login");
+    this.router.navigate(['/login']);
   }
 
 
