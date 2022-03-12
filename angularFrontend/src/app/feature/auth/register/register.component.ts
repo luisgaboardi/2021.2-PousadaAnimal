@@ -1,0 +1,68 @@
+import { RegisterService } from '../../../core/services/register.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
+})
+export class RegisterComponent implements OnInit {
+
+  isTextField!: boolean;
+  // formRegister: FormGroup;
+
+  genderList = [
+    { nome: 'Masculino'},
+    { nome: 'Feminino'},
+    {nome: 'Outro'}
+  ];
+
+  formRegister: FormGroup = new FormGroup ({
+    email: new FormControl ('',[Validators.required,
+      Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]),
+    firstName: new FormControl('',[Validators.required]),
+    lastName:  new FormControl('',[Validators.required]),
+    cpf: new FormControl('',[Validators.required]),
+    phone:  new FormControl('',[Validators.required]),
+    cep:  new FormControl('',[Validators.required]),
+    address:  new FormControl('',[Validators.required]),
+    gender:  new FormControl('',[Validators.required]),
+    dateBirth: new FormControl('',[Validators.required]),
+    password:  new FormControl('',[Validators.required])
+  })
+
+  constructor(
+    private readonly formBuilder: FormBuilder,
+    private readonly registerServiceClient: RegisterService
+  ) { }
+
+  ngOnInit(): void { }
+  showPassword() {
+    this.isTextField = !this.isTextField;
+  }
+
+  cadastrarCliente(){
+    console.log("Fazer cadastro")
+    //verificar se email e cpf existe
+    if(this.formRegister.valid){
+      let register = Object.assign({}, this.formRegister.value);
+
+      this.registerServiceClient.sendRegisterClient(register).subscribe({
+        next: () => { // definir data
+          this.redirect();
+        },
+        error: (error) => {
+          console.log("Erro ao registrar", error) //definir tipos de erros
+        }
+      }
+      )
+    }
+  }
+
+  redirect(){
+    console.log("Redirecionar p/ login");
+  }
+
+
+}

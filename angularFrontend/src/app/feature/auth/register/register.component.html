@@ -2,14 +2,18 @@
   <div class="container">
     <div class="register-form input" [formGroup]="formRegister">
 
+      <div class="col-md-12 text-center">
+        <h2>Cadastro do Cliente</h2>
+      </div>
+
       <div class="col-md-4">
         <label>Nome</label>
-        <input type="text" placeholder="Digite o seu primeiro nome" formGroupName="firstName">
+        <input type="text" placeholder="Digite o seu nome" formControlName="firstName">
       </div>
 
       <div class="col-md-8">
         <label>Sobrenome</label>
-        <input type="text" placeholder="Digite o seu sobrenome"  formGroupName="lastName">
+        <input type="text" placeholder="Digite o seu sobrenome"  formControlName="lastName">
       </div>
 
       <div class="col-md-3">
@@ -23,23 +27,23 @@
 
       <div class="col-md-3">
         <label>CPF</label>
-        <input type="text" placeholder="Digite o seu CPF" formGroupName="cpf" mask="000.000.000-00">
+        <input type="text" placeholder="Digite o seu CPF" formControlName="cpf" mask="000.000.000-00">
       </div>
 
       <div class="col-md-3">
         <label>Telefone</label>
-        <input type="text" placeholder="Digite o seu número de telefone" formGroupName="phone" ngxPhoneMaskBr>
+        <input type="text" placeholder="Digite o seu número de telefone" formControlName="phone">
         <!-- verificar ngxPhoneMaskBr ngxmask não funciona -->
       </div>
 
       <div class="col-md-3">
         <label>CEP</label>
-        <input type="text" placeholder="Digite o seu cep" formGroupName="cep" mask="00.000-000">
+        <input type="text" placeholder="Digite o seu cep" formControlName="cep" mask="00.000-000">
       </div>
 
       <div class="col-md-12">
         <label>Endereço</label>
-        <input type="text" placeholder="Digite o seu Endereço" formGroupName="adress">
+        <input type="text" placeholder="Digite o seu Endereço" formControlName="address">
       </div>
 
       <div class="col-md-12">
@@ -49,7 +53,7 @@
 
       <div class="col-md-12">
         <label>Email</label>
-        <input type="text" placeholder="Digite o seu email" formGroupName="email">
+        <input type="text" placeholder="Digite o seu email" formControlName="email">
       </div>
 
       <div class="col-md-12">
@@ -63,8 +67,8 @@
       </div>
 
       <div>
-        <button [class]="formRegister.invalid ? 'btn-custom btn-block disabled' : 'btn-custom btn-block default'"
-          (click)="cadastrarCliente()" [disabled]="formRegister.invalid">
+        <button class ="btn btn-custon default"(click)="cadastrarCliente()" [disabled]="formRegister.invalid"
+          [class]="formRegister.invalid ? 'btn btn-custon disabled ' : 'btn btn-custon default'">
           Cadastrar Cliente
         </button>
       </div>
