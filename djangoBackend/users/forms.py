@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from rest_framework.authtoken.models import Token
 
 User = get_user_model()
 
@@ -64,8 +65,10 @@ class UserAdminCreationForm(forms.ModelForm):
         # Save the provided password in hashed format
         user = super().save(commit=False)
         user.set_password(self.cleaned_data["password"])
+        
         if commit:
             user.save()
+        Token.objects.create(user=user)
         return user
 
 
