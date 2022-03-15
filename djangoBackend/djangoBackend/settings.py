@@ -50,10 +50,17 @@ INSTALLED_APPS = [
 
     'users',
     'rest_framework',
+    'rest_framework.authtoken',
     "corsheaders",
 ]
 
 AUTH_USER_MODEL = 'users.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
