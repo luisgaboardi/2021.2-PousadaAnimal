@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/core/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  isTextField!: boolean;
 
-  ngOnInit(): void {
+  formLogin: FormGroup = new FormGroup ({
+    email: new FormControl('',[Validators.required,
+      Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]),
+    password:  new FormControl('',[Validators.required])
+  })
+
+  constructor(
+    private readonly loginServiceClient: LoginService,
+    private readonly router : Router
+  ) { }
+
+  ngOnInit(): void { }
+
+  showPassword() {
+    this.isTextField = !this.isTextField;
+  }
+
+  loginClient(){
+    console.log("Fazer cadastro")
+    //verificar se email e cpf existe
+    if(this.formLogin.valid){
+      let login = Object.assign({}, this.formLogin.value);
+
+      this.loginServiceClient.sendLoginClient(login).subscribe({
+        next: () => { // definir data
+          this.redirect();
+        },
+        error: (error) => {
+          console.log("Erro ao fazer login", error) //definir tipos de erros
+        }
+      }
+      )
+    }
+  }
+
+  redirect(){
+    this.router.navigate(['/home']);
   }
 
 }

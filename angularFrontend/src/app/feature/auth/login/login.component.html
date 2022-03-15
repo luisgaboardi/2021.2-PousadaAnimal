@@ -1,1 +1,47 @@
-<p>login works!</p>
+<div class="login">
+  <div class="container">
+    <div class="login-form input" [formGroup]="formLogin">
+      <div class="col-md-12 text-center">
+        <h2>Login</h2>
+      </div>
+
+      <div class="col-md-6">
+        <label>Email </label>
+        <input type="text" placeholder="Digite o seu email" formControlName="email">
+      </div>
+
+      <div class="col-md-6">
+        <div class="field-wrapper">
+          <label>Senha</label>
+          <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
+            <button type="button" class="btn-icon" (click)="showPassword()" tabindex="-1">
+              <em [class]="isTextField ? 'icone eye' : 'icone eye-slash' "></em>
+            </button>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn btn-custom default"(click)="loginClient()" [disabled]="formLogin.invalid"
+          [class]="formLogin.invalid ? 'btn btn-custom disable ' : 'btn btn-custom default'">
+          Entrar
+        </button>
+      </div>
+
+      <div class="forgot-pass" [routerLink]="['/home']">
+        Esqueceu a senha
+      </div>
+
+      <div class="register-box">
+        <div>
+          Não tem cadastro?
+        </div>
+        <button class="btn-bottom" [routerLink]="['/auth/cadastro-cliente']">
+          Cadastre-se
+        </button>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -16,7 +16,7 @@
   margin-top: 15px;
   width: 100%;
   font-weight: 500;
-  color:rgb(4, 10, 10);
+  color:black;
   line-height: 1;
   text-align: left;
 }
@@ -30,12 +30,6 @@
   border-radius: 4px;
   outline: none;
 }
-
-/* ta desabilitado entoão? */
-/* .register-form input [disabled]{
-  background: #e6bfbf;
-  cursor: not-allowed;
-} */
 
 .container{
   width: 90%;
@@ -55,10 +49,6 @@
   height: 46px;
 }
 
-/* .field-wrapper {
-  margin-bottom: 10;
-} */
-
 [class*='icone-']:before{
   display: inline-block;
   font-family: sans-serif;
@@ -74,8 +64,6 @@
   background-color: rgb(250, 231, 224);
   width: 30px;
   height: 30px;
-  /* border: 2cm;
-  border-color: #BADA5F;*/
 }
 
 .btn {
