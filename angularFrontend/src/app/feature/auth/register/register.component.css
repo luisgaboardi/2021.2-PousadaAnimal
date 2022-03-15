@@ -8,6 +8,7 @@
 .register-form{
   display: flex;
   flex-wrap: wrap;
+  justify-content:space-between;
   /* background: #daf1ec; */
 }
 
@@ -44,15 +45,19 @@
   background: #daf1ec;
   border-radius: 6px;
   padding-top: 50px;
+  padding-bottom: 20px;
 }
 
-.col-md-12{
-  justify-content: center;
+.form-select{
+  border: 1px solid #BADA5F;
+  background-color: rgb(249, 253, 237);
+  width: 100%;
+  height: 46px;
 }
 
-.field-wrapper {
-  margin-bottom: 0;
-}
+/* .field-wrapper {
+  margin-bottom: 10;
+} */
 
 [class*='icone-']:before{
   display: inline-block;
@@ -62,4 +67,17 @@
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Botao de mostrar a senha */
+.btn-icon {
+  background-color: rgb(250, 231, 224);
+  width: 30px;
+  height: 30px;
+  /* border: 2cm;
+  border-color: #BADA5F;*/
+}
+
+.btn {
+  background-color: #c3ff00;
 }
