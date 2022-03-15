@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  endPointPousadaAnimal: 'https://localhost:8000',
+  endPointPousadaAnimal: 'http://localhost:8000',
 };
 
 /*

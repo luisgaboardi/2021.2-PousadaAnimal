@@ -13,7 +13,7 @@ export class RegisterService {
 
   sendRegisterClient( newUser: RegisterClient): Observable<RegisterClient>{
     return this.http.post<any>(
-      `${environment.endPointPousadaAnimal}/users`, newUser
+      `${environment.endPointPousadaAnimal}/users/`, newUser
     )
   }
 }

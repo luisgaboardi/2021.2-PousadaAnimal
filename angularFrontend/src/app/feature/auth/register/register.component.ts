@@ -14,16 +14,16 @@ export class RegisterComponent implements OnInit {
   // formRegister: FormGroup;
 
   genderList = [
-    { nome: 'Masculino'},
-    { nome: 'Feminino'},
-    {nome: 'Outro'}
+    { nome: 'Masculino' },
+    { nome: 'Feminino' },
+    { nome: 'Outro' }
   ];
 
   formRegister: FormGroup = new FormGroup ({
-    email: new FormControl ('',[Validators.required,
+    email: new FormControl('',[Validators.required,
       Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]),
-    firstName: new FormControl('',[Validators.required]),
-    lastName:  new FormControl('',[Validators.required]),
+    first_name: new FormControl('',[Validators.required]),
+    last_name:  new FormControl('',[Validators.required]),
     cpf: new FormControl('',[Validators.required]),
     phone:  new FormControl('',[Validators.required]),
     cep:  new FormControl('',[Validators.required]),
