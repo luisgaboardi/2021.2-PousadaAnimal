@@ -11,14 +11,15 @@
         <input type="text" placeholder="Digite o seu nome" formControlName="first_name">
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-7">
         <label>Sobrenome</label>
         <input type="text" placeholder="Digite o seu sobrenome"  formControlName="last_name">
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-2">
         <label>Gênero</label>
         <select class="form-select" formControlName="gender">
+          <option value="" disabled>Selecione</option>
           <option *ngFor="let gender of genderList" value="{{gender.nome}}">
             {{gender.nome}}
           </option>
@@ -32,13 +33,13 @@
 
       <div class="col-md-3">
         <label>Telefone</label>
-        <input type="text" placeholder="Digite o seu número de telefone" formControlName="phone">
+        <input type="text" placeholder="Digite o seu número de telefone" formControlName="phone" mask="(00) 00000-0000">
         <!-- verificar ngxPhoneMaskBr ngxmask não funciona -->
       </div>
 
       <div class="col-md-3">
         <label>CEP</label>
-        <input type="text" placeholder="Digite o seu cep" formControlName="cep" mask="00.000-000">
+        <input type="text" placeholder="Digite o seu CEP" formControlName="cep" mask="00.000-000">
       </div>
 
       <div class="col-md-12">
@@ -58,21 +59,22 @@
 
       <div class="col-md-12">
         <div class="field-wrapper">
-          <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
-          <button type="button" class="btn-icon" (click)="showPassword()" tabindex="-1">
-            <em [class]="isTextField ? 'icone eye' : 'icone eye-slash' "></em>
-          </button>
           <label>Senha</label>
+          <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
+            <button type="button" class="btn-icon" (click)="showPassword()" tabindex="-1">
+              <em [class]="isTextField ? 'icone eye' : 'icone eye-slash' "></em>
+            </button>
         </div>
       </div>
 
       <div>
-        <button class ="btn btn-custon default"(click)="cadastrarCliente()" [disabled]="formRegister.invalid"
-          [class]="formRegister.invalid ? 'btn btn-custon disabled ' : 'btn btn-custon default'">
-          Cadastrar Cliente
+        <button class ="btn btn-custom default"(click)="cadastrarCliente()" [disabled]="formRegister.invalid"
+          [class]="formRegister.invalid ? 'btn btn-custom disabled ' : 'btn btn-custom default'">
+          Cadastrar
         </button>
       </div>
 
     </div>
   </div>
 </div>
+
