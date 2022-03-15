@@ -4,6 +4,7 @@ from django.db import models
 class Pet (models.Model):
     name = models.CharField(max_length=30)
     species = models.CharField(max_length=30)
+    sex = models.CharField(max_length=10)
     breed = models.CharField(max_length=30)
     colour = models.CharField(max_length=10)
     size =  models.CharField(max_length=10)
@@ -11,6 +12,7 @@ class Pet (models.Model):
     weight = models.FloatField()
     medical_conditions = models.TextField(max_length=255)
     personality = models.CharField(max_length=255)
+    temperament = models.CharField(max_length=255)
     is_hosted = models.BooleanField(default=True)
     since = models.DateField(blank=True, null=True)
     owner = models.CharField(max_length=30)
