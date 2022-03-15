@@ -7,18 +7,18 @@ class User(AbstractBaseUser):
     email = models.EmailField(unique=True, max_length=255)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    cpf = models.CharField(max_length=11)
-    phone = models.CharField(max_length=12)
-    cep = models.CharField(max_length=8)
+    cpf = models.CharField(max_length=14)
+    phone = models.CharField(max_length=15)
+    cep = models.CharField(max_length=10)
     address = models.CharField(max_length=255)
-    gender = models.CharField(max_length=1)
+    gender = models.CharField(max_length=10)
     date_of_birth = models.DateField(blank=True, null=True)
     is_active = models.BooleanField(default=True)
     staff = models.BooleanField(default=False) # a admin user
     admin = models.BooleanField(default=False) # irrelevant
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = [] # Colocar
 
     def get_full_name(self):
         return self.first_name.capitalize() + " " + self.last_name.capitalize()
@@ -47,5 +47,14 @@ class User(AbstractBaseUser):
         "Is the user a admin member?"
         return self.admin
 
-
     objects = UserManager()
+
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
+
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
