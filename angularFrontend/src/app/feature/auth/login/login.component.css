@@ -2,7 +2,6 @@
   height: auto;
   margin: 0 -15px;
   justify-content: center;
-  /* margin-top: 10mm; */
 }
 
 .container{
@@ -10,8 +9,8 @@
   max-width: 1128px;
   margin-right: auto;
   margin-left: auto;
-  background: #A7CD2C;
-  border-radius: 6px;
+  border: 3px solid #50C8C6;
+  border-radius: 10px;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -20,7 +19,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background: #daf1ec; */
 }
 
 .login-form input {
