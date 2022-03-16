@@ -13,7 +13,7 @@ class UserList(APIView):
     List all users, or create a new user.
     """
     def get(self, request, format=None):
-        if request.user.is_staff:
+        if request.successful_authenticator:
             users = User.objects.all()
             serializer = UserSerializer(users, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -27,7 +27,7 @@ class UserList(APIView):
             serializer = UserSerializer(data=request.data)
             if serializer.is_valid():
                 serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
+                return Response(status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class UserDetail(generics.RetrieveAPIView):
@@ -41,8 +41,8 @@ class UserDetail(generics.RetrieveAPIView):
             raise Http404
 
     def get(self, request, pk, format=None):
-        if request.user in User.objects.all():
+        if request.successful_authenticator:
             user = self.get_object(pk)
             serializer = UserSerializer(user)
             return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(status=status.HTTP_403_FORBIDDEN)
+        return Response(status=status.HTTP_401_UNAUTHORIZED)
