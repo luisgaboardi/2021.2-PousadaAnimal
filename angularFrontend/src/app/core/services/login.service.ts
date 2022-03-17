@@ -9,11 +9,14 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
+  token: String;
+
   constructor(private readonly http: HttpClient) { }
 
-  sendLoginClient( newUser: LoginClient): Observable<LoginClient>{
-    return this.http.post<any>(
-      `${environment.endPointPousadaAnimal}/users/login`, newUser
-    )
+  sendLoginClient( newUser: LoginClient) {
+    this.http.post<any>(`${environment.endPointPousadaAnimal}/users/login/`, newUser).subscribe(data => {
+      this.token = data
+    })
+    return this.token
   }
 }

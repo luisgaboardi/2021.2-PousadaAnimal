@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   isTextField!: boolean;
 
   formLogin: FormGroup = new FormGroup ({
-    email: new FormControl('',[Validators.required,
+    username: new FormControl('',[Validators.required,
       Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]),
     password:  new FormControl('',[Validators.required])
   })
@@ -35,15 +35,20 @@ export class LoginComponent implements OnInit {
     if(this.formLogin.valid){
       let login = Object.assign({}, this.formLogin.value);
 
-      this.loginServiceClient.sendLoginClient(login).subscribe({
-        next: () => { // definir data
-          this.redirect();
-        },
-        error: (error) => {
-          console.log("Erro ao fazer login", error) //definir tipos de erros
-        }
+      if (this.loginServiceClient.sendLoginClient(login)) {
+        console.log("Deu bom");
+      } else {
+        console.log("Erro ao fazer login");
       }
-      )
+      // .subscribe({
+      //   next: () => { // definir data
+      //     
+      //   },
+      //   error: (error) => {
+      //     console.log("Erro ao fazer login", error) //definir tipos de erros
+      //   }
+      // }
+      // )
     }
   }
 
