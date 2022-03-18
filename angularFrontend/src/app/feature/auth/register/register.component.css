@@ -59,13 +59,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Botao de mostrar a senha */
-.btn-icon {
-  background-color: rgb(250, 231, 224);
-  width: 30px;
-  height: 30px;
+.btn-icon{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  right: 13%;
+  background-color: transparent;
+  border: none;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.eye{
+  background-image: url(../../../../assets/icons/eye.svg);
+}
+
+.eye-slash{
+  background-image: url(../../../../assets/icons/eye-slash.svg);
 }
 
 .btn {
   background-color: #c3ff00;
+  margin-top: 15px;
 }
