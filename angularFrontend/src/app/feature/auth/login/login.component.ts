@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginClient(){
-    console.log("Fazer cadastro")
+    console.log("Fazer login")
     //verificar se email e cpf existe
     if(this.formLogin.valid){
       let login = Object.assign({}, this.formLogin.value);
@@ -40,16 +40,12 @@ export class LoginComponent implements OnInit {
       } else {
         console.log("Erro ao fazer login");
       }
-      // .subscribe({
-      //   next: () => { // definir data
-      //     
-      //   },
-      //   error: (error) => {
-      //     console.log("Erro ao fazer login", error) //definir tipos de erros
-      //   }
-      // }
-      // )
     }
+  }
+
+  logoutClient() {
+    console.log("Log out");
+    this.loginServiceClient.logout()
   }
 
   redirect(){

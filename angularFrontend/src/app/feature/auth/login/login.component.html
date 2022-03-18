@@ -20,9 +20,15 @@
       </div>
 
       <div>
-        <button class="btn btn-custom default"(click)="loginClient()" [disabled]="formLogin.invalid"
+        <button class="btn btn-custom default" (click)="loginClient()" [routerLink]="['/home']" [disabled]="formLogin.invalid"
           [class]="formLogin.invalid ? 'btn btn-custom disable ' : 'btn btn-custom default'">
           Entrar
+        </button>
+      </div>
+
+      <div>
+        <button class="btn btn-custom default" (click)="logoutClient()">
+          Log out
         </button>
       </div>
 

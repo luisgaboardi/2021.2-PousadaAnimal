@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     cep:  new FormControl('',[Validators.required]),
     address:  new FormControl('',[Validators.required]),
     gender:  new FormControl('',[Validators.required]),
-    dateBirth: new FormControl('',[Validators.required]),
+    date_of_birth: new FormControl('',[Validators.required]),
     password:  new FormControl('',[Validators.required])
   })
 
