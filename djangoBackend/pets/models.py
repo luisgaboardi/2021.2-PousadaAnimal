@@ -6,7 +6,7 @@ class Pet (models.Model):
     species = models.CharField(max_length=30)
     gender = models.CharField(max_length=10)
     breed = models.CharField(max_length=30)
-    colour = models.CharField(max_length=10)
+    colour = models.CharField(max_length=30)
     size =  models.CharField(max_length=30)
     age = models.SmallIntegerField()
     weight = models.FloatField()

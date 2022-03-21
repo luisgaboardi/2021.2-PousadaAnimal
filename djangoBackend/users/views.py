@@ -1,6 +1,5 @@
 from datetime import datetime
 from django.http import Http404
-from users.hash import hash_password
 from users.models import User
 from users.serializers import UserSerializer
 from rest_framework import generics

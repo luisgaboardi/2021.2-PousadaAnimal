@@ -12,7 +12,7 @@ class PetList(APIView):
     List all pets, or create a new pet.
     """
     def get(self, request, format=None):
-        if request.user.is_staff:
+        if request.successful_authenticator:
             users = Pet.objects.all()
             serializer = PetSerializer(users, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -35,8 +35,8 @@ class PetDetail(generics.RetrieveAPIView):
         except Pet.DoesNotExist:
             raise Http404
 
-    def get(self, request, pk, format=None):
-        if request.user in Pet.objects.all():
+    def get(self, request, pk, format=None): # and pet.owner = request.user
+        if request.successful_authenticator:
             pet = self.get_object(pk)
             serializer = PetSerializer(pet)
             return Response(serializer.data, status=status.HTTP_200_OK)
