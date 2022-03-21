@@ -1,0 +1,40 @@
+[
+    {
+        "model": "pets.pet",
+        "pk": 1,
+        "fields": {
+            "name": "Totó",
+            "species": "Cachorro",
+            "gender": "Masculino",
+            "breed": "Xitsu",
+            "colour": "Preto",
+            "size": "Médio",
+            "age": 11,
+            "weight": 5.0,
+            "medical_conditions": "Ele tem probleminha",
+            "temperament": "Nervouser",
+            "is_hosted": true,
+            "since": "2022-03-21",
+            "owner": "O admin"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 2,
+        "fields": {
+            "name": "Smiley",
+            "species": "Gato",
+            "gender": "Feminino",
+            "breed": "Egípcio",
+            "colour": "Amarelo",
+            "size": "Pequeno",
+            "age": 7,
+            "weight": 2.5,
+            "medical_conditions": "Ele toma omezapran",
+            "temperament": "Demônho",
+            "is_hosted": true,
+            "since": "2022-02-11",
+            "owner": "Alguém aí"
+        }
+    }
+]

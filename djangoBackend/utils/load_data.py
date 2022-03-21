@@ -13,7 +13,7 @@ print('Você deseja carregar os dados? (Y/n)')
 user_input = input()
 
 if user_input.lower() == 'y':
-    system('python manage.py loaddata users')
+    system('python manage.py loaddata users pets')
 
 # Super User
 print('Create super user')
