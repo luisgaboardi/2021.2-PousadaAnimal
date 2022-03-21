@@ -1,23 +1,31 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
+import { NavBarComponent } from './feature/nav-bar/nav-bar.component';
+
+
+export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
-  declarations: [AppComponent, AboutComponent],
+  declarations: [AppComponent,NavBarComponent],
   imports: [
-    RouterModule,
-    AppRoutingModule,
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    NgxMaskModule.forRoot(options),
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

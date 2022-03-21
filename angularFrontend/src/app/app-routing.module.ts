@@ -1,13 +1,29 @@
+
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch:'full'},
+  // {
+  //   path: '',
+  //   loadChildren: () =>
+  //     import('./feature/panel/panel.module').then((x) => x.PanelModule)
+  // },
   {
-    path: '',
-    loadChildren: () =>
-      import('./features/panel/panel.module').then((x) => x.PanelModule)
+    path: 'auth',
+      loadChildren: () =>
+        import('./feature/auth/auth.module').then((x) => x.AuthModule)
   },
+  {
+    path: 'home',
+      loadChildren: () =>
+        import('./feature/home/home.module').then((x)=> x.HomeModule)
+  },
+  // {
+  //   path: '**',
+  //   redirectTo: '',
+  // },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule],
