@@ -49,7 +49,7 @@
 
       <div class="col-md-12">
         <label>Data de Nascimento</label>
-        <input type="text" placeholder="DD/MM/AAAA" formControlName=dateBirth mask="d0/M0/0000">
+        <input type="text" placeholder="DD-MM-AAAA" formControlName=date_of_birth mask="d0-M0-0000">
       </div>
 
       <div class="col-md-12">
@@ -61,8 +61,7 @@
         <div class="field-wrapper">
           <label>Senha</label>
           <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
-            <button type="button" class="btn-icon" (click)="showPassword()" tabindex="-1">
-              <em [class]="isTextField ? 'icone eye' : 'icone eye-slash' "></em>
+            <button type="button" [class]="isTextField ? 'btn-icon eye' : 'btn-icon eye-slash'" (click)="showPassword()" tabindex="-1">
             </button>
         </div>
       </div>
