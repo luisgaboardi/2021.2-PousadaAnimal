@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.http import Http404
+from djangoBackend.settings import DEBUG
 from users.models import User
 from users.serializers import UserSerializer
 from rest_framework import generics
@@ -13,7 +14,7 @@ class UserList(APIView):
     List all users, or create a new user.
     """
     def get(self, request, format=None):
-        if request.successful_authenticator:
+        if request.successful_authenticator or DEBUG:
             users = User.objects.all()
             serializer = UserSerializer(users, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -41,7 +42,7 @@ class UserDetail(generics.RetrieveAPIView):
             raise Http404
 
     def get(self, request, pk, format=None):
-        if request.successful_authenticator:
+        if request.successful_authenticator or DEBUG:
             user = self.get_object(pk)
             serializer = UserSerializer(user)
             return Response(serializer.data, status=status.HTTP_200_OK)

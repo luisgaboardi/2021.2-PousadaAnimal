@@ -15,12 +15,31 @@
             "temperament": "Nervouser",
             "is_hosted": true,
             "since": "2022-03-21",
-            "owner": "O admin"
+            "owner": 1
         }
     },
     {
         "model": "pets.pet",
         "pk": 2,
+        "fields": {
+            "name": "Floquinho",
+            "species": "Cachorro",
+            "gender": "Masculino",
+            "breed": "Chihuahua",
+            "colour": "Marrom",
+            "size": "Pequeno",
+            "age": 3,
+            "weight": 2.0,
+            "medical_conditions": "Chihuahua é tenso",
+            "temperament": "Calmo como um trovão",
+            "is_hosted": true,
+            "since": "2022-03-15",
+            "owner": 1
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 3,
         "fields": {
             "name": "Smiley",
             "species": "Gato",
@@ -34,7 +53,7 @@
             "temperament": "Demônho",
             "is_hosted": true,
             "since": "2022-02-11",
-            "owner": "Alguém aí"
+            "owner": 2
         }
     }
 ]
