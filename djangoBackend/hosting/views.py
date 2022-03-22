@@ -1,3 +1,4 @@
+import re
 from django.http import Http404
 from hosting.serializers import HostingSerializer
 from users.models import User
@@ -17,6 +18,12 @@ class HostingList(APIView):
     List all pets, or create a new pet.
     """
 
+    def get_pet(self, pk):
+        try:
+            return Hosting.objects.get(pk=pk)
+        except Hosting.DoesNotExist:
+            raise Http404
+
     def get(self, request, format=None):
         if request.successful_authenticator or DEBUG:
             hosting = Hosting.objects.all()
@@ -26,12 +33,17 @@ class HostingList(APIView):
 
     def post(self, request, format=None):
         if request.successful_authenticator or DEBUG:
-            if request.user.id == request.data['owner']:
-                serializer = HostingSerializer(data=request.data)
-                if serializer.is_valid():
-                    serializer.save()
-                    return Response(serializer.data, status=status.HTTP_201_CREATED)
-                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            owner_id = request.data['owner']
+            pet_id = request.data['pet']
+            pet = self.get_pet(pet_id)
+            if pet == None or pet.get_owner().id != owner_id:
+                return Response(status=status.HTTP_400_BAD_REQUEST)
+            
+            serializer = HostingSerializer(data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
 

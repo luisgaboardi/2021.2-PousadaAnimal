@@ -26,4 +26,4 @@ class Hosting (models.Model):
         return self.end_date - self.start_date
     
     def set_cost(self):
-        return self.get_duration()*(50+self.pet.weight)
+        return self.get_duration().days*(50+self.pet.weight)
