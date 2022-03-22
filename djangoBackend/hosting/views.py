@@ -1,9 +1,6 @@
-import re
 from django.http import Http404
 from hosting.serializers import HostingSerializer
-from users.models import User
 from pets.models import Pet
-from pets.serializers import PetSerializer
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -20,8 +17,8 @@ class HostingList(APIView):
 
     def get_pet(self, pk):
         try:
-            return Hosting.objects.get(pk=pk)
-        except Hosting.DoesNotExist:
+            return Pet.objects.get(pk=pk)
+        except Pet.DoesNotExist:
             raise Http404
 
     def get(self, request, format=None):
@@ -47,7 +44,7 @@ class HostingList(APIView):
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
 
-class HostingDetail(generics.RetrieveAPIView):
+class HostingDetail(APIView):
     """
     Get one pet detail by pk.
     """
@@ -63,4 +60,14 @@ class HostingDetail(generics.RetrieveAPIView):
             hosting = self.get_object(pk)
             serializer = HostingSerializer(hosting)
             return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_403_FORBIDDEN)
+
+    def put(self, request, pk, format=None):
+        if (request.successful_authenticator and request.user.is_staff):
+            hosting = self.get_object(pk)
+            serializer = HostingSerializer(hosting, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         return Response(status=status.HTTP_403_FORBIDDEN)
