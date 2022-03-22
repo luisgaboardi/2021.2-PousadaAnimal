@@ -63,7 +63,7 @@ class HostingDetail(APIView):
         return Response(status=status.HTTP_403_FORBIDDEN)
 
     def put(self, request, pk, format=None):
-        if (request.successful_authenticator and request.user.is_staff):
+        if (request.successful_authenticator and request.user.is_staff) or DEBUG:
             hosting = self.get_object(pk)
             serializer = HostingSerializer(hosting, data=request.data)
             if serializer.is_valid():
