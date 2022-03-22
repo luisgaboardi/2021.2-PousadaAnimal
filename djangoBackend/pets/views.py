@@ -1,4 +1,5 @@
 from django.http import Http404
+from users.models import User
 from pets.models import Pet
 from pets.serializers import PetSerializer
 from rest_framework import generics
@@ -16,18 +17,19 @@ class PetList(APIView):
 
     def get(self, request, format=None):
         if request.successful_authenticator or DEBUG:
-            users = Pet.objects.all()
-            serializer = PetSerializer(users, many=True)
+            pets = Pet.objects.all()
+            serializer = PetSerializer(pets, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
     def post(self, request, format=None):
         if request.successful_authenticator or DEBUG:
-            serializer = PetSerializer(data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            if request.user.id == request.data['owner']:
+                serializer = PetSerializer(data=request.data)
+                if serializer.is_valid():
+                    serializer.save()
+                    return Response(serializer.data, status=status.HTTP_201_CREATED)
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
 
@@ -42,7 +44,7 @@ class PetDetail(generics.RetrieveAPIView):
         except Pet.DoesNotExist:
             raise Http404
 
-    def get(self, request, pk, format=None):  # and pet.owner = request.user
+    def get(self, request, pk, format=None):
         if request.successful_authenticator or DEBUG == True:
             pet = self.get_object(pk)
             serializer = PetSerializer(pet)
