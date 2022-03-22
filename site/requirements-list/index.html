@@ -1,0 +1,909 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="/images/favicon-medio.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.8">
+    
+    
+      
+        <title>Lista de Requisitos inicial - Pousada Animal</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6e60f8b8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lista-de-requisitos-inicial" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pousada Animal" class="md-header__button md-logo" aria-label="Pousada Animal" data-md-component="logo">
+      
+  <img src="/images/favicon-medio.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pousada Animal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lista de Requisitos inicial
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pousada Animal" class="md-nav__button md-logo" aria-label="Pousada Animal" data-md-component="logo">
+      
+  <img src="/images/favicon-medio.png" alt="logo">
+
+    </a>
+    Pousada Animal
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Projeto
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Projeto" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Projeto
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-vision/" class="md-nav__link">
+        Visão do Produto
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../visual-identity/" class="md-nav__link">
+        Identidade Visual
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rich-picture/" class="md-nav__link">
+        Rich Picture
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../product-backlog/" class="md-nav__link">
+        Backlog do Produto
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Gerência
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Gerência" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Gerência
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodology/" class="md-nav__link">
+        Metodologia
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements-engineering/" class="md-nav__link">
+        Engenharia de Requisitos
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lista de Requisitos inicial
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Lista de Requisitos inicial
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-revisao" class="md-nav__link">
+    Histórico de revisão
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-funcionais" class="md-nav__link">
+    Requisitos Funcionais
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos Funcionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-cliente-deve-conseguir-se-cadastrar-no-site-da-pousada" class="md-nav__link">
+    O cliente deve conseguir se cadastrar no site da pousada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-cliente-deve-conseguir-cadastrar-os-seus-pets" class="md-nav__link">
+    O cliente deve conseguir cadastrar os seus pets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-administrador-deve-conseguir-gerir-funcionarios-e-clientes" class="md-nav__link">
+    O administrador deve conseguir gerir funcionários e clientes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-administrador-deve-conseguir-alterar-sua-senha-e-atualizar-os-dados-da-sua-conta-como-e-mail-e-telefone" class="md-nav__link">
+    O administrador deve conseguir alterar sua senha e atualizar os dados da sua conta (como e-mail e telefone)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-funcionario-deve-conseguir-alterar-sua-senha-e-atualizar-os-dados-da-sua-conta-como-e-mail-e-telefone" class="md-nav__link">
+    O funcionário deve conseguir alterar sua senha e atualizar os dados da sua conta (como e-mail e telefone)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-administrador-pode-gerir-todo-o-sistema" class="md-nav__link">
+    O administrador pode gerir todo o sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-sistema-deve-ser-capaz-de-administrar-a-hospedagem-dos-pets" class="md-nav__link">
+    O sistema deve ser capaz de administrar a hospedagem dos pets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-nao-funcionais" class="md-nav__link">
+    Requisitos não-funcionais
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos não-funcionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisito-de-seguranca" class="md-nav__link">
+    Requisito de segurança
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-de-implementacao" class="md-nav__link">
+    Requisitos de Implementação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-de-usabilidade" class="md-nav__link">
+    Requisitos de Usabilidade
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-bibliograficas" class="md-nav__link">
+    Referências Bibliográficas
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Resultados
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Resultados" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Resultados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/unit-1/" class="md-nav__link">
+        Unidade 1
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#historico-de-revisao" class="md-nav__link">
+    Histórico de revisão
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-funcionais" class="md-nav__link">
+    Requisitos Funcionais
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos Funcionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-cliente-deve-conseguir-se-cadastrar-no-site-da-pousada" class="md-nav__link">
+    O cliente deve conseguir se cadastrar no site da pousada
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-cliente-deve-conseguir-cadastrar-os-seus-pets" class="md-nav__link">
+    O cliente deve conseguir cadastrar os seus pets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-administrador-deve-conseguir-gerir-funcionarios-e-clientes" class="md-nav__link">
+    O administrador deve conseguir gerir funcionários e clientes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-administrador-deve-conseguir-alterar-sua-senha-e-atualizar-os-dados-da-sua-conta-como-e-mail-e-telefone" class="md-nav__link">
+    O administrador deve conseguir alterar sua senha e atualizar os dados da sua conta (como e-mail e telefone)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-funcionario-deve-conseguir-alterar-sua-senha-e-atualizar-os-dados-da-sua-conta-como-e-mail-e-telefone" class="md-nav__link">
+    O funcionário deve conseguir alterar sua senha e atualizar os dados da sua conta (como e-mail e telefone)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-administrador-pode-gerir-todo-o-sistema" class="md-nav__link">
+    O administrador pode gerir todo o sistema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-sistema-deve-ser-capaz-de-administrar-a-hospedagem-dos-pets" class="md-nav__link">
+    O sistema deve ser capaz de administrar a hospedagem dos pets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos-nao-funcionais" class="md-nav__link">
+    Requisitos não-funcionais
+  </a>
+  
+    <nav class="md-nav" aria-label="Requisitos não-funcionais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisito-de-seguranca" class="md-nav__link">
+    Requisito de segurança
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-de-implementacao" class="md-nav__link">
+    Requisitos de Implementação
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-de-usabilidade" class="md-nav__link">
+    Requisitos de Usabilidade
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias-bibliograficas" class="md-nav__link">
+    Referências Bibliográficas
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="lista-de-requisitos-inicial">Lista de Requisitos Inicial</h1>
+<h2 id="historico-de-revisao">Histórico de revisão</h2>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Autor</th>
+<th>Modificações</th>
+<th>Versão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11/02/2022</td>
+<td><a href="https://github.com/luisgaboardi">Luís Lins</a>, <a href="https://github.com/laispa">Lais Portela</a>, <a href="https://github.com/aluzianobriceno">Ana Julia</a>, <a href="https://github.com/klmurussi">Lara Murussi</a></td>
+<td>Adiciona primeira versão da lista de requisitos do Produto</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>18/02/2022</td>
+<td><a href="https://github.com/klmurussi">Kathlyn Lara</a></td>
+<td>Padrão ABNT nas referências</td>
+<td>1.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="requisitos-funcionais">Requisitos Funcionais</h2>
+<h3 id="o-cliente-deve-conseguir-se-cadastrar-no-site-da-pousada">O cliente deve conseguir se cadastrar no site da pousada</h3>
+<ul>
+<li>
+<p>O cliente deve ser cadastrar no site, no qual deve dar o nome, data de nascimento, e-mail, senha, cpf, endereço e número de contato; </p>
+</li>
+<li>
+<p>O cliente deve ser capaz de gerir as suas formas de pagamento </p>
+</li>
+<li>
+<p>O cliente deve conseguir fazer login com a conta criada anteriormente; </p>
+</li>
+<li>
+<p>O cliente deve conseguir editar os seus dados ou apagar a sua conta; </p>
+</li>
+<li>
+<p>O cliente deve ser capaz de recuperar a sua senha através do e-mail. </p>
+</li>
+</ul>
+<h3 id="o-cliente-deve-conseguir-cadastrar-os-seus-pets">O cliente deve conseguir cadastrar os seus pets</h3>
+<ul>
+<li>
+<p>O cliente deve ser de cadastrar os seus pets, no qual o cliente deve registrar nome, raça, idade, sexo, foto, período de hospedagem e condições especiais do seu pet; </p>
+</li>
+<li>
+<p>O cliente deve ser capaz de editar os dados do seu pet ou apagá-lo do site; </p>
+</li>
+<li>
+<p>O cliente poderá ter acesso ao status dos animais; </p>
+</li>
+<li>
+<p>O cliente poderá ter acesso as câmeras através do site; </p>
+</li>
+<li>
+<p>O cliente poderá definir o dia de hospedagem do pet. </p>
+</li>
+</ul>
+<h3 id="o-administrador-deve-conseguir-gerir-funcionarios-e-clientes">O administrador deve conseguir gerir funcionários e clientes</h3>
+<ul>
+<li>
+<p>O administrador deve ser capaz de cadastrar funcionários, no qual ele deve registrar o e-mail, cpf, cargo do funcionário; </p>
+</li>
+<li>
+<p>O administrador deve ser capaz de editar e apagar funcionários e clientes. </p>
+</li>
+</ul>
+<h3 id="o-administrador-deve-conseguir-alterar-sua-senha-e-atualizar-os-dados-da-sua-conta-como-e-mail-e-telefone">O administrador deve conseguir alterar sua senha e atualizar os dados da sua conta (como e-mail e telefone)</h3>
+<h3 id="o-funcionario-deve-conseguir-alterar-sua-senha-e-atualizar-os-dados-da-sua-conta-como-e-mail-e-telefone">O funcionário deve conseguir alterar sua senha e atualizar os dados da sua conta (como e-mail e telefone)</h3>
+<ul>
+<li>
+<p>O funcionário pode gerir parte do sistema </p>
+</li>
+<li>
+<p>O funcionário deve conseguir analisar e controlar o status dos pets hospedados na pousada; </p>
+</li>
+<li>
+<p>O funcionário deve conseguir fornecer informações do status do animal ao cliente; </p>
+</li>
+</ul>
+<h3 id="o-administrador-pode-gerir-todo-o-sistema">O administrador pode gerir todo o sistema</h3>
+<ul>
+<li>
+<p>O administrador deve conseguir analisar e controlar o status dos pets hospedados na pousada; </p>
+</li>
+<li>
+<p>O administrador deve conseguir descrever os serviços prestados pela pousada e seus respectivos preços no website para o cliente; </p>
+</li>
+<li>
+<p>O administrador deve conseguir feedback informações do estado do animal ao cliente; </p>
+</li>
+<li>
+<p>O administrador deve conseguir controlar as datas disponíveis para hospedagem; </p>
+</li>
+<li>
+<p>O administrador deve conseguir informar se há espaço de convivência de animais; </p>
+</li>
+<li>
+<p>O administrador deve ser capaz de controlar número de quartos e alas/seções habilitadas da pousada. </p>
+</li>
+</ul>
+<h3 id="o-sistema-deve-ser-capaz-de-administrar-a-hospedagem-dos-pets">O sistema deve ser capaz de administrar a hospedagem dos pets</h3>
+<ul>
+<li>
+<p>O sistema deve ser capaz de integrar as câmeras da pousada com o website para visualização do pet por parte do cliente; </p>
+</li>
+<li>
+<p>O sistema deve impedir a hospedagens de pets de acordo com a disponibilidade da pousada, seja de data ou ocupação, sendo essa relacionada ou não ao tipo de animal; </p>
+</li>
+</ul>
+<h2 id="requisitos-nao-funcionais">Requisitos não-funcionais</h2>
+<h3 id="requisito-de-seguranca">Requisito de segurança</h3>
+<ul>
+<li>Deve ter segurança nas informações do cliente e da empresa (login); </li>
+</ul>
+<h3 id="requisitos-de-implementacao">Requisitos de Implementação</h3>
+<ul>
+<li>
+<p>O sistema deve ser feito no framework Angular e Django; </p>
+</li>
+<li>
+<p>O sistema deve ser um site; </p>
+</li>
+<li>
+<p>O sistema deve ser capaz de armazenar dados de forma persistente mediante o banco de dados SQLite; </p>
+</li>
+</ul>
+<h3 id="requisitos-de-usabilidade">Requisitos de Usabilidade</h3>
+<ul>
+<li>O layout do sistema deve ser em português de fácil compreensão. </li>
+</ul>
+<h2 id="referencias-bibliograficas">Referências Bibliográficas</h2>
+<ol>
+<li>MARSICANO, George. Requisitos de Software: Tipos e Característica de Requisitos. Brasília. 2021. Apresentação em PowerPoint. 36 slides, color, Material de aula do curso de Engenharia de Software da FGA/UNB. Disponível em: https://aprender3.unb.br/pluginfile.php/1624498/mod_resource/content/0/REQ_Aula%202.1%20-%20Introdu%C3%A7%C3%A3o%20a%20ER-atualizado.pdf. Acesso em: 18 fev 2022</li>
+<li>SAFE 5 for Lean Enterprises. <strong>SAFe</strong>. 2021. Disponível em: https://www.scaledagileframework.com/. Acesso dia 11 de Fev de 2022.</li>
+</ol>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../requirements-engineering/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Engenharia de Requisitos" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Engenharia de Requisitos
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../results/unit-1/" class="md-footer__link md-footer__link--next" aria-label="Next: Unidade 1" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Unidade 1
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.22074ed6.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.960e086b.min.js"></script>
+      
+    
+  </body>
+</html>

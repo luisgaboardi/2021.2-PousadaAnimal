@@ -18,7 +18,6 @@ class User(AbstractBaseUser):
     admin = models.BooleanField(default=False) # irrelevant
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = [] # Colocar
 
     def get_full_name(self):
         return self.first_name.capitalize() + " " + self.last_name.capitalize()
