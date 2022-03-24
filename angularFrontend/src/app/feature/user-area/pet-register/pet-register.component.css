@@ -1,0 +1,87 @@
+.petRegister{
+    height: auto;
+    margin: 0 -15px;
+    justify-content: center;
+    /* margin-top: 10mm; */
+  }
+  
+  .register-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    /* background: #daf1ec; */
+  }
+  
+  .register-form label {
+    margin-top: 15px;
+    width: 100%;
+    font-weight: 500;
+    color:black;
+    line-height: 1;
+    text-align: left;
+  }
+  
+  .register-form input {
+    width: 100%;
+    height: 48px;
+    color:black;
+    background-color: rgb(249, 253, 237);
+    border: 1px solid #BADA5F;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .container{
+    width: 90%;
+    max-width: 1128px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #daf1ec;
+    border-radius: 6px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+  
+  .form-select{
+    border: 1px solid #BADA5F;
+    background-color: rgb(249, 253, 237);
+    width: 100%;
+    height: 46px;
+  }
+  
+  [class*='icone-']:before{
+    display: inline-block;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .btn-icon{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    right: 13%;
+    background-color: transparent;
+    border: none;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+  }
+  
+  .eye{
+    background-image: url(../../../../assets/icons/eye.svg);
+  }
+  
+  .eye-slash{
+    background-image: url(../../../../assets/icons/eye-slash.svg);
+  }
+  
+  .btn {
+    background-color: #c3ff00;
+    margin-top: 15px;
+  }
+  

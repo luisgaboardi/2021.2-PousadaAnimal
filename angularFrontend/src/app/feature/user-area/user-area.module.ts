@@ -2,6 +2,8 @@ import { UserAreaComponent } from './user-area.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PetRegisterComponent } from './pet-register/pet-register.component';
 
 const routes: Routes = [
   {
@@ -18,10 +20,12 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [UserAreaComponent],
+  declarations: [UserAreaComponent, PetRegisterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class UserAreaModule { }
