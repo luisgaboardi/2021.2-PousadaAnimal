@@ -3,7 +3,7 @@ import { LoginClient } from './../../../shared/models/login-client';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from 'src/app/models/user.model';
+import { User } from 'src/shared/models/user.model';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -37,5 +37,5 @@ export class LoginService {
     localStorage.removeItem('currentUser');
     this.userSubject.next(null);
   }
-  
+
 }
