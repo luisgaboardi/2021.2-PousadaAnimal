@@ -3,10 +3,9 @@ from .models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
-    pets = serializers.StringRelatedField(many=True)
     class Meta:
         model = User
-        fields = ['id', 'email', 'first_name', 'last_name', 'gender', 'cpf', 'phone', 'cep', 'address', 'date_of_birth', 'password', 'pets']
+        fields = ['id', 'email', 'first_name', 'last_name', 'gender', 'cpf', 'phone', 'cep', 'address', 'date_of_birth', 'password']
 
     def create(self, validated_data):
         user = User(
@@ -18,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
             phone=validated_data['phone'],
             cep=validated_data['cep'],
             address=validated_data['address'],
-            date_of_birth=validated_data['date_of_birth']
+            date_of_birth=validated_data['date_of_birth'],
         )
         user.set_password(validated_data['password'])
         user.save()
