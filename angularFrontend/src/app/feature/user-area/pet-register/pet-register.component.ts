@@ -54,9 +54,9 @@ export class PetRegisterComponent implements OnInit {
 
   registerPet(){
     console.log("Fazer cadastro")
-    //verificar se email e cpf existe
     if(this.formPetRegister.valid){
-      let register = Object.assign({}, this.formPetRegister.value);
+      let registerpet = Object.assign({}, this.formPetRegister.value);
+      this.
     }
   }
 }
