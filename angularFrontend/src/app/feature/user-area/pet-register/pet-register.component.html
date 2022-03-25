@@ -13,11 +13,22 @@
                   </div>
 
                   <div class="col-md-4">
+                    <label>Espécie</label>
+                    <select class="form-select" formControlName="temperament">
+                      <option value="" disabled>Selecione</option>
+                      <option *ngFor="let item of speciesList " value="{{item.name}}">
+                        {{item.name}}
+                      </option>
+                    </select>
+                  </div>
+
+
+                  <div class="col-md-4">
                     <label>Raça</label>
-                    <input type="text" placeholder="Digite a raça do animal" formControlName="breed">
+                    <input type="text" placeholder="Digite a raça do pet" formControlName="breed">
                   </div>
                   <br>
-                  <div class="col-md-4">
+                  <div class="col-md-2">
                     <label>Sexo</label>
                     <select class="form-select" formControlName="gender">
                       <option value="" disabled>Selecione</option>
@@ -36,12 +47,12 @@
                     </select>
                   </div>
                   <br>
-                  <div class="col-md-3">
+                  <div class="col-md-2">
                     <label>Idade</label>
-                    <input type="number" formControlName="age" min="0" max="100">
+                    <input type="number" placeholder="Digite a idade do pet"  formControlName="age" min="0" max="30">
                   </div>
                   <br>
-                  <div class="col-md-3">
+                  <div class="col-md-2">
                     <label>Peso</label>
                     <input type="text" placeholder="Peso do Pet" formControlName="weight">
                   </div>
@@ -55,24 +66,23 @@
                       </option>
                     </select>
                   </div>
-                  <div class="col-md-4">
+                  <!-- <div class="col-md-4">
                     <label>Espécie</label>
-                    <!-- <div class="form-check form-check-inline"> -->
                     <div class="form-check " *ngFor="let item of speciesList">
                       <input class="form-check-input" type="radio" formControlName="species" value="{{item.name}}"> {{item.name}}
                     </div>
-                    <!-- </div> -->
+                  </div> -->
+
+
+                  <div class="col-md-6">
+                    <label>Aparência</label>
+                    <textarea class="form-control" placeholder="Descreva a aparência do animal" formControlName="colour"></textarea>
                   </div>
 
-                  <div class="col-md-4">
+                  <div class="col-md-6">
                     <label>Condições médicas</label>
                     <textarea  class="form-control" placeholder="Descreva detalhadamente as condições de saúde e tratamente especial do pet"
                       formControlName="medicalConditions"></textarea>
-                  </div>
-
-                  <div class="col-md-4">
-                    <label>Aparência</label>
-                    <textarea class="form-control" placeholder="Descreva a aparência do animal" formControlName="colour"></textarea>
                   </div>
                 </div>
                 <div class="col-md-12">

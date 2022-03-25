@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { PetResgisterService } from 'src/app/core/services/pet-register.service';
 
 @Component({
   selector: 'app-pet-register',
@@ -47,7 +48,8 @@ export class PetRegisterComponent implements OnInit {
   })
 
   constructor(
-    private readonly router : Router
+    private readonly router : Router,
+    private readonly petService: PetResgisterService
   ) { }
 
   ngOnInit(): void {}
@@ -56,9 +58,18 @@ export class PetRegisterComponent implements OnInit {
     console.log("Fazer cadastro")
     if(this.formPetRegister.valid){
       let registerpet = Object.assign({}, this.formPetRegister.value);
-      this.
+      this.petService.sendRegisterPet(registerpet).subscribe({
+        next:() => {
+        this.redirect();
+        },
+        error: (error) => {
+          console.log("Erro ao registrar", error) //definir tipos de erros
+        }
+      })
     }
   }
-}
 
-//falta coisa que n entendo ainda
+  redirect(){
+    this.router.navigate(['/']);//ver
+  }
+}
