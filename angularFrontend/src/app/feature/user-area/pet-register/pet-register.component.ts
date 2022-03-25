@@ -43,7 +43,7 @@ export class PetRegisterComponent implements OnInit {
     size: new FormControl ('', [Validators.required]),
     age: new FormControl('',[Validators.required]),
     weight: new FormControl('',[Validators.required]),
-    medicalConditions: new FormControl('',[Validators.required]),
+    medicalConditions: new FormControl(''),
     temperament: new FormControl ('', [Validators.required])
   })
 
