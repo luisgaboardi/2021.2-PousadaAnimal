@@ -111,15 +111,6 @@ h2 {
   background-position-y: center;
 }
 
-
-.eye{
-  background-image: url(../../../../assets/icons/eye.svg);
-}
-
-.eye-slash{
-  background-image: url(../../../../assets/icons/eye-slash.svg);
-}
-
 .btn {
   background-color: #c3ff00;
   margin-top: 30px;
