@@ -40,8 +40,13 @@
   text-align: left;
 }
 
-.forgot-pass{
+.forgot-pass {
   padding-top: 20px;
+}
+
+.forgot-pass a {
+  color: #50C8C6;
+  text-decoration: none;
 }
 
 .register-box{

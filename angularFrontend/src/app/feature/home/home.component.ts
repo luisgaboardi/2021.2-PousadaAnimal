@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
-import { User } from 'src/app/models/user.model';
+import { User } from 'src/shared/models/user';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   currentUser: User;
 
   constructor(private authenticationService: LoginService) {
-    this.authenticationService.user.subscribe(user => this.currentUser = user);
+    // this.authenticationService.user.subscribe(user => this.currentUser = user);
   }
 
   ngOnInit(): void {

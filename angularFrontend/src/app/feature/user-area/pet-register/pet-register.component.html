@@ -1,80 +1,95 @@
-<html lang="pt">
-    <div class="petRegister">
-        <div class="container">
-            <div class="register-form input" [formGroup]="formPetRegister">
-                <div class="col-md-12 text-center">
-                    <h2>Cadastro do pet</h2>
+<div class="petRegister">
+    <div class="container">
+        <div class="register-form" [formGroup]="formPetRegister">
+            <div class="col-md-12 text-center">
+                <h2>Cadastre o seu Pet</h2>
+            </div>
+            <div class="row g-2">
+
+                <div class="col-md-4">
+                <label>Nome</label>
+                <input type="text" placeholder="Digite o nome do animal" formControlName="name">
                 </div>
-        
-                <div class="col-md">
-                    <label>Nome</label>
-                    <input type="text" placeholder="Digite o nome do animal" formControlName="name">
+
+                <div class="col-md-4">
+                <label>Espécie</label>
+                <select class="form-select" formControlName="species">
+                    <option value="" disabled>Selecione</option>
+                    <option *ngFor="let item of speciesList " value="{{item.name}}">
+                    {{item.name}}
+                    </option>
+                </select>
                 </div>
-                <br>
-                <div class="col-md">
-                    <label>Espécie</label>
-                    <br>
-                    <div class="form-check form-check-inline" *ngFor="let item of speciesList"> 
-                        <input class="form-check-input" type="radio" formControlName="species" value="{{item.name}}"> {{item.name}}
-                    </div>
-                        
-                </div>
-                <br>
-                <div class="col-md">
-                    <label>Raça</label>
-                    <input type="text" placeholder="Digite a raça do animal" formControlName="breed">
+
+
+                <div class="col-md-4">
+                <label>Raça</label>
+                <input type="text" placeholder="Digite a raça do pet" formControlName="breed">
                 </div>
                 <br>
                 <div class="col-md-2">
-                    <label>Sexo</label>
-                    <select class="form-select" formControlName="gender">
+                <label>Sexo</label>
+                <select class="form-select" formControlName="gender">
                     <option value="" disabled>Selecione</option>
                     <option *ngFor="let gender of genderList" value="{{gender.name}}">
-                        {{gender.name}}
+                    {{gender.name}}
                     </option>
-                    </select>
+                </select>
                 </div>
-                <br>
-                <div class="col-md">
-                    <label>Aparência</label>
-                    <input type="text" placeholder="Descreva a aparência do animal" formControlName="colour">
-                </div>
-                <br>
-                <div class="col-md-2">
-                    <label>Porte/Tamanho</label>
-                    <select class="form-select" formControlName="size">
+                <div class="col-md-3">
+                <label>Porte/Tamanho</label>
+                <select class="form-select" formControlName="size">
                     <option value="" disabled>Selecione</option>
                     <option *ngFor="let size of sizeList" value="{{size.name}}">
-                        {{size.name}}
+                    {{size.name}}
                     </option>
-                    </select>
-                </div>
-                <br>
-                <div class="col-md">
-                    <label>Idade</label>
-                    <input type="number" formControlName="age" min="0" max="100">
-                </div>
-                <br>
-                <div class="col-md">
-                    <label>Peso</label>
-                    <input type="text" placeholder="Peso do Pet" formControlName="weight">
-                </div>
-                <br>
-                <div class="col-md">
-                    <label>Condições médicas</label>
-                    <input type="text" placeholder="Descreva detalhadamente as condições de saúde e tratamente especial do pet" formControlName="medicalConditions">
+                </select>
                 </div>
                 <br>
                 <div class="col-md-2">
-                    <label>Temperamento</label>
-                    <select class="form-select" formControlName="temperament">
+                <label>Idade</label>
+                <input type="number" placeholder="Digite a idade do pet"  formControlName="age" min="0" max="30">
+                </div>
+                <br>
+                <div class="col-md-2">
+                <label>Peso</label>
+                <input type="text" placeholder="Peso do Pet" formControlName="weight">
+                </div>
+
+                <div class="col-md-3">
+                <label>Temperamento</label>
+                <select class="form-select" formControlName="temperament">
                     <option value="" disabled>Selecione</option>
                     <option *ngFor="let temperament of temperamentList" value="{{temperament.name}}">
-                        {{temperament.name}}
+                    {{temperament.name}}
                     </option>
-                    </select>
+                </select>
                 </div>
+                <!-- <div class="col-md-4">
+                <label>Espécie</label>
+                <div class="form-check " *ngFor="let item of speciesList">
+                    <input class="form-check-input" type="radio" formControlName="species" value="{{item.name}}"> {{item.name}}
+                </div>
+                </div> -->
+
+
+                <div class="col-md-6">
+                <label>Aparência</label>
+                <textarea class="form-control" placeholder="Descreva a aparência do animal" formControlName="colour"></textarea>
+                </div>
+
+                <div class="col-md-6">
+                <label>Condições médicas</label>
+                <textarea  class="form-control" placeholder="Descreva detalhadamente as condições de saúde e tratamento especial do pet"
+                    formControlName="medicalConditions"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button class ="btn btn-custom default" [routerLink]="['/user-area']" (click)="registerPet()" [disabled]="formPetRegister.invalid"
+                [class]="formPetRegister.invalid ? 'btn btn-custom disabled ' : 'btn btn-custom default'">
+                Cadastrar
+                </button>
             </div>
         </div>
     </div>
-</html>
+</div>
