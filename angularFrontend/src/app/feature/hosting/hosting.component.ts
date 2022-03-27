@@ -2,6 +2,8 @@ import { HostingService } from './../../core/services/hosting.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -10,6 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./hosting.component.css']
 })
 export class HostingComponent implements OnInit {
+
+  petList: [number, string][] = [];
 
   formHosting: FormGroup = new FormGroup({
     owner: new FormControl('', [Validators.required]),
@@ -23,10 +27,20 @@ export class HostingComponent implements OnInit {
 
   constructor(
     private readonly hostingService: HostingService,
-    private readonly router: Router
+    private readonly router: Router,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
+    this.http.get<any>(`${environment.endPointPousadaAnimal}/users/1/`).subscribe(data => {
+        let petData = data['pets'];
+        petData.forEach((pet) => {
+          let petIdIndex = pet.indexOf(" - ");
+          let petId = Number(pet.substring(0, petIdIndex));
+          let petName = pet.substring(petIdIndex+3);
+          this.petList.push([petId, petName]);
+        }); 
+    });
     this.formHosting.controls['approved'].setValue(false);
     this.formHosting.controls['owner'].setValue(1); // Pegar a partir da autenticação
 

@@ -11,10 +11,9 @@
           <label>Pet</label>
           <select class="form-select" formControlName="pet">
             <option value="" disabled>Selecione</option>
-            <option value="1">Exemplo totó</option>
-            <!-- <option *ngFor="let gender of genderList" value="{{gender.nome}}">
-              {{gender.nome}}
-            </option> -->
+            <option *ngFor="let pet of petList" value="{{pet[0]}}">
+              {{pet[1]}}
+            </option>
           </select>
         </div>
   
