@@ -2,7 +2,7 @@ from datetime import datetime
 from django.http import Http404
 from djangoBackend.settings import DEBUG
 from users.models import User
-from users.serializers import UserSerializer
+from users.serializers import UserPetsSerializer, UserSerializer
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -44,6 +44,6 @@ class UserDetail(generics.RetrieveAPIView):
     def get(self, request, pk, format=None):
         if request.successful_authenticator or DEBUG:
             user = self.get_object(pk)
-            serializer = UserSerializer(user)
+            serializer = UserPetsSerializer(user)
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_401_UNAUTHORIZED)

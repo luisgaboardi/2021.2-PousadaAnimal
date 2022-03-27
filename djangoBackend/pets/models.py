@@ -19,7 +19,7 @@ class Pet (models.Model):
 
 
     def __str__(self):
-        return self.name + " - " + self.species + " - " + self.get_host_status()
+        return str(self.id) + " - " + self.name
 
     def get_name(self):
         return self.name.capitalize()
