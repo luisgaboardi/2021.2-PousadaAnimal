@@ -6,7 +6,7 @@
         <div class="col-md-12 text-center">
           <h2>Agendamento de Hospedagem</h2>
         </div>
-  
+
         <div class="col-md-12">
           <label>Pet</label>
           <select class="form-select" formControlName="pet">
@@ -16,24 +16,24 @@
             </option>
           </select>
         </div>
-  
+
         <div class="col-md-6">
           <label>Check-in</label>
           <input type="text" placeholder="DD-MM-AAAA" formControlName=start_date  mask="d0-M0-0000">
         </div>
-  
+
         <div class="col-md-6">
           <label>Check-out</label>
-          <input type="text" placeholder="DD-MM-AAAA" formControlName=end_date  mask="d0-M0-0000">
+          <input type="text" placeholder="DD-MM-AAAA" formControlName=end_date  mask="d0-M0-0000" (change)="checkDate()">
         </div>
-  
+
         <div class="col-md-12">
           <label>Observações</label>
-          <input type="text" placeholder="Digite o seu CPF" formControlName="observations">
+          <input type="text" placeholder="Informações Importantes" formControlName="observations">
         </div>
-  
+
         <div class="col-md-12">
-          <label>Preço</label>
+          <label>Valor Total</label>
           {{0||formHosting.controls['cost'].value}}
         </div>
 

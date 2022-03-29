@@ -39,7 +39,7 @@ export class HostingComponent implements OnInit {
           let petId = Number(pet.substring(0, petIdIndex));
           let petName = pet.substring(petIdIndex+3);
           this.petList.push([petId, petName]);
-        }); 
+        });
     });
     this.formHosting.controls['approved'].setValue(false);
     this.formHosting.controls['owner'].setValue(1); // Pegar a partir da autenticação
@@ -62,6 +62,26 @@ export class HostingComponent implements OnInit {
       )
     }
   }
+
+  checkDate() {
+    if (this.formHosting.controls['start_date'].valid && this.formHosting.controls['end_date'].valid) {
+      let start = (this.formHosting.controls['start_date'].value);
+      let end = (this.formHosting.controls['end_date'].value);
+      let startDate_str = [start.substring(0,2),'-', start.substring(2,4),'-', start.substring(4)].reverse();
+      let endDate_str = [end.substring(0,2),'-', end.substring(2,4),'-', end.substring(4)].reverse();
+      let startDate = new Date(startDate_str.join(''));
+      let endDate = new Date(endDate_str.join(''));
+
+      if (startDate > endDate){
+        alert("A data do Check-out deve ser maior que a do check-in");
+        this.formHosting.controls['start_date'].setValue(null);
+        this.formHosting.controls['end_date'].setValue(null);
+      }
+    }
+
+  }
+
+
 
   redirect() {
     this.router.navigate(['/home']);
