@@ -20,6 +20,12 @@ const routes: Routes = [
       loadChildren: () =>
         import('./feature/home/home.module').then((x)=> x.HomeModule)
   },
+
+  {
+    path: 'user-area',
+      loadChildren: () =>
+        import('./feature/user-area/user-area.module').then((x)=> x.UserAreaModule)
+  },
   // {
   //   path: '**',
   //   redirectTo: '',
