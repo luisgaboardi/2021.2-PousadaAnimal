@@ -52,11 +52,12 @@ export class HostingComponent implements OnInit {
       let hosting = Object.assign({}, this.formHosting.value);
 
       this.hostingService.sendHosting(hosting).subscribe({
-        next: () => { // definir data
+        next: () => {
+          console.log("Deu bom");
           this.redirect();
         },
         error: (error) => {
-          console.log("Erro ao agendar", error) //definir tipos de erros
+          console.log("Erro ao agendar", error)
         }
       }
       )

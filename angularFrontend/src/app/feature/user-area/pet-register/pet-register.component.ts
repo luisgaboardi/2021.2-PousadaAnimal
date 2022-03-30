@@ -12,66 +12,56 @@ export class PetRegisterComponent implements OnInit {
 
   isTextField!: boolean;
 
-  speciesList = [
-    { name: 'Cachorro' },
-    { name: 'Gato' },
-    { name: 'Pássaro' }
-  ]; // consertar depois para a administração escolher os tipos de animais
+  speciesList = ['Cachorro', 'Gato', 'Pássaro'];
 
-  genderList = [
-    { name: 'Macho' },
-    { name: 'Fêmea' }
-  ];
+  genderList = ['Macho', 'Fêmea'];
 
-  temperamentList = [
-    { name: 'Bonzinho' },
-    { name: 'Malvadinho' }
-  ];
+  temperamentList = ['Calmo', 'Ansioso', 'Nervoso'];
 
-  sizeList = [
-    { name: 'Pequeno' },
-    { name: 'Médio' },
-    { name: 'Grande' },
-  ];
+  sizeList = ['Pequeno', 'Médio', 'Grande'];
 
-  formPetRegister: FormGroup = new FormGroup ({
-    name: new FormControl('',[Validators.required]),
-    species: new FormControl ('', [Validators.required]),
-    breed: new FormControl('',[Validators.required]),
-    gender: new FormControl ('', [Validators.required]),
-    colour: new FormControl('',[Validators.required]),
-    size: new FormControl ('', [Validators.required]),
-    age: new FormControl('',[Validators.required]),
-    weight: new FormControl('',[Validators.required]),
+  formPetRegister: FormGroup = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    species: new FormControl('', [Validators.required]),
+    breed: new FormControl('', [Validators.required]),
+    gender: new FormControl('', [Validators.required]),
+    colour: new FormControl('', [Validators.required]),
+    size: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required]),
+    weight: new FormControl('', [Validators.required]),
     medicalConditions: new FormControl(''),
-    temperament: new FormControl ('', [Validators.required])
+    temperament: new FormControl('', [Validators.required]),
+    owner: new FormControl('', [Validators.required]),
+    is_hosted: new FormControl('', [Validators.required])
   })
 
   constructor(
-    private readonly router : Router,
+    private readonly router: Router,
     private readonly petService: PetResgisterService
   ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.formPetRegister.controls['owner'].setValue(1); // Pegar da autenticação
+    this.formPetRegister.controls['is_hosted'].setValue(false);
+  }
 
-  registerPet(){
-    console.log("Fazer cadastro")
-    if(this.formPetRegister.valid){
+  registerPet() {
+    console.log("Fazer cadastro de pet")
+    if (this.formPetRegister.valid) {
       let registerpet = Object.assign({}, this.formPetRegister.value);
       this.petService.sendRegisterPet(registerpet).subscribe({
-        next:() => {
-        this.redirect();
+        next: () => {
+          console.log("Deu bom");
+          this.redirect();
         },
         error: (error) => {
-          console.log("Erro ao registrar", error) //definir tipos de erros
+          console.log("Erro ao cadastrar", error)
         }
       })
     }
   }
 
-  redirect(){
-    this.router.navigate(['/']);//ver
+  redirect() {
+    this.router.navigate(['/']);
   }
 }
-
-//falta coisa que n entendo ainda
