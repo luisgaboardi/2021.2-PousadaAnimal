@@ -14,7 +14,6 @@ class Pet (models.Model):
     medical_conditions = models.TextField(null=True, blank=True, max_length=255)
     temperament = models.CharField(max_length=255)
     is_hosted = models.BooleanField(default=True)
-    since = models.DateField()
     owner = models.ForeignKey(User, related_name='pets', on_delete=models.CASCADE)
 
 

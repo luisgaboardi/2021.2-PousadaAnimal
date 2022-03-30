@@ -14,7 +14,6 @@
             "medical_conditions": "Ele tem probleminha",
             "temperament": "Nervouser",
             "is_hosted": true,
-            "since": "2022-03-21",
             "owner": 1
         }
     },
@@ -33,7 +32,6 @@
             "medical_conditions": "Chihuahua é tenso",
             "temperament": "Calmo como um trovão",
             "is_hosted": true,
-            "since": "2022-03-15",
             "owner": 1
         }
     },
@@ -52,7 +50,6 @@
             "medical_conditions": "Ele toma omezapran",
             "temperament": "Demônho",
             "is_hosted": true,
-            "since": "2022-02-11",
             "owner": 2
         }
     }
