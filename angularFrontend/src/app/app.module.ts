@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './feature/nav-bar/nav-bar.component';
 import { HostingComponent } from './feature/hosting/hosting.component';
+import { UserAreaComponent } from './feature/user-area/user-area.component';
 
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);

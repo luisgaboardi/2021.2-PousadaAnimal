@@ -25,6 +25,11 @@ const routes: Routes = [
       loadChildren: () =>
         import('./feature/hosting/hosting.module').then((x)=> x.HostingModule)
   },
+  {
+    path: 'user-area',
+      loadChildren: () =>
+        import('./feature/user-area/user-area.module').then((x)=> x.UserAreaModule)
+  },
   // {
   //   path: '**',
   //   redirectTo: '',

@@ -6,66 +6,68 @@
         <h2>Cadastro do Cliente</h2>
       </div>
 
-      <div class="col-md-5">
-        <label>Nome</label>
-        <input type="text" placeholder="Digite o seu nome" formControlName="first_name">
-      </div>
+      <div class="row g-3">
 
-      <div class="col-md-6">
-        <label>Sobrenome</label>
-        <input type="text" placeholder="Digite o seu sobrenome"  formControlName="last_name">
-      </div>
-
-      <div class="col-md-2">
-        <label>Gênero</label>
-        <select class="form-select" formControlName="gender">
-          <option value="" disabled>Selecione</option>
-          <option *ngFor="let gender of genderList" value="{{gender.nome}}">
-            {{gender.nome}}
-          </option>
-        </select>
-      </div>
-
-      <div class="col-md-3">
-        <label>CPF</label>
-        <input type="text" placeholder="Digite o seu CPF" formControlName="cpf" mask="000.000.000-00">
-      </div>
-
-      <div class="col-md-3">
-        <label>Telefone</label>
-        <input type="text" placeholder="Digite o seu telefone" formControlName="phone" mask="(00) 00000-0000">
-      </div>
-
-      <div class="col-md-3">
-        <label>Data de Nascimento</label>
-        <input type="text" placeholder="DD-MM-AAAA" formControlName=date_of_birth mask="d0-M0-0000">
-      </div>
-
-      <div class="col-md-2">
-        <label>CEP</label>
-        <input type="text" placeholder="Digite o seu CEP" formControlName="cep" mask="00.000-000">
-      </div>
-
-      <div class="col-md-9">
-        <label>Endereço</label>
-        <input type="text" placeholder="Digite o seu Endereço" formControlName="address">
-      </div>
-
-      <div class="form-input col-md-12">
-        <div class="col-md-4">
-          <label>Email</label>
-          <input type="text" placeholder="Digite o seu email" formControlName="email">
+        <div class="col-md-5">
+          <label>Nome</label>
+          <input type="text" placeholder="Digite o seu nome" formControlName="first_name">
         </div>
-  
-        <div class="col-md-4">
-          <label>Senha</label>
-          <div class="field-wrapper">
-            <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
-            <button type="button" [class]="isTextField ? 'btn-icon eye' : 'btn-icon eye-slash'" (click)="showPassword()" tabindex="-1"></button>
+
+        <div class="col-md-6">
+          <label>Sobrenome</label>
+          <input type="text" placeholder="Digite o seu sobrenome"  formControlName="last_name">
+        </div>
+
+        <div class="col-md-2">
+          <label>Gênero</label>
+          <select class="form-select" formControlName="gender">
+            <option value="" disabled>Selecione</option>
+            <option *ngFor="let gender of genderList" value="{{gender.nome}}">
+              {{gender.nome}}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label>CPF</label>
+          <input type="text" placeholder="Digite o seu CPF" formControlName="cpf" mask="000.000.000-00">
+        </div>
+
+        <div class="col-md-3">
+          <label>Telefone</label>
+          <input type="text" placeholder="Digite o seu telefone" formControlName="phone" mask="(00) 00000-0000">
+        </div>
+
+        <div class="col-md-3">
+          <label>Data de Nascimento</label>
+          <input type="text" placeholder="DD-MM-AAAA" formControlName=date_of_birth mask="d0-M0-0000">
+        </div>
+
+        <div class="col-md-2">
+          <label>CEP</label>
+          <input type="text" placeholder="Digite o seu CEP" formControlName="cep" mask="00.000-000">
+        </div>
+
+        <div class="col-md-9">
+          <label>Endereço</label>
+          <input type="text" placeholder="Digite o seu Endereço" formControlName="address">
+        </div>
+
+        <div class="form-input col-md-12">
+          <div class="col-md-4">
+            <label>Email</label>
+            <input type="text" placeholder="Digite o seu email" formControlName="email">
+          </div>
+
+          <div class="col-md-4">
+            <label>Senha</label>
+            <div class="field-wrapper">
+              <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
+              <button type="button" [class]="isTextField ? 'btn-icon eye' : 'btn-icon eye-slash'" (click)="showPassword()" tabindex="-1"></button>
+            </div>
           </div>
         </div>
       </div>
-
       <div class="col-md-12">
         <button class ="btn btn-custom default"(click)="cadastrarCliente()" [disabled]="formRegister.invalid"
           [class]="formRegister.invalid ? 'btn btn-custom disabled ' : 'btn btn-custom default'">

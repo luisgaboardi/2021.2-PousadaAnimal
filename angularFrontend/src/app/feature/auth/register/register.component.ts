@@ -1,6 +1,6 @@
 import { RegisterService } from '../../../core/services/register.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
     private readonly router : Router
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   showPassword() {
     this.isTextField = !this.isTextField;
   }
@@ -63,6 +63,7 @@ export class RegisterComponent implements OnInit {
 
   redirect(){
     this.router.navigate(['/auth/login']);
+
   }
 
 
