@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
 
       this.loginServiceClient.sendLoginClient(login).subscribe({
         next: (response) => {
+          localStorage.setItem('user', JSON.stringify(response.user));
           localStorage.setItem('token', JSON.stringify(response.token));
           console.log("Deu bom");
           this.redirect();

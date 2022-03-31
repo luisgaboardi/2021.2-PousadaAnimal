@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/core/services/login.service';
 import { PetResgisterService } from 'src/app/core/services/pet-register.service';
+import { User } from 'src/shared/models/user';
 
 @Component({
   selector: 'app-pet-register',
@@ -35,13 +37,18 @@ export class PetRegisterComponent implements OnInit {
     is_hosted: new FormControl('', [Validators.required])
   })
 
+  user: User;
+
   constructor(
     private readonly router: Router,
-    private readonly petService: PetResgisterService
-  ) { }
+    private readonly petService: PetResgisterService,
+    private readonly loginService: LoginService
+  ) {
+    this.user = loginService.GetUser();
+  }
 
   ngOnInit(): void {
-    this.formPetRegister.controls['owner'].setValue(1); // Pegar da autenticação
+    this.formPetRegister.controls['owner'].setValue(this.user.id);
     this.formPetRegister.controls['is_hosted'].setValue(false);
   }
 
@@ -62,6 +69,6 @@ export class PetRegisterComponent implements OnInit {
   }
 
   redirect() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/user-area/home']);
   }
 }

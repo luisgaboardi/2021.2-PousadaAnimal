@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PetRegisterComponent } from './pet-register/pet-register.component';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
+import { HomeUserComponent } from './home-user/home-user.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,7 @@ const routes: Routes = [
       {
         path: 'home',
         canLoad: [AuthGuard],
-        loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+        loadChildren: () => import('./home-user/home-user.module').then(m => m.HomeUserModule),
       },
       {
         path: 'hosting',
@@ -32,7 +33,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [UserAreaComponent, PetRegisterComponent],
+  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

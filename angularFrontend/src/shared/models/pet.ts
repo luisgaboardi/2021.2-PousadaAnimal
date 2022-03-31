@@ -11,4 +11,5 @@ export class Pet {
     medical_conditions: string;
     temperament: string;
     is_hosted: boolean;
+    owner: string;
 }
