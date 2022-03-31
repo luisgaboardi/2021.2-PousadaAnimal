@@ -5,11 +5,11 @@ from users.models import User
 # Create your models here.
 
 class Hosting (models.Model):
-    owner = models.OneToOneField(
+    owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
     )
-    pet = models.OneToOneField(
+    pet = models.ForeignKey(
         Pet,
         on_delete=models.CASCADE,
     )

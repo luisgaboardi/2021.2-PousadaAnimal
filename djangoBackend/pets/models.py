@@ -14,12 +14,11 @@ class Pet (models.Model):
     medical_conditions = models.TextField(null=True, blank=True, max_length=255)
     temperament = models.CharField(max_length=255)
     is_hosted = models.BooleanField(default=True)
-    since = models.DateField()
     owner = models.ForeignKey(User, related_name='pets', on_delete=models.CASCADE)
 
 
     def __str__(self):
-        return self.name + " - " + self.species + " - " + self.get_host_status()
+        return str(self.id) + " - " + self.name
 
     def get_name(self):
         return self.name.capitalize()

@@ -15,8 +15,8 @@
                 <label>Espécie</label>
                 <select class="form-select" formControlName="species">
                     <option value="" disabled>Selecione</option>
-                    <option *ngFor="let item of speciesList " value="{{item.name}}">
-                    {{item.name}}
+                    <option *ngFor="let species of speciesList " value="{{species}}">
+                    {{species}}
                     </option>
                 </select>
                 </div>
@@ -31,8 +31,8 @@
                 <label>Sexo</label>
                 <select class="form-select" formControlName="gender">
                     <option value="" disabled>Selecione</option>
-                    <option *ngFor="let gender of genderList" value="{{gender.name}}">
-                    {{gender.name}}
+                    <option *ngFor="let gender of genderList" value="{{gender}}">
+                    {{gender}}
                     </option>
                 </select>
                 </div>
@@ -40,8 +40,8 @@
                 <label>Porte/Tamanho</label>
                 <select class="form-select" formControlName="size">
                     <option value="" disabled>Selecione</option>
-                    <option *ngFor="let size of sizeList" value="{{size.name}}">
-                    {{size.name}}
+                    <option *ngFor="let size of sizeList" value="{{size}}">
+                    {{size}}
                     </option>
                 </select>
                 </div>
@@ -60,27 +60,20 @@
                 <label>Temperamento</label>
                 <select class="form-select" formControlName="temperament">
                     <option value="" disabled>Selecione</option>
-                    <option *ngFor="let temperament of temperamentList" value="{{temperament.name}}">
-                    {{temperament.name}}
+                    <option *ngFor="let temperament of temperamentList" value="{{temperament}}">
+                    {{temperament}}
                     </option>
                 </select>
                 </div>
-                <!-- <div class="col-md-4">
-                <label>Espécie</label>
-                <div class="form-check " *ngFor="let item of speciesList">
-                    <input class="form-check-input" type="radio" formControlName="species" value="{{item.name}}"> {{item.name}}
-                </div>
-                </div> -->
-
 
                 <div class="col-md-6">
-                <label>Fotos do pet</label>
-                <input type="file" multiple accept="image/*" formControlName="colour">
+                <label>Cores do pet</label>
+                <input type="text" placeholder="Preto com manchas brancas" formControlName="colour">
                 </div>
 
                 <div class="col-md-6">
                 <label>Condições médicas</label>
-                <textarea  class="form-control" placeholder="Descreva detalhadamente as condições de saúde e tratamento especial do pet"
+                <textarea  class="form-control" placeholder="Descreva quaisquer condições de saúde do pet"
                     formControlName="medicalConditions"></textarea>
                 </div>
             </div>

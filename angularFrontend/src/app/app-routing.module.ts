@@ -20,7 +20,11 @@ const routes: Routes = [
       loadChildren: () =>
         import('./feature/home/home.module').then((x)=> x.HomeModule)
   },
-
+  {
+    path: 'hosting',
+      loadChildren: () =>
+        import('./feature/hosting/hosting.module').then((x)=> x.HostingModule)
+  },
   {
     path: 'user-area',
       loadChildren: () =>

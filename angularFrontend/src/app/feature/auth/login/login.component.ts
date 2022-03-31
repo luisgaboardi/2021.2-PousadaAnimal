@@ -31,8 +31,7 @@ export class LoginComponent implements OnInit {
 
   loginClient() {
     console.log("Fazer login")
-    //verificar se email e cpf existe
-    if (this.formLogin.valid) {
+    if(this.formLogin.valid){
       let login = Object.assign({}, this.formLogin.value);
 
       this.loginServiceClient.sendLoginClient(login).subscribe({

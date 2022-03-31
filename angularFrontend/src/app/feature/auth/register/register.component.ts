@@ -68,11 +68,12 @@ export class RegisterComponent implements OnInit {
       let register = Object.assign({}, this.formRegister.value);
 
       this.registerServiceClient.sendRegisterClient(register).subscribe({
-        next: () => { // definir data
+        next: () => {
+          console.log("Deu bom");
           this.redirect();
         },
         error: (error) => {
-          console.log("Erro ao registrar", error) //definir tipos de erros
+          console.log("Erro ao registrar", error)
         }
       }
       )

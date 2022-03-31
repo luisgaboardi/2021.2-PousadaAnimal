@@ -2,10 +2,19 @@ from rest_framework import serializers
 from .models import User
 
 
+class UserPetsSerializer(serializers.ModelSerializer):
+    pets = serializers.StringRelatedField(many=True)
+
+    class Meta:
+        model = User
+        fields = '__all__'
+
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'email', 'first_name', 'last_name', 'gender', 'cpf', 'phone', 'cep', 'address', 'date_of_birth', 'password']
+        fields = ['id', 'email', 'first_name', 'last_name', 'gender',
+                  'cpf', 'phone', 'cep', 'address', 'date_of_birth', 'password']
 
     def create(self, validated_data):
         user = User(

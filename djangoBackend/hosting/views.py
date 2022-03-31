@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.http import Http404
 from hosting.serializers import HostingSerializer
 from pets.models import Pet
@@ -37,6 +38,15 @@ class HostingList(APIView):
                 return Response(status=status.HTTP_400_BAD_REQUEST)
             
             serializer = HostingSerializer(data=request.data)
+            
+            # Fix data format to save in Django
+            start_date = request.data['start_date']
+            start_date = datetime.strptime(start_date, '%d%m%Y')
+            request.data['start_date'] = start_date.strftime('%Y-%m-%d')
+            end_date = request.data['end_date']
+            end_date = datetime.strptime(end_date, '%d%m%Y')
+            request.data['end_date'] = end_date.strftime('%Y-%m-%d')
+
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
