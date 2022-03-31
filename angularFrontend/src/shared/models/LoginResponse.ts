@@ -1,7 +1,6 @@
 import { User } from "./user";
 
-export class LogiResponse{
-  usuario: User;
+export class LoginResponse{
+  user: User;
   token: string;
-  // token:  Token//criar
 }

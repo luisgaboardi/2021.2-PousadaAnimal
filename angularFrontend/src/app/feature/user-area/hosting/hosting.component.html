@@ -11,20 +11,20 @@
           <label>Pet</label>
           <select class="form-select" formControlName="pet">
             <option value="" disabled>Selecione</option>
-            <option *ngFor="let pet of petList" value="{{pet[0]}}">
-              {{pet[1]}}
+            <option *ngFor="let pet of petList" value="{{pet.id}}">
+              {{pet.name}}
             </option>
           </select>
         </div>
 
         <div class="col-md-6">
           <label>Check-in</label>
-          <input type="text" placeholder="DD-MM-AAAA" formControlName=start_date  mask="d0-M0-0000">
+          <input type="text" placeholder="DD-MM-AAAA" (change)="setCost()" formControlName=start_date  mask="d0-M0-0000">
         </div>
 
         <div class="col-md-6">
           <label>Check-out</label>
-          <input type="text" placeholder="DD-MM-AAAA" formControlName=end_date  mask="d0-M0-0000" (change)="checkDate()">
+          <input type="text" placeholder="DD-MM-AAAA" formControlName=end_date  mask="d0-M0-0000" (change)="setCost()">
         </div>
 
         <div class="col-md-12">
@@ -34,7 +34,7 @@
 
         <div class="col-md-12">
           <label>Valor Total</label>
-          {{0||formHosting.controls['cost'].value}}
+          {{formHosting.controls['cost'].value}}
         </div>
 
         <div class="col-md-12">

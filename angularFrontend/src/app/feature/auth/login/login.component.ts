@@ -12,15 +12,15 @@ export class LoginComponent implements OnInit {
 
   isTextField!: boolean;
 
-  formLogin: FormGroup = new FormGroup ({
-    username: new FormControl('',[Validators.required,
-      Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]),
-    password:  new FormControl('',[Validators.required])
+  formLogin: FormGroup = new FormGroup({
+    username: new FormControl('', [Validators.required,
+    Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]),
+    password: new FormControl('', [Validators.required])
   })
 
   constructor(
     private readonly loginServiceClient: LoginService,
-    private readonly router : Router
+    private readonly router: Router
   ) { }
 
   ngOnInit(): void { }
@@ -29,17 +29,25 @@ export class LoginComponent implements OnInit {
     this.isTextField = !this.isTextField;
   }
 
-  loginClient(){
+  loginClient() {
     console.log("Fazer login")
     if(this.formLogin.valid){
       let login = Object.assign({}, this.formLogin.value);
 
-      if (this.loginServiceClient.sendLoginClient(login)) {
-        console.log("Deu bom");
-      } else {
-        console.log("Erro ao fazer login");
+      this.loginServiceClient.sendLoginClient(login).subscribe({
+        next: (response) => {
+          localStorage.setItem('user', JSON.stringify(response.user));
+          localStorage.setItem('token', JSON.stringify(response.token));
+          console.log("Deu bom");
+          this.redirect();
+        },
+        error: (error) => {
+          console.log("Erro ao registrar", error); //definir tipos de erros
+        }
       }
+      )
     }
+
   }
 
   logoutClient() {
@@ -47,8 +55,8 @@ export class LoginComponent implements OnInit {
     this.loginServiceClient.logout()
   }
 
-  redirect(){
-    this.router.navigate(['/home']);
+  redirect() {
+    this.router.navigate(['/user-area/home']);
   }
 
 }

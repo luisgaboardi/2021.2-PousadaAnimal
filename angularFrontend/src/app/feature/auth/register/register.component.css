@@ -106,7 +106,21 @@ h2 {
 }
 
 .btn {
-  background-color: #c3ff00;
+  background-color: #BADA5F;
   margin-top: 30px;
   float: right;
+}
+.btn:disabled{
+  background-color: #e1f5c4;
+  cursor: not-allowed;
+}
+
+.error-msg{
+  /* display:none;
+  background: #f1f1f1; */
+  color: #50C8C6;
+  /* position: relative;
+  padding: 20px;
+  margin-top: 10px; */
+  padding: 10px 35px;
 }

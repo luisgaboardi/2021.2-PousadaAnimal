@@ -1,6 +1,6 @@
 import { RegisterService } from '../../../core/services/register.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -30,20 +30,38 @@ export class RegisterComponent implements OnInit {
     address:  new FormControl('',[Validators.required]),
     gender:  new FormControl('',[Validators.required]),
     date_of_birth: new FormControl('',[Validators.required]),
-    password:  new FormControl('',[Validators.required])
-  })
+    password:  new FormControl('',[Validators.required]),
+    password2: new FormControl('',[Validators.required]),
+  });
 
   constructor(
     private readonly registerServiceClient: RegisterService,
     private readonly router : Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.formRegister.setValidators(
+      this.passwordEqual()
+    );
+  }
+
   showPassword() {
     this.isTextField = !this.isTextField;
   }
+  public passwordEqual(): ValidatorFn{
+    return (group: FormGroup): ValidationErrors => {
+      const password = group.controls['password'];
+      const passwordConfirm = group.controls['password2'];
+      if(password.value !== passwordConfirm.value){
+         passwordConfirm.setErrors({mustMatch: true});
+      }else{
+        passwordConfirm.setErrors(null);
+      }
+      return null;
+    }
+  }
 
-  cadastrarCliente(){
+  registerClient(){
     console.log("Fazer cadastro")
     //verificar se email e cpf existe
     if(this.formRegister.valid){
@@ -64,7 +82,6 @@ export class RegisterComponent implements OnInit {
 
   redirect(){
     this.router.navigate(['/auth/login']);
-
   }
 
 
