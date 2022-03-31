@@ -9,7 +9,7 @@ import { HostingComponent } from './hosting.component';
 const mask: Partial<IConfig> = {validation: true};
 
 @NgModule({
-  declarations: [],
+  declarations: [HostingComponent],
   imports: [
     CommonModule,
     FormsModule,

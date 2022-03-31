@@ -1,4 +1,4 @@
-import { HostingService } from './../../core/services/hosting.service';
+import { HostingService } from '../../../core/services/hosting.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
