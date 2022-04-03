@@ -1,7 +1,7 @@
 {
   "hosting": {
     "target": "angularFrontend",
-    "public": "dist/angular-frontend",
+    "public": "./dist/angular-frontend",
     "ignore": [
       "**/.*"
     ],
