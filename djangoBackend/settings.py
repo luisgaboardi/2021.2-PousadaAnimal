@@ -35,7 +35,7 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'grupo-pets-pousada-animal.web.app']
 
 CORS_ALLOWED_ORIGINS = [
-    "https://grupo-pets-pousada-animal.web.app/",
+    "grupo-pets-pousada-animal.web.app",
 ]
 
 # Application definition

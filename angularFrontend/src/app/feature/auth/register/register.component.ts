@@ -31,7 +31,6 @@ export class RegisterComponent implements OnInit {
     gender:  new FormControl('',[Validators.required]),
     date_of_birth: new FormControl('',[Validators.required]),
     password:  new FormControl('',[Validators.required]),
-    password2: new FormControl('',[Validators.required]),
   });
 
   constructor(
@@ -40,26 +39,26 @@ export class RegisterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.formRegister.setValidators(
-      this.passwordEqual()
-    );
+    // this.formRegister.setValidators(
+    //   this.passwordEqual()
+    // );
   }
 
   showPassword() {
     this.isTextField = !this.isTextField;
   }
-  public passwordEqual(): ValidatorFn{
-    return (group: FormGroup): ValidationErrors => {
-      const password = group.controls['password'];
-      const passwordConfirm = group.controls['password2'];
-      if(password.value !== passwordConfirm.value){
-         passwordConfirm.setErrors({mustMatch: true});
-      }else{
-        passwordConfirm.setErrors(null);
-      }
-      return null;
-    }
-  }
+  // public passwordEqual(): ValidatorFn{
+  //   return (group: FormGroup): ValidationErrors => {
+  //     const password = group.controls['password'];
+  //     const passwordConfirm = group.controls['password2'];
+  //     if(password.value !== passwordConfirm.value){
+  //        passwordConfirm.setErrors({mustMatch: true});
+  //     }else{
+  //       passwordConfirm.setErrors(null);
+  //     }
+  //     return null;
+  //   }
+  // }
 
   registerClient(){
     console.log("Fazer cadastro")
