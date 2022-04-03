@@ -43,6 +43,8 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
+      - name: Cadê?
+        run: ls
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
