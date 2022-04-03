@@ -51,3 +51,4 @@ jobs:
           args: deploy --only hosting
         env:
           FIREBASE_TOKEN: 1//0hKohB6datjKWCgYIARAAGBESNwF-L9IrK7Su7n3UDG9Rv-bNstkzrl9iqSw640Mzr1LdxTbJc7KXvCNPBeM6dLwNjfOY_pxeZwM
+          PROJECT_PATH: "./angularFrontend"
