@@ -1,0 +1,30 @@
+name: Deploy Production 
+on:
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  heroku-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: git push heroku main
+
+  firebase-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16.14'
+    - run: npm install
+    - run: npm run build:prod
+    - uses: w9jds/firebase-action@master
+      with:
+        args: deploy --only hosting
+      env:
+        FIREBASE_TOKEN: 1//0hKohB6datjKWCgYIARAAGBESNwF-L9IrK7Su7n3UDG9Rv-bNstkzrl9iqSw640Mzr1LdxTbJc7KXvCNPBeM6dLwNjfOY_pxeZwM
