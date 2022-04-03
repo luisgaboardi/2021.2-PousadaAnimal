@@ -9,6 +9,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   heroku-deploy:
+    name: Deploy Backend on Heroku
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,7 +20,7 @@ jobs:
           heroku_email: luis.ggaboardi@gmail.com
 
   build-front:
-    name: Build
+    name: Build Frontend
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -32,13 +33,9 @@ jobs:
       - name: Build
         run: npm run build
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: dist
-          path: dist
 
   deploy-front:
-    name: Deploy
+    name: Deploy Frontend on Firebase
     needs: build-front
     runs-on: ubuntu-latest
     defaults:
@@ -47,11 +44,6 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
-      - name: Download Artifact
-        uses: actions/download-artifact@master
-        with:
-          name: dist
-          path: dist
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
