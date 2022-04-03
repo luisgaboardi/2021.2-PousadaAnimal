@@ -1,9 +1,11 @@
 {
   "hosting": {
     "target": "angularFrontend",
-    "public": "dist/",
+    "public": "./dist/angular-frontend",
     "ignore": [
-      "**/.*"
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ],
     "headers": [
       {
