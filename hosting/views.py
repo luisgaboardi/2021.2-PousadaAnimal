@@ -23,14 +23,14 @@ class HostingList(APIView):
             raise Http404
 
     def get(self, request, format=None):
-        if request.successful_authenticator or DEBUG:
+        if DEBUG:
             hosting = Hosting.objects.all()
             serializer = HostingSerializer(hosting, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_401_UNAUTHORIZED)
 
     def post(self, request, format=None):
-        if request.successful_authenticator or DEBUG:
+        if DEBUG:
             owner_id = request.data['owner']
             pet_id = request.data['pet']
             pet = self.get_pet(pet_id)
@@ -66,14 +66,14 @@ class HostingDetail(APIView):
             raise Http404
 
     def get(self, request, pk, format=None):
-        if request.successful_authenticator or DEBUG == True:
+        if DEBUG == True:
             hosting = self.get_object(pk)
             serializer = HostingSerializer(hosting)
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(status=status.HTTP_403_FORBIDDEN)
 
     def put(self, request, pk, format=None):
-        if (request.successful_authenticator and request.user.is_staff) or DEBUG:
+        if request.user.is_staff or DEBUG:
             hosting = self.get_object(pk)
             serializer = HostingSerializer(hosting, data=request.data)
             if serializer.is_valid():
