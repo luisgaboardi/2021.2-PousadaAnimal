@@ -1,0 +1,88 @@
+<div class="petRegister">
+    <div class="container">
+        <div class="register-form" [formGroup]="formPetRegister">
+            <div class="col-md-12 text-center">
+                <h2>Cadastre o seu Pet</h2>
+            </div>
+            <div class="row g-2">
+
+                <div class="col-md-4">
+                <label>Nome</label>
+                <input type="text" placeholder="Digite o nome do animal" formControlName="name">
+                </div>
+
+                <div class="col-md-4">
+                <label>Espécie</label>
+                <select class="form-select" formControlName="species">
+                    <option value="" disabled>Selecione</option>
+                    <option *ngFor="let species of speciesList " value="{{species}}">
+                    {{species}}
+                    </option>
+                </select>
+                </div>
+
+
+                <div class="col-md-4">
+                <label>Raça</label>
+                <input type="text" placeholder="Digite a raça do pet" formControlName="breed">
+                </div>
+                <br>
+                <div class="col-md-2">
+                <label>Sexo</label>
+                <select class="form-select" formControlName="gender">
+                    <option value="" disabled>Selecione</option>
+                    <option *ngFor="let gender of genderList" value="{{gender}}">
+                    {{gender}}
+                    </option>
+                </select>
+                </div>
+                <div class="col-md-3">
+                <label>Porte/Tamanho</label>
+                <select class="form-select" formControlName="size">
+                    <option value="" disabled>Selecione</option>
+                    <option *ngFor="let size of sizeList" value="{{size}}">
+                    {{size}}
+                    </option>
+                </select>
+                </div>
+                <br>
+                <div class="col-md-2">
+                <label>Idade</label>
+                <input type="number" placeholder="Digite a idade do pet"  formControlName="age" min="0" max="30">
+                </div>
+                <br>
+                <div class="col-md-2">
+                <label>Peso</label>
+                <input type="text" placeholder="Peso do Pet" formControlName="weight">
+                </div>
+
+                <div class="col-md-3">
+                <label>Temperamento</label>
+                <select class="form-select" formControlName="temperament">
+                    <option value="" disabled>Selecione</option>
+                    <option *ngFor="let temperament of temperamentList" value="{{temperament}}">
+                    {{temperament}}
+                    </option>
+                </select>
+                </div>
+
+                <div class="col-md-6">
+                <label>Cores do pet</label>
+                <input type="text" placeholder="Preto com manchas brancas" formControlName="colour">
+                </div>
+
+                <div class="col-md-6">
+                <label>Condições médicas</label>
+                <textarea  class="form-control" placeholder="Descreva quaisquer condições de saúde do pet"
+                    formControlName="medicalConditions"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button class ="btn btn-custom default" [routerLink]="['/user-area']" (click)="registerPet()" [disabled]="formPetRegister.invalid"
+                [class]="formPetRegister.invalid ? 'disabled ' : 'default'">
+                Cadastrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

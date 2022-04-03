@@ -1,0 +1,48 @@
+<div class="login">
+  <div class="container">
+    <div class="login-form input" [formGroup]="formLogin">
+      <div class="col-md-12 text-center">
+        <h2>Login</h2>
+      </div>
+
+      <div class="col-md-6">
+        <label>Email </label>
+        <input type="text" placeholder="Digite o seu email" formControlName="username">
+      </div>
+
+      <div class="col-md-6">
+        <label>Senha</label>
+        <div class="field-wrapper">
+          <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
+          <button type="button" [class]="isTextField ? 'btn-icon eye': 'btn-icon eye-slash'" (click)="showPassword()" tabindex="-1">
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn btn-custom default" (click)="loginClient()" [routerLink]="['/home']" [disabled]="formLogin.invalid"
+          [class]="formLogin.invalid ? 'btn btn-custom disable ' : 'btn btn-custom default'">
+          Entrar
+        </button>
+      </div>
+
+      <div class="forgot-pass" [routerLink]="['/home']">
+        <a href="#">
+          Esqueci a senha
+        </a>
+      </div>
+
+      <div class="register-box">
+        <div>
+          Não tem cadastro?
+        </div>
+        <button class="btn-bottom" [routerLink]="['/auth/cadastro-cliente']">
+          Cadastre-se
+        </button>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

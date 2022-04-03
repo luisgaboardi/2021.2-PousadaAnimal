@@ -30,3 +30,14 @@
 |<img src="https://avatars.githubusercontent.com/u/52364259?v=4" width="100">| Kathlyn Lara | [klmurussi](https://github.com/klmurussi) |
 |<img src="https://avatars.githubusercontent.com/u/54222696?v=4" width="100">| Laís Portela  | [laispa](https://github.com/laispa) |
 |<img src="https://avatars.githubusercontent.com/u/45673358?v=4" width="100">| Luís Guilherme | [luisgaboardi](https://github.com/luisgaboardi) |
+
+## Execução do Projeto Localmente
+
+### Requisitos
+* Python versão *3.8* ou superior
+* Gerenciador de pacotes Python *pip*
+* Node Packager Manager (npm) versão *8.4* ou superior
+* Angular CLI versão *13.2* ou superior
+
+### Instruções
+1. Execute o [Backend]() e o [Frontend]() ao mesmo tempo (em dois terminais diferentes) seguindo os passos contendo nos seus respectivos READMEs.

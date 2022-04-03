@@ -1,0 +1,126 @@
+.register{
+  justify-content: center;
+  min-width: 550px;
+}
+
+.register-form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px 35px;
+  /* background: #daf1ec; */
+}
+
+.form-input {
+  justify-content: left;
+  display: flex;
+}
+
+.form-input .col-md-4 {
+  margin-right: 30px;
+}
+
+.register-form label {
+  margin-top: 15px;
+  width: 100%;
+  font-weight: 500;
+  color:black;
+  line-height: 1;
+  text-align: left;
+}
+
+.register-form input {
+  width: 100%;
+  height: 48px;
+  background-color: rgb(249, 253, 237);
+  border: 1px solid #BADA5F;
+  border-radius: 4px;
+  outline: none;
+}
+
+.container{
+  width: 90%;
+  max-width: 1128px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 3px solid #50C8C6;
+  border-radius: 10px;
+  padding: 10px 0 35px 0;
+  margin-bottom: 60px;
+}
+
+h2 {
+  padding: 25px 0 50px 0;
+}
+
+.form-select{
+  border: 1px solid #BADA5F;
+  background-color: rgb(249, 253, 237);
+  width: 100%;
+  height: 46px;
+}
+
+[class*='icone-']:before{
+  display: inline-block;
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.field-wrapper {
+  display: flex;
+  align-content: flex-end;
+  width: 80%;
+  /* min-width: 500px; */
+}
+
+.field-wrapper input {
+  display: flex;
+  width: 100%;
+}
+
+.btn-icon{
+  display: flex;
+  height: 50px;
+  width: 50px;
+  right: 50px;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+
+.eye{
+  background-image: url(../../../../assets/icons/eye.svg);
+}
+
+.eye-slash{
+  background-image: url(../../../../assets/icons/eye-slash.svg);
+}
+
+.btn {
+  background-color: #BADA5F;
+  margin-top: 30px;
+  float: right;
+}
+.btn:disabled{
+  background-color: #e1f5c4;
+  cursor: not-allowed;
+}
+
+.error-msg{
+  /* display:none;
+  background: #f1f1f1; */
+  color: #50C8C6;
+  /* position: relative;
+  padding: 20px;
+  margin-top: 10px; */
+  padding: 10px 35px;
+}
