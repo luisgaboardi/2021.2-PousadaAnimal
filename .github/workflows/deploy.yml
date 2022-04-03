@@ -51,8 +51,6 @@ jobs:
         with:
           name: built-project
           path: ./angularFrontend/dist/
-      - name: Deu bom?
-        run: ls
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
