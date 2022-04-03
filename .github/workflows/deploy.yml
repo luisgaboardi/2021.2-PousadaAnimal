@@ -36,7 +36,7 @@ jobs:
 
   deploy-front:
     name: Deploy
-    needs: build
+    needs: build-front
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
