@@ -16,20 +16,16 @@ class PetList(APIView):
     """
 
     def get(self, request, format=None):
-        if DEBUG:
-            pets = Pet.objects.all()
-            serializer = PetSerializer(pets, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(status=status.HTTP_401_UNAUTHORIZED)
+        pets = Pet.objects.all()
+        serializer = PetSerializer(pets, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, format=None):
-        if DEBUG:
-            serializer = PetSerializer(data=request.data)
-            if serializer.is_valid():
-                serializer.save()
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return Response(status=status.HTTP_400_BAD_REQUEST)
-        return Response(status=status.HTTP_401_UNAUTHORIZED)
+        serializer = PetSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
 
 
 class PetDetail(generics.RetrieveAPIView):
@@ -44,8 +40,6 @@ class PetDetail(generics.RetrieveAPIView):
             raise Http404
 
     def get(self, request, pk, format=None):
-        if DEBUG == True:
-            pet = self.get_object(pk)
-            serializer = PetSerializer(pet)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(status=status.HTTP_403_FORBIDDEN)
+        pet = self.get_object(pk)
+        serializer = PetSerializer(pet)
+        return Response(serializer.data, status=status.HTTP_200_OK)

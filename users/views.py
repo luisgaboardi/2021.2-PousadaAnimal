@@ -43,11 +43,9 @@ class UserList(APIView):
     List all users, or create a new user.
     """
     def get(self, request, format=None):
-        if request.successful_authenticator or DEBUG:
-            users = User.objects.all()
-            serializer = UserSerializer(users, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(status=status.HTTP_401_UNAUTHORIZED)
+        users = User.objects.all()
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, format=None):
         serializer = UserSerializer(data=request.data)
@@ -71,11 +69,9 @@ class UserDetail(generics.RetrieveAPIView):
             raise Http404
 
     def get(self, request, pk, format=None):
-        if request.successful_authenticator or DEBUG:
-            user = self.get_object(pk)
-            serializer = UserPetsSerializer(user)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(status=status.HTTP_401_UNAUTHORIZED)
+        user = self.get_object(pk)
+        serializer = UserPetsSerializer(user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class UserPets(generics.RetrieveAPIView):
     queryset = Pet.objects.all()
@@ -89,8 +85,6 @@ class UserPets(generics.RetrieveAPIView):
             raise Http404
 
     def get(self, request, pk, format=None):
-        if request.successful_authenticator or DEBUG:
-            pets = self.queryset.filter(owner=pk)
-            serializer = PetSerializer(pets, many=True)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        return Response(status=status.HTTP_401_UNAUTHORIZED)
+        pets = self.queryset.filter(owner=pk)
+        serializer = PetSerializer(pets, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
