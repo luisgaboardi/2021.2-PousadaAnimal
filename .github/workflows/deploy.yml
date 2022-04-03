@@ -32,7 +32,6 @@ jobs:
         run: npm install
       - name: Build
         run: npm run build
-      - name: Archive Production Artifact
 
   deploy-front:
     name: Deploy Frontend on Firebase
