@@ -37,7 +37,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: built-project
-          path: dist/
+          path: ./angularFrontend/dist/
 
   deploy-front:
     name: Deploy Frontend on Firebase
@@ -49,7 +49,7 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: built-project
       - name: Deu bom?
