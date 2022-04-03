@@ -21,6 +21,9 @@ jobs:
   build-front:
     name: Build
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./angularFrontend
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -38,6 +41,9 @@ jobs:
     name: Deploy
     needs: build-front
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./angularFrontend
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
