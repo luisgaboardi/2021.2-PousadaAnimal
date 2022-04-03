@@ -44,6 +44,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
       - name: Deploy to Firebase
+        run: ls
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
