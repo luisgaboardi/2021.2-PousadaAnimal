@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "grupo-pets-pousada-animal": {
+      "hosting": {
+        "angularFrontend": [
+          "grupo-pets-pousada-animal"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "grupo-pets-pousada-animal"
+  }
+}

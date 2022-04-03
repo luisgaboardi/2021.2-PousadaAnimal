@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angularFrontend:build:production",
+            "firebaseProject": "grupo-pets-pousada-animal",
+            "firebaseHostingSite": "grupo-pets-pousada-animal"
+          }
         }
       }
     }
