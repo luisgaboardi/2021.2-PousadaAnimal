@@ -1,5 +1,5 @@
 import { environment } from './../../../environments/environment';
-import { Hosting } from './../../../shared/models/hosting.model';
+import { GetHosting, Hosting } from './../../../shared/models/hosting.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,6 +15,10 @@ export class HostingService {
     return this.http.post<any>(
       `${environment.endPointPousadaAnimal}/hosting/`, newHosting
     )
+  }
+
+  getHostings(): Observable<GetHosting[]>{
+    return this.http.get<any>(`${environment.endPointPousadaAnimal}/hosting/`)
   }
 
 }
