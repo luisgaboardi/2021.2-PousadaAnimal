@@ -9,14 +9,13 @@ import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './feature/nav-bar/nav-bar.component';
-import { UserAreaComponent } from './feature/user-area/user-area.component';
 import { HomeComponent } from './feature/home/home.component';
 
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
-  declarations: [AppComponent,NavBarComponent, HomeComponent],
+  declarations: [AppComponent, NavBarComponent, HomeComponent],
   imports: [
     ReactiveFormsModule,
     FormsModule,
