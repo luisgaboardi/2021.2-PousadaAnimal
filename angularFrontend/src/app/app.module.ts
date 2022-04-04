@@ -11,12 +11,13 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './feature/nav-bar/nav-bar.component';
 import { UserAreaComponent } from './feature/user-area/user-area.component';
 import { HomeComponent } from './feature/home/home.component';
+import { AdminAreaComponent } from './feature/admin-area/admin-area.component';
 
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
-  declarations: [AppComponent,NavBarComponent, HomeComponent],
+  declarations: [AppComponent,NavBarComponent, HomeComponent, AdminAreaComponent],
   imports: [
     ReactiveFormsModule,
     FormsModule,
