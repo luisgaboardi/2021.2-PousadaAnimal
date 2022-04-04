@@ -60,7 +60,29 @@
     margin-top: 20px;
     color: #000000;
     font-size: 15px;
-    background-color: aquamarine;
+    border: 2px solid #50C8C6;
+    border-radius: 8px;
+}
+
+.petList {
+    margin-top: 30px;
+    height: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    background-color: #caf5f3;
+    border-radius: 5px;
+}
+
+.buttom {
+    background-color: white;
+    border: 1px solid #50C8C6;
+    border-radius: 5px;
+    color: black;
+    font-size: 12px;
+    margin-top: 6%;
 }
 
 .navbar-right{
