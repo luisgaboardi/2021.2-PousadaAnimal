@@ -1,3 +1,38 @@
-<p>home works!</p>
-<br>
-<h1>Página de redirecionamento depois do login</h1>
+<div class="homeUserArea">
+    <div class="header">
+        <div class="banner"></div>
+        <div class="icon"></div>
+        <ul>
+            <div class="edit" >
+                <button class="edit-bottom" href="#">Editar Perfil</button>
+            </div>
+        </ul>
+        <div class="name">
+            {{user.first_name + " " + user.last_name}}
+        </div>
+        <div class="bio">
+            <p>eu desisto disso aqui</p>
+        </div>
+        <div class="line"></div>
+        <div class="notifications"></div>
+    </div>
+    <div class="navbar-right">
+        <ul>
+            <li class="nav-item" >
+                <a class="nav-link" href="#">Seus Pets</a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" [routerLink]="['/user-area/cadastro-pet']">Registrar Pet</a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" [routerLink]="['/user-area/hosting']">Hospedar Pet</a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" href="#">Status do Pet</a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link" href="#">Avaliar a Pousada</a>
+            </li>
+        </ul>
+    </div>
+</div>
