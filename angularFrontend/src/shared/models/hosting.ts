@@ -5,8 +5,8 @@ import { User } from "./user";
 export class Hosting {
   owner: number;
   pet: number;
-  start_date: string;
-  end_date: string;
+  start_date: Date;
+  end_date: Date;
   cost: number;
   observation: string;
   approved: boolean;

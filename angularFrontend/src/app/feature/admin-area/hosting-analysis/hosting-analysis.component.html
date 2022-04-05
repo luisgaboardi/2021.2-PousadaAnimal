@@ -1,41 +1,45 @@
-<h2>Análise de Agendamento</h2>
-
-<div class="col-md-12">
-  <div class="col-md-12">
-    <h3>Lista de Pedidos</h3>
-  </div>
-  <table class="styled-table col-md-10">
+<div class="container col-md-12">
+  <h2>Análise de Agendamento</h2>
+  <h4>Lista de Pedidos</h4>
+  <table class="styled-table col-md-12">
     <thead>
-        <tr>
-            <th>Pet</th>
-            <th>Dono</th>
-            <th>Data de Início</th>
-            <th>Data de Fim</th>
-            <th>Duração</th>
-            <th>Preço</th>
-        </tr>
+      <tr>
+        <th>Pet</th>
+        <th>Dono</th>
+        <th>Data de Início</th>
+        <th>Data de Fim</th>
+        <th>A Receber</th>
+        <th>Ação</th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Dom</td>
-            <td>6000</td>
-            <td>Dom</td>
-            <td>6000</td>
-            <td>Dom</td>
-            <td>6000</td>
-        </tr>
-        <tr class="active-row">
-            <td>Melissa</td>
-            <td>5150</td>
-            <td>Dom</td>
-            <td>6000</td>
-            <td>Dom</td>
-            <td>6000</td>
-        </tr>
-        <!-- and so on... -->
+      <tr *ngFor="let hosting of hostingList">
+        <td>{{hosting.owner}}</td> <!-- Pegar nome do dono, não o id -->
+        <td>{{hosting.pet}}</td> <!-- Pegar nome do pet, não o id -->
+        <td>{{hosting.start_date}}</td> <!-- Formatar data -->
+        <td>{{hosting.end_date}}</td> <!-- Formatar data -->
+        <td>R$ {{hosting.cost}},00</td>
+        <td>
+          <button class="btn btn-sm btn-outline-primary" (click)="openHostingModal(mymodal)">
+            Abrir
+          </button>
+          <ng-template #mymodal let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">x</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              {{hostingDetails(hosting)}}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore')">Ignorar</button>
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('approve')">Aprovar</button>
+            </div>
+          </ng-template>
+        </td>
+      </tr>
     </tbody>
-</table>
-  <div>
-    {{approveHosting()}}
-  </div>
+  </table>
 </div>

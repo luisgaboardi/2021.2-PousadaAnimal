@@ -1,3 +1,15 @@
+.container {
+    width: 90%;
+    max-width: 1128px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 3px solid #50C8C6;
+    border-radius: 10px;
+    padding: 10px 0 35px 0;
+    margin-bottom: 60px;
+    padding: 25px;
+}
+
 .styled-table {
     border-collapse: collapse;
     margin: 25px 0;
