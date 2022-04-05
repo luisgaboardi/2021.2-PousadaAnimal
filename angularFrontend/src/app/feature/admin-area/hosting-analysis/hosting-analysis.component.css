@@ -41,3 +41,7 @@
 .styled-table tbody tr:last-of-type {
     border-bottom: thin solid #50C8C6;
 }
+
+.modal-xl {
+    top: 500px;
+}

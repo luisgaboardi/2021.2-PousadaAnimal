@@ -36,7 +36,7 @@ export class HostingAnalysisComponent implements OnInit {
   getHostingList() {
     this.hostingService.getHostings().subscribe({
       next: (hostingList) => {
-        this.hostingList = hostingList;
+        this.hostingList = hostingList as GetHosting[];
       },
       error: (error) => {
         console.log("Erro ao agendar", error)
@@ -45,26 +45,47 @@ export class HostingAnalysisComponent implements OnInit {
     )
   }
 
-  // Hosting details modal
-  openHostingModal(content:any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size: 'xl'}).result.then((result) => {
-      console.log(`Closed with: ${result}`);
-    }, (reason) => {
-      console.log(`Dismissed ${this.getDismissReason(reason)}`);
-    });
-  } 
-
-  private getDismissReason(reason: any): string {
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
+  getHostingStatus(hosting: GetHosting) {
+    let today = new Date();
+    let hostingStartDate = new Date(hosting.start_date);
+    let hostingEndDate = new Date(hosting.end_date);
+    if ((!hosting.approved && today > hostingStartDate) || (hosting.approved && today > hostingEndDate)) {
+      return "Passado";
+    } else if (!hosting.approved && today <= hostingStartDate) {
+      return "Pendente"
     } else {
-      return  `with: ${reason}`;
+      return "Confirmado";
     }
+    
   }
 
-  hostingDetails(hosting:GetHosting) {
+  getStatusString(hosting: GetHosting) {
+    if (!hosting.approved) {
+      return "Esperando aprovação";
+    }
+    return "Confirmado";
+  }
+
+  // Hosting details modal
+  openHostingModal(content: any) {
+    this.modalService.open(content, {
+      ariaLabelledBy: 'modal-basic-title',
+      size: 'xl',
+      scrollable: true,
+      centered: true,
+      animation: true
+    }).result.then((result) => {
+      if (result == "approve") {
+        console.log("Faz o put pro backend");
+      } else if (result == "ignore") {
+        console.log("Coloca a hospedagem numa lista de ignorados");
+      }
+    }, (reason) => {
+      console.log("Saindo da visualização");
+    });
+  }
+
+  hostingDetails(hosting: GetHosting) {
     return JSON.stringify(hosting);
   }
 
