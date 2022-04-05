@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HostingService } from 'src/app/core/services/hosting.service';
 import { LoginService } from 'src/app/core/services/login.service';
 import { GetHosting } from 'src/shared/models/hosting';
@@ -66,6 +66,32 @@ export class HostingAnalysisComponent implements OnInit {
     return "Confirmado";
   }
 
+  cancelHosting(hosting:GetHosting) {
+    hosting.approved = false;
+    this.hostingService.approveHosting(hosting).subscribe({
+      next: () => {
+        this.redirect();
+      },
+      error: (error) => {
+        console.log("Erro ao aprovar o agendamento", error)
+      }
+    }
+    )
+  }
+
+  approveHosting(hosting: GetHosting) {
+    hosting.approved = true;
+    this.hostingService.approveHosting(hosting).subscribe({
+      next: () => {
+        this.redirect();
+      },
+      error: (error) => {
+        console.log("Erro ao aprovar o agendamento", error)
+      }
+    }
+    )
+  }
+
   // Hosting details modal
   openHostingModal(content: any) {
     this.modalService.open(content, {
@@ -74,23 +100,11 @@ export class HostingAnalysisComponent implements OnInit {
       scrollable: true,
       centered: true,
       animation: true
-    }).result.then((result) => {
-      if (result == "approve") {
-        console.log("Faz o put pro backend");
-      } else if (result == "ignore") {
-        console.log("Coloca a hospedagem numa lista de ignorados");
-      }
-    }, (reason) => {
-      console.log("Saindo da visualização");
-    });
-  }
-
-  hostingDetails(hosting: GetHosting) {
-    return JSON.stringify(hosting);
+    })
   }
 
   redirect() {
-    this.router.navigate(['/user-area/home']);
+    this.router.navigate(['/user-area/hosting-analysis']);
   }
 
 }

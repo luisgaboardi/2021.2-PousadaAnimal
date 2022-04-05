@@ -45,8 +45,8 @@
               <p>{{getStatusString(hosting)}}</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore')">Ignorar</button>
-              <button type="button" class="btn btn-outline-dark" (click)="modal.close('approve')">Aprovar</button>
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore')">Voltar</button>
+              <button type="button" class="btn btn-outline-dark" (click)="approveHosting(hosting); modal.close('approve')">Aprovar</button>
             </div>
           </ng-template>
         </td>
@@ -100,8 +100,8 @@
               <p>{{getStatusString(hosting)}}</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore')">Ignorar</button>
-              <button type="button" class="btn btn-outline-dark" (click)="modal.close('approve')">Aprovar</button>
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore'); cancelHosting(hosting)">Cancelar</button>
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ok')">Ok</button>
             </div>
           </ng-template>
         </td>
@@ -151,12 +151,9 @@
               <p>R$ {{hosting.cost}},00</p>
               <h5>Observações do Cliente</h5>
               <p>{{hosting.observations}}</p>
-              <h5>Status</h5>
-              <p>{{getStatusString(hosting)}}</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore')">Ignorar</button>
-              <button type="button" class="btn btn-outline-dark" (click)="modal.close('approve')">Aprovar</button>
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('voltar')">Voltar</button>
             </div>
           </ng-template>
         </td>
