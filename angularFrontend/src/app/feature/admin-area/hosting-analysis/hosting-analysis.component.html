@@ -1,0 +1,164 @@
+<div class="container col-md-12">
+  <h2>Análise de Agendamento</h2>
+  <h4>Lista de Pedidos</h4>
+  <table class="styled-table col-md-12">
+    <thead>
+      <tr>
+        <th>Pet</th>
+        <th>Dono</th>
+        <th>Data de Início</th>
+        <th>Data de Fim</th>
+        <th>A Receber</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hosting of hostingList">
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.owner}}</td> <!-- Pegar nome do dono, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.pet}}</td> <!-- Pegar nome do pet, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.start_date}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.end_date}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">R$ {{hosting.cost}},00</td>
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">
+          <button class="btn btn-sm btn-outline-primary" (click)="openHostingModal(mymodal)">
+            Abrir
+          </button>
+          <ng-template #mymodal let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Pedido de Agendamento #{{hosting.id}}</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">x</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>Cliente</h5>
+              <p>{{hosting.owner}}</p>
+              <h5>Animal</h5>
+              <p>{{hosting.pet}}</p>
+              <h5>Período de hospedagem</h5>
+              <p>{{hosting.start_date}} - {{hosting.end_date}}</p>
+              <h5>Valor</h5>
+              <p>R$ {{hosting.cost}},00</p>
+              <h5>Observações do Cliente</h5>
+              <p>{{hosting.observations}}</p>
+              <h5>Status</h5>
+              <p>{{getStatusString(hosting)}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore')">Voltar</button>
+              <button type="button" class="btn btn-outline-dark" (click)="approveHosting(hosting); modal.close('approve')">Aprovar</button>
+            </div>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+
+  <h4>Agendamentos Confirmados</h4>
+  <table class="styled-table col-md-12">
+    <thead>
+      <tr>
+        <th>Pet</th>
+        <th>Dono</th>
+        <th>Data de Início</th>
+        <th>Data de Fim</th>
+        <th>A Receber</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hosting of hostingList">
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.owner}}</td> <!-- Pegar nome do dono, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.pet}}</td> <!-- Pegar nome do pet, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.start_date}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.end_date}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">R$ {{hosting.cost}},00</td>
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">
+          <button class="btn btn-sm btn-outline-primary" (click)="openHostingModal(mymodal)">
+            Abrir
+          </button>
+          <ng-template #mymodal let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Pedido de Agendamento #{{hosting.id}}</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">x</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>Cliente</h5>
+              <p>{{hosting.owner}}</p>
+              <h5>Animal</h5>
+              <p>{{hosting.pet}}</p>
+              <h5>Período de hospedagem</h5>
+              <p>{{hosting.start_date}} - {{hosting.end_date}}</p>
+              <h5>Valor</h5>
+              <p>R$ {{hosting.cost}},00</p>
+              <h5>Observações do Cliente</h5>
+              <p>{{hosting.observations}}</p>
+              <h5>Status</h5>
+              <p>{{getStatusString(hosting)}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore'); cancelHosting(hosting)">Cancelar</button>
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ok')">Ok</button>
+            </div>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+
+  <h4>Agendamentos Passados</h4>
+  <table class="styled-table col-md-12">
+    <thead>
+      <tr>
+        <th>Pet</th>
+        <th>Dono</th>
+        <th>Data de Início</th>
+        <th>Data de Fim</th>
+        <th>A Receber</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hosting of hostingList">
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.owner}}</td> <!-- Pegar nome do dono, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.pet}}</td> <!-- Pegar nome do pet, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.start_date}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.end_date}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">R$ {{hosting.cost}},00</td>
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">
+          <button class="btn btn-sm btn-outline-primary" (click)="openHostingModal(mymodal)">
+            Abrir
+          </button>
+          <ng-template #mymodal let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Pedido de Agendamento #{{hosting.id}}</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">x</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>Cliente</h5>
+              <p>{{hosting.owner}}</p>
+              <h5>Animal</h5>
+              <p>{{hosting.pet}}</p>
+              <h5>Período de hospedagem</h5>
+              <p>{{hosting.start_date}} - {{hosting.end_date}}</p>
+              <h5>Valor</h5>
+              <p>R$ {{hosting.cost}},00</p>
+              <h5>Observações do Cliente</h5>
+              <p>{{hosting.observations}}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('voltar')">Voltar</button>
+            </div>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

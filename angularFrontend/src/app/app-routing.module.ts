@@ -25,6 +25,11 @@ const routes: Routes = [
       loadChildren: () =>
         import('./feature/user-area/user-area.module').then((x)=> x.UserAreaModule)
   },
+  {
+    path: 'admin-area',
+      loadChildren: () =>
+        import('./feature/admin-area/admin-area.module').then((x)=> x.AdminAreaModule)
+  },
   // {
   //   path: '**',
   //   redirectTo: '',
