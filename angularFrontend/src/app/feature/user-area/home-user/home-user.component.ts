@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
-import { User } from 'src/shared/models/user';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +16,7 @@ export class HomeUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
 }

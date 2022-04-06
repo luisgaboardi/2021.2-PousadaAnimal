@@ -16,15 +16,24 @@ export class NavBarComponent implements OnInit {
   constructor(
     public readonly loginService: LoginService,
     public readonly router: Router) {
-    this.rotaSubscription = this.router.events.subscribe(() => {
-    const rota = this.router.url;
-    if(rota.indexOf('user-area')){
-      this.header = 1;
-    }
-   });
+    this.defineRoute();
   }
 
   ngOnInit(): void {
+  }
+
+  defineRoute(){
+    this.rotaSubscription = this.router.events.subscribe(() => {
+      const rota = this.router.url;
+      if(rota.includes('user-area')){
+        this.header = 1;
+      }else if (rota.includes('admin-area')){
+        this.header = 2;
+      }
+      else{
+        this.header = 0;
+      }
+     });
   }
 
   logout() {

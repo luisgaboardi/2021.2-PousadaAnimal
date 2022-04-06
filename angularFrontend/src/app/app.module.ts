@@ -1,3 +1,4 @@
+import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,15 +10,13 @@ import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './feature/nav-bar/nav-bar.component';
-import { UserAreaComponent } from './feature/user-area/user-area.component';
-import { HomeComponent } from './feature/home/home.component';
-import { AdminAreaComponent } from './feature/admin-area/admin-area.component';
-
+import { ModalComponent } from './shared/components/modal/modal.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
-  declarations: [AppComponent,NavBarComponent, HomeComponent, AdminAreaComponent],
+  declarations: [AppComponent,NavBarComponent],
   imports: [
     ReactiveFormsModule,
     FormsModule,
@@ -27,6 +26,8 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     AppRoutingModule,
     RouterModule,
     BrowserAnimationsModule,
+    SharedModule,
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

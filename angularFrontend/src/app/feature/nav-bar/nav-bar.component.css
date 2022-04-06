@@ -1,7 +1,20 @@
-.navbar-container{
+.admin{
+  background-color: #cee891;
+}
+
+.area{
   background-color: #50c8c6;
+}
+
+.user{
+  background-color: #a7cd2c;
+}
+.navbar-container{
+  /* background-color: #50c8c6; */
   width: "100%";
 };
+
+
 
 /* .navbar-img{
   margin: auto;
@@ -22,7 +35,7 @@ align-content: space-between;
   margin-bottom: 60px;
   height: 100px;
   padding: 0.4rem 1rem;
-  background-color: #50c8c6;
+  /* background-color: #50c8c6; */
 }
 
 /* tudo ta dentro da navbar */

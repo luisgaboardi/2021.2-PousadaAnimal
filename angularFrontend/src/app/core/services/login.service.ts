@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { User } from 'src/shared/models/user';
+import { User } from 'src/app/shared/models/user';
 import { Router } from '@angular/router';
-import { LoginResponse } from './../../../shared/models/LoginResponse';
+import { LoginResponse } from 'src/app/shared/models/LoginResponse';
 import { environment } from './../../../environments/environment';
-import { LoginClient } from './../../../shared/models/login-client';
+import { LoginClient } from 'src/app/shared/models/login-client';
 
 @Injectable({
   providedIn: 'root'

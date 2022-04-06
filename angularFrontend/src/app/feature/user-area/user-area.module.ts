@@ -16,6 +16,7 @@ const routes: Routes = [
       {
         path: 'cadastro-pet',
         canLoad: [AuthGuard],
+        canActivate: [AuthGuard],
         loadChildren: () => import('./pet-register/pet-register.module').then(m => m.PetRegisterModule),
       },
       {
