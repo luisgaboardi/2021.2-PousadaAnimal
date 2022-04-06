@@ -50,7 +50,7 @@ export class HostingAnalysisComponent implements OnInit {
     )
   }
 
-  getOwner(hosting:GetHosting) {
+  getOwner(hosting: GetHosting) {
     return this.hostingService.getOwner(hosting).subscribe({
       next: (owner) => {
         hosting.owner = owner as User;
@@ -62,7 +62,7 @@ export class HostingAnalysisComponent implements OnInit {
     )
   }
 
-  getPet(hosting:GetHosting) {
+  getPet(hosting: GetHosting) {
     return this.hostingService.getPet(hosting).subscribe({
       next: (pet) => {
         hosting.pet = pet as Pet;
@@ -85,7 +85,7 @@ export class HostingAnalysisComponent implements OnInit {
     } else {
       return "Confirmado";
     }
-    
+
   }
 
   getStatusString(hosting: GetHosting) {
@@ -95,7 +95,7 @@ export class HostingAnalysisComponent implements OnInit {
     return "Confirmado";
   }
 
-  cancelHosting(hosting:GetHosting) {
+  cancelHosting(hosting: GetHosting) {
     hosting.approved = false;
     this.hostingService.approveHosting(hosting).subscribe({
       error: (error) => {
@@ -115,6 +115,11 @@ export class HostingAnalysisComponent implements OnInit {
       }
     }
     )
+  }
+
+  formatDate(dateString):string {
+    let dArr = dateString.trim().split("-");  // ex input "2010-01-18"
+    return dArr[2] + "/" + dArr[1] + "/" + dArr[0].substring(2);
   }
 
   // Hosting details modal
