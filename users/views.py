@@ -4,7 +4,7 @@ from pets.models import Pet
 from pets.serializers import PetSerializer
 from djangoBackend.settings import DEBUG
 from users.models import User
-from users.serializers import UserPetsSerializer, UserSerializer
+from users.serializers import UserSerializer
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -70,7 +70,7 @@ class UserDetail(generics.RetrieveAPIView):
 
     def get(self, request, pk, format=None):
         user = self.get_object(pk)
-        serializer = UserPetsSerializer(user)
+        serializer = UserSerializer(user)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 class UserPets(generics.RetrieveAPIView):

@@ -121,6 +121,6 @@ export class HostingComponent implements OnInit {
 
 
   redirect() {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/user-area/home']);
   }
 }
