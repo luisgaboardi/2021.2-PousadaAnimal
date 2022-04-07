@@ -11,13 +11,13 @@
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/home']">Home
+        <li class="nav-item" [routerLink]="['/home']" routerLinkActive="header-link-active">
+          <a class="nav-link" >Home
             <!-- <span class="sr-only">(página atual)</span> -->
           </a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link" [routerLink]="['/auth/login']">Login</a>
+        <li class="nav-item" [routerLink]="['/auth/login']" routerLinkActive="header-link-active">
+          <a class="nav-link" >Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Serviços</a>
@@ -44,8 +44,9 @@
 
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" [routerLink]="['/user-area/home']">Área do Usuário
+          <li class="nav-item active" [routerLink]="['/user-area/home']" routerLinkActive="header-link-active">
+            <a class="nav-link" >Área do Usuário
+
               <!-- <span class="sr-only">(página atual)</span> -->
             </a>
           </li>
@@ -76,8 +77,8 @@
 
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" [routerLink]="['/admin-area/home']">Página do Administrador
+            <li class="nav-item active" [routerLink]="['/admin-area/home']" routerLinkActive="header-link-active">
+              <a class="nav-link" >Página do Administrador
                 <!-- <span class="sr-only">(página atual)</span> -->
               </a>
             </li>

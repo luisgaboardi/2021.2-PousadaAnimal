@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminGuard } from './core/auth/admin.guard';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch:'full'},
+  {path: '', redirectTo: 'auth', pathMatch:'full'},
   {
     path: 'auth',
       loadChildren: () =>
