@@ -13,14 +13,13 @@ import { UserPetsService } from 'src/app/core/services/user-pets.service';
 export class HomeUserComponent implements OnInit {
 
   petList: Pet[];
+  user: User;
 
   formHome: FormGroup = new FormGroup ({
     icon: new FormControl(''),
     banner: new FormControl(''),
     pet: new FormControl('', [Validators.required]),
   })
-
-  user: User;
 
   constructor(
     private readonly loginService: LoginService,
