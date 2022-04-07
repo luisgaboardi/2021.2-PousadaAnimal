@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HostingService } from 'src/app/core/services/hosting.service';
 import { LoginService } from 'src/app/core/services/login.service';
-import { GetHosting } from 'src/shared/models/hosting';
-import { User } from 'src/shared/models/user';
+import { GetHosting } from 'src/app/shared/models/hosting';
+import { Pet } from 'src/app/shared/models/pet';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-hosting-analysis',
@@ -37,9 +38,37 @@ export class HostingAnalysisComponent implements OnInit {
     this.hostingService.getHostings().subscribe({
       next: (hostingList) => {
         this.hostingList = hostingList as GetHosting[];
+        for (let hosting of this.hostingList) {
+          this.getOwner(hosting);
+          this.getPet(hosting);
+        }
       },
       error: (error) => {
         console.log("Erro ao agendar", error)
+      }
+    }
+    )
+  }
+
+  getOwner(hosting: GetHosting) {
+    return this.hostingService.getOwner(hosting).subscribe({
+      next: (owner) => {
+        hosting.owner = owner as User;
+      },
+      error: (error) => {
+        console.log("Erro ao pegar dono do pet", error)
+      }
+    }
+    )
+  }
+
+  getPet(hosting: GetHosting) {
+    return this.hostingService.getPet(hosting).subscribe({
+      next: (pet) => {
+        hosting.pet = pet as Pet;
+      },
+      error: (error) => {
+        console.log("Erro ao pegar o pet", error)
       }
     }
     )
@@ -56,7 +85,7 @@ export class HostingAnalysisComponent implements OnInit {
     } else {
       return "Confirmado";
     }
-    
+
   }
 
   getStatusString(hosting: GetHosting) {
@@ -66,14 +95,12 @@ export class HostingAnalysisComponent implements OnInit {
     return "Confirmado";
   }
 
-  cancelHosting(hosting:GetHosting) {
+  cancelHosting(hosting: GetHosting) {
     hosting.approved = false;
     this.hostingService.approveHosting(hosting).subscribe({
-      next: () => {
-        this.redirect();
-      },
       error: (error) => {
-        console.log("Erro ao aprovar o agendamento", error)
+        hosting.approved = true;
+        console.log("Erro ao cancelar o agendamento", error)
       }
     }
     )
@@ -82,14 +109,17 @@ export class HostingAnalysisComponent implements OnInit {
   approveHosting(hosting: GetHosting) {
     hosting.approved = true;
     this.hostingService.approveHosting(hosting).subscribe({
-      next: () => {
-        this.redirect();
-      },
       error: (error) => {
+        hosting.approved = false;
         console.log("Erro ao aprovar o agendamento", error)
       }
     }
     )
+  }
+
+  formatDate(dateString):string {
+    let dArr = dateString.trim().split("-");  // ex input "2010-01-18"
+    return dArr[2] + "/" + dArr[1] + "/" + dArr[0].substring(2);
   }
 
   // Hosting details modal

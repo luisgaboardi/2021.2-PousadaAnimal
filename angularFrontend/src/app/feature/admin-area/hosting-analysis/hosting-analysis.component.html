@@ -4,8 +4,8 @@
   <table class="styled-table col-md-12">
     <thead>
       <tr>
-        <th>Pet</th>
         <th>Dono</th>
+        <th>Pet</th>
         <th>Data de Início</th>
         <th>Data de Fim</th>
         <th>A Receber</th>
@@ -14,10 +14,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let hosting of hostingList">
-        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.owner}}</td> <!-- Pegar nome do dono, não o id -->
-        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.pet}}</td> <!-- Pegar nome do pet, não o id -->
-        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.start_date}}</td> <!-- Formatar data -->
-        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.end_date}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.owner.first_name}} {{hosting.owner.last_name}}</td> <!-- Pegar nome do dono, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.pet.name}}</td> <!-- Pegar nome do pet, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{formatDate(hosting.start_date)}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{formatDate(hosting.end_date)}}</td> <!-- Formatar data -->
         <td *ngIf="getHostingStatus(hosting) == 'Pendente'">R$ {{hosting.cost}},00</td>
         <td *ngIf="getHostingStatus(hosting) == 'Pendente'">
           <button class="btn btn-sm btn-outline-primary" (click)="openHostingModal(mymodal)">
@@ -32,11 +32,11 @@
             </div>
             <div class="modal-body">
               <h5>Cliente</h5>
-              <p>{{hosting.owner}}</p>
+              <p>{{hosting.owner.first_name}} {{hosting.owner.last_name}}</p>
               <h5>Animal</h5>
-              <p>{{hosting.pet}}</p>
+              <p>{{hosting.pet.name}}</p>
               <h5>Período de hospedagem</h5>
-              <p>{{hosting.start_date}} - {{hosting.end_date}}</p>
+              <p>{{formatDate(hosting.start_date)}} - {{formatDate(hosting.end_date)}}</p>
               <h5>Valor</h5>
               <p>R$ {{hosting.cost}},00</p>
               <h5>Observações do Cliente</h5>
@@ -59,8 +59,8 @@
   <table class="styled-table col-md-12">
     <thead>
       <tr>
-        <th>Pet</th>
         <th>Dono</th>
+        <th>Pet</th>
         <th>Data de Início</th>
         <th>Data de Fim</th>
         <th>A Receber</th>
@@ -69,10 +69,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let hosting of hostingList">
-        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.owner}}</td> <!-- Pegar nome do dono, não o id -->
-        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.pet}}</td> <!-- Pegar nome do pet, não o id -->
-        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.start_date}}</td> <!-- Formatar data -->
-        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.end_date}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.owner.first_name}} {{hosting.owner.last_name}}</td> <!-- Pegar nome do dono, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{hosting.pet.name}}</td> <!-- Pegar nome do pet, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{formatDate(hosting.start_date)}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">{{formatDate(hosting.end_date)}}</td> <!-- Formatar data -->
         <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">R$ {{hosting.cost}},00</td>
         <td *ngIf="getHostingStatus(hosting) == 'Confirmado'">
           <button class="btn btn-sm btn-outline-primary" (click)="openHostingModal(mymodal)">
@@ -87,11 +87,11 @@
             </div>
             <div class="modal-body">
               <h5>Cliente</h5>
-              <p>{{hosting.owner}}</p>
+              <p>{{hosting.owner.first_name}} {{hosting.owner.last_name}}</p>
               <h5>Animal</h5>
-              <p>{{hosting.pet}}</p>
+              <p>{{hosting.pet.name}}</p>
               <h5>Período de hospedagem</h5>
-              <p>{{hosting.start_date}} - {{hosting.end_date}}</p>
+              <p>{{formatDate(hosting.start_date)}} - {{formatDate(hosting.end_date)}}</p>
               <h5>Valor</h5>
               <p>R$ {{hosting.cost}},00</p>
               <h5>Observações do Cliente</h5>
@@ -114,8 +114,8 @@
   <table class="styled-table col-md-12">
     <thead>
       <tr>
-        <th>Pet</th>
         <th>Dono</th>
+        <th>Pet</th>
         <th>Data de Início</th>
         <th>Data de Fim</th>
         <th>A Receber</th>
@@ -124,10 +124,10 @@
     </thead>
     <tbody>
       <tr *ngFor="let hosting of hostingList">
-        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.owner}}</td> <!-- Pegar nome do dono, não o id -->
-        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.pet}}</td> <!-- Pegar nome do pet, não o id -->
-        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.start_date}}</td> <!-- Formatar data -->
-        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.end_date}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.owner.first_name}} {{hosting.owner.last_name}}</td> <!-- Pegar nome do dono, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{hosting.pet.name}}</td> <!-- Pegar nome do pet, não o id -->
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{formatDate(hosting.start_date)}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Passado'">{{formatDate(hosting.end_date)}}</td> <!-- Formatar data -->
         <td *ngIf="getHostingStatus(hosting) == 'Passado'">R$ {{hosting.cost}},00</td>
         <td *ngIf="getHostingStatus(hosting) == 'Passado'">
           <button class="btn btn-sm btn-outline-primary" (click)="openHostingModal(mymodal)">
@@ -142,11 +142,11 @@
             </div>
             <div class="modal-body">
               <h5>Cliente</h5>
-              <p>{{hosting.owner}}</p>
+              <p>{{hosting.owner.first_name}} {{hosting.owner.last_name}}</p>
               <h5>Animal</h5>
-              <p>{{hosting.pet}}</p>
+              <p>{{hosting.pet.name}}</p>
               <h5>Período de hospedagem</h5>
-              <p>{{hosting.start_date}} - {{hosting.end_date}}</p>
+              <p>{{formatDate(hosting.start_date)}} - {{formatDate(hosting.end_date)}}</p>
               <h5>Valor</h5>
               <p>R$ {{hosting.cost}},00</p>
               <h5>Observações do Cliente</h5>

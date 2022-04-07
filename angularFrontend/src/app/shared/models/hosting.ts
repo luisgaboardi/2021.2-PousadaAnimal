@@ -1,8 +1,11 @@
+import { Pet } from "./pet";
+import { User } from "./user";
+
 export class Hosting {
   owner: number;
   pet: number;
-  start_date: Date;
-  end_date: Date;
+  start_date: string;
+  end_date: string;
   cost: number;
   observations: string;
   approved: boolean;
@@ -10,11 +13,11 @@ export class Hosting {
 
 export class GetHosting {
   id: string;
-  pet: string;
+  pet: Pet;
   start_date: string;
   end_date: string;
   cost: number;
   observations: string;
   approved: boolean;
-  owner: string;
+  owner: User;
 }
