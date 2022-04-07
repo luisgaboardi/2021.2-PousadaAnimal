@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HostingAnalysisComponent } from './hosting-analysis/hosting-analysis.component';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
@@ -18,13 +19,18 @@ const routes: Routes = [
         path: 'hosting-analysis',
         canLoad: [AuthGuard],
         loadChildren: () => import('./hosting-analysis/hosting-analysis.module').then(m => m.HostingAnalysisModule),
+      },
+      {
+        path: 'home',
+        canLoad: [AuthGuard],
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
       }
     ]
   }
 ]
 
 @NgModule({
-  declarations: [AdminAreaComponent, HostingAnalysisComponent],
+  declarations: [AdminAreaComponent, HostingAnalysisComponent, HomeComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

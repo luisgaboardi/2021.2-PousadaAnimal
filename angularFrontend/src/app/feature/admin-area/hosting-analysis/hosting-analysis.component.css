@@ -3,7 +3,8 @@
     max-width: 1128px;
     margin-right: auto;
     margin-left: auto;
-    border: 3px solid #50C8C6;
+    margin-top: 5%;
+    border: 3px solid #cee891;
     border-radius: 10px;
     padding: 10px 0 35px 0;
     margin-bottom: 60px;
@@ -20,7 +21,7 @@
 }
 
 .styled-table thead tr {
-    background-color: #50C8C6;
+    background-color: #bce955;
     color: #ffffff;
     text-align: left;
 }
@@ -39,7 +40,7 @@
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: thin solid #50C8C6;
+    border-bottom: thin solid #bce955;
 }
 
 .modal-xl {
