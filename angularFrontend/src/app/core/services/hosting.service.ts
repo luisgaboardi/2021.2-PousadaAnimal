@@ -3,8 +3,8 @@ import { GetHosting, Hosting } from 'src/app/shared/models/hosting'; //verificar
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from 'src/shared/models/user';
-import { Pet } from 'src/shared/models/pet';
+import { User } from 'src/app/shared/models/user';
+import { Pet } from 'src/app/shared/models/pet';
 
 @Injectable({
   providedIn: 'root'

@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HostingService } from 'src/app/core/services/hosting.service';
 import { LoginService } from 'src/app/core/services/login.service';
-import { GetHosting } from 'src/shared/models/hosting';
-import { Pet } from 'src/shared/models/pet';
-import { User } from 'src/shared/models/user';
+import { GetHosting } from 'src/app/shared/models/hosting';
+import { Pet } from 'src/app/shared/models/pet';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-hosting-analysis',

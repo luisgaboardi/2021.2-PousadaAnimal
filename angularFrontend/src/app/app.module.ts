@@ -31,7 +31,6 @@ export let options: Partial<IConfig> | (() => Partial<IConfig>);
     BrowserAnimationsModule,
     SharedModule,
     ModalModule.forRoot()
-    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
