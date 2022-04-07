@@ -6,8 +6,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HostingAnalysisComponent } from './hosting-analysis/hosting-analysis.component';
+import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { AdminGuard } from 'src/app/core/auth/admin.guard';
-import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { HomeComponent } from './home/home.component';
+
 
 const routes: Routes = [
   {
@@ -23,14 +25,15 @@ const routes: Routes = [
       {
         path: 'home',
         canLoad: [AdminGuard],
-        loadChildren: () => import('./home-admin/home-admin.module').then(m => m.HomeAdminModule),
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
       }
     ]
   }
 ]
 
 @NgModule({
-  declarations: [AdminAreaComponent, HostingAnalysisComponent, HomeAdminComponent],
+  declarations: [AdminAreaComponent, HostingAnalysisComponent, HomeComponent],
+
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

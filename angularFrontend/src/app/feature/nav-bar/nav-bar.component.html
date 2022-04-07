@@ -20,10 +20,10 @@
           <a class="nav-link" >Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Serviços</a>
+          <a class="nav-link">Serviços</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sobre</a>
+          <a class="nav-link">Sobre</a>
         </li>
       </ul>
     </div>
@@ -36,7 +36,7 @@
     <div class ="container">
     <nav class="user navbar navbar-expand-lg ">
       <a class="navbar-img navbar-brand" >
-          <img src="../../assets/images/logo-transparente-p.png" alt="Pousada Animal" height="15%" width="15%">
+          <img src="../../assets/images/logo-transparente-p.png" [routerLink]="['/home']" alt="Pousada Animal" height="15%" width="15%">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
         <span class="navbar-toggler-icon"></span>
@@ -46,14 +46,15 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active" [routerLink]="['/user-area/home']" routerLinkActive="header-link-active">
             <a class="nav-link" >Área do Usuário
+
               <!-- <span class="sr-only">(página atual)</span> -->
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Serviços</a>
+            <a class="nav-link">Serviços</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Sobre</a>
+            <a class="nav-link">Sobre</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" (click)="logout()">Logout</a>
@@ -68,7 +69,7 @@
       <div class ="container">
       <nav class="admin navbar navbar-expand-lg ">
         <a class="navbar-img navbar-brand" >
-            <img src="../../assets/images/logo-transparente-p.png" alt="Pousada Animal" height="15%" width="15%">
+            <img src="../../assets/images/logo-transparente-p.png" [routerLink]="['/home']" alt="Pousada Animal" height="15%" width="15%">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
@@ -76,7 +77,7 @@
 
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active" [routerLink]="['/admin-area/hosting-analysis']" routerLinkActive="header-link-active">
+            <li class="nav-item active" [routerLink]="['/admin-area/home']" routerLinkActive="header-link-active">
               <a class="nav-link" >Página do Administrador
                 <!-- <span class="sr-only">(página atual)</span> -->
               </a>

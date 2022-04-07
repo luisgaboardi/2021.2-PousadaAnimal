@@ -17,7 +17,7 @@
             </div>
             <div class="line"></div>
             <div *ngIf= "petList.length > 0 "class="pets-descrition">
-                <h2 class="text">Seus Pets</h2>
+                <h2 class="text" style="text-align: center;">Seus Pets</h2>
                 <ul>
                   <li class="petList" *ngFor="let pet of petList">
                     <td><img src="./../../../../assets/images/favicon.png" alt="Pousada Animal" width="80%" height="80%"></td>
@@ -29,14 +29,11 @@
             </div>
 
             <div *ngIf= "petList.length === 0" >
-              <h5 class="text">Você ainda não tem pets cadastrados, por favor, registre um no botão ao lado!</h5>
+              <h5 class="pets-descrition" style="text-align: center;">Você ainda não tem pets cadastrados, por favor, registre um no botão ao lado!</h5>
             </div>
         </div>
         <div class="navbar-right">
             <ul>
-                <!-- <li class="nav-item" >
-                    <a class="nav-link" href="#">Seus Pets</a>
-                </li> -->
                 <li class="nav-item" >
                     <a class="nav-link" [routerLink]="['/user-area/cadastro-pet']">Registrar Pet</a>
                 </li>
@@ -44,7 +41,10 @@
                     <a class="nav-link" [routerLink]="['/user-area/hosting']">Hospedar Pet</a>
                 </li>
                 <li class="nav-item" >
-                    <a class="nav-link" href="#">Status do Pet</a>
+                    <a class="nav-link">Status do Pet</a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link">Pagamento</a>
                 </li>
             </ul>
         </div>
