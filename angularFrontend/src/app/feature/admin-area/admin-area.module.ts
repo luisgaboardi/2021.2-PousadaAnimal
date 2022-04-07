@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HostingAnalysisComponent } from './hosting-analysis/hosting-analysis.component';
-import { AuthGuard } from 'src/app/core/auth/auth.guard';
+import { AdminGuard } from 'src/app/core/auth/admin.guard';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
 
 const routes: Routes = [
   {
@@ -16,15 +17,20 @@ const routes: Routes = [
       // {path: '', redirectTo: 'cadastro-pet', pathMatch: 'full'},
       {
         path: 'hosting-analysis',
-        canLoad: [AuthGuard],
+        canLoad: [AdminGuard],
         loadChildren: () => import('./hosting-analysis/hosting-analysis.module').then(m => m.HostingAnalysisModule),
+      },
+      {
+        path: 'home',
+        canLoad: [AdminGuard],
+        loadChildren: () => import('./home-admin/home-admin.module').then(m => m.HomeAdminModule),
       }
     ]
   }
 ]
 
 @NgModule({
-  declarations: [AdminAreaComponent, HostingAnalysisComponent],
+  declarations: [AdminAreaComponent, HostingAnalysisComponent, HomeAdminComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
