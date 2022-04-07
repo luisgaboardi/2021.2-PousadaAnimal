@@ -52,7 +52,6 @@ class UserList(APIView):
         date_of_birth = request.data['date_of_birth']
         date_of_birth = datetime.strptime(date_of_birth, '%d%m%Y')
         request.data['date_of_birth'] = date_of_birth.strftime('%Y-%m-%d')
-        print(request.data['date_of_birth'])
         if serializer.is_valid():
             serializer.save()
             return Response(status=status.HTTP_201_CREATED)

@@ -23,14 +23,14 @@ export class RegisterComponent implements OnInit {
   formRegister: FormGroup = new FormGroup ({
     email: new FormControl('',[Validators.required,
       Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i)]),
-    firstName: new FormControl('',[Validators.required]),
-    lastName:  new FormControl('',[Validators.required]),
+    first_name: new FormControl('',[Validators.required]),
+    last_name:  new FormControl('',[Validators.required]),
     cpf: new FormControl('',[Validators.required]),
     phone:  new FormControl('',[Validators.required]),
     cep:  new FormControl('',[Validators.required]),
     address:  new FormControl('',[Validators.required]),
     gender:  new FormControl('',[Validators.required]),
-    dateBirth: new FormControl('',[Validators.required]),
+    date_of_birth: new FormControl('',[Validators.required]),
     password:  new FormControl('',[Validators.required]),
     password2: new FormControl('')
    });
@@ -72,20 +72,19 @@ export class RegisterComponent implements OnInit {
     console.log("Fazer cadastro")
     const postRegister ={
       email: this.formRegister.controls['email'].value,
-      firstName: this.formRegister.controls['firstName'].value,
-      lastName: this.formRegister.controls['lastName'].value,
+      first_name: this.formRegister.controls['first_name'].value,
+      last_name: this.formRegister.controls['last_name'].value,
       cpf: this.formRegister.controls['cpf'].value,
       phone: this.formRegister.controls['phone'].value,
       cep: this.formRegister.controls['cep'].value,
       address: this.formRegister.controls['address'].value,
       gender: this.formRegister.controls['gender'].value,
-      dateBirth: this.formRegister.controls['dateBirth'].value,
+      date_of_birth: this.formRegister.controls['date_of_birth'].value,
       password: this.formRegister.controls['password'].value,
     }
     //verificar se email e cpf existe
     if(this.formRegister.valid){
-      // let postRegister = Object.assign({}, this.formRegister.value);
-
+      let postRegister = Object.assign({}, this.formRegister.value);
       this.registerServiceClient.sendRegisterClient(postRegister).subscribe({
         next: () => {
           console.log("Deu bom");

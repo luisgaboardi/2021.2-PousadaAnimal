@@ -11,7 +11,7 @@ export class RegisterService {
 
   constructor(private readonly http: HttpClient) { }
 
-  sendRegisterClient( newUser: RegisterClient): Observable<RegisterClient>{
+  sendRegisterClient(newUser: RegisterClient): Observable<RegisterClient> {
     return this.http.post<any>(
       `${environment.endPointPousadaAnimal}/users/`, newUser
     )
