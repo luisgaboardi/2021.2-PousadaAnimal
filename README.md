@@ -1,7 +1,7 @@
 # Pousada Animal :dog: :cat:
 
 <div align="center">
-  <img src="./docs/images/pa.png" >
+  <img src="https://github.com/FGAUnB-REQ-GM/2021.2-PousadaAnimal/blob/docs/docs/images/pa.png" >
 </div>
 
   **Pousada Animal** é um website administrativo desenvolvido para empresas que trabalham com a hospedagem e cuidados físicos e emocionais de pets.
