@@ -5,7 +5,7 @@
 .banner{
     height: 200px;
     width: 100%;
-    background-color: powderblue;
+    background-color: #a7cd2c;;
 }
 
 .icon{
@@ -27,7 +27,7 @@
 
 .edit-bottom{
     background-color: white;
-    border: 2px solid #50C8C6;
+    border: 2px solid #a7cd2c;;
     border-radius: 5px;
     color: #000000;
 }
@@ -59,7 +59,7 @@
     margin-top: 20px;
     color: #000000;
     font-size: 15px;
-    border: 2px solid #50C8C6;
+    border: 2px solid #a7cd2c;
     border-radius: 8px;
 }
 
@@ -71,13 +71,13 @@
     display: flex;
     align-items: center;
     width: 80%;
-    background-color: #caf5f3;
+    background-color: #d7e99e;;
     border-radius: 5px;
 }
 
 .buttom {
     background-color: white;
-    border: 1px solid #50C8C6;
+    border: 1px solid #c6ee43;
     border-radius: 5px;
     color: black;
     font-size: 12px;
@@ -96,7 +96,7 @@
     align-items: center;
     justify-content: center;
     width: 150px;
-    background-color: #50C8C6;
+    background-color: #c6ee43;
     border-radius: 5px;
   }
   
