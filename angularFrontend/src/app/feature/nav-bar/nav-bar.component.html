@@ -1,7 +1,7 @@
 
-<div *ngIf="header==0" class="navbar-container">
+<div *ngIf="header==0" class="navbar-container area">
   <div class ="container">
-  <nav class="navbar navbar-expand-lg ">
+  <nav class="area navbar navbar-expand-lg ">
     <a class="navbar-img navbar-brand" >
         <img src="../../assets/images/logo-transparente-p.png" alt="Pousada Animal" height="15%" width="15%">
     </a>
@@ -19,22 +19,74 @@
         <li class="nav-item" >
           <a class="nav-link" [routerLink]="['/auth/login']">Login</a>
         </li>
-        <!-- Provisório, quando o login ficar pronto vai ter um link nele para ir direto pro registro -->
-        <li class="nav-item" >
-          <a class="nav-link" [routerLink]="['/user-area/cadastro-pet']">Cadastro Pet</a>
-        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Serviços</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Sobre</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="logout()">Logout</a>
-        </li>
       </ul>
     </div>
   </nav>
   </div>
   </div>
+
+
+  <div *ngIf="header==1" class="navbar-container user">
+    <div class ="container">
+    <nav class="user navbar navbar-expand-lg ">
+      <a class="navbar-img navbar-brand" >
+          <img src="../../assets/images/logo-transparente-p.png" alt="Pousada Animal" height="15%" width="15%">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/home']">Área do Usuário
+              <!-- <span class="sr-only">(página atual)</span> -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </div>
+    </div>
+
+    <div *ngIf="header==2" class="admin navbar-container">
+      <div class ="container">
+      <nav class="admin navbar navbar-expand-lg ">
+        <a class="navbar-img navbar-brand" >
+            <img src="../../assets/images/logo-transparente-p.png" alt="Pousada Animal" height="15%" width="15%">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" [routerLink]="['/user-area']">Página do Administrador
+                <!-- <span class="sr-only">(página atual)</span> -->
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+      </div>
 

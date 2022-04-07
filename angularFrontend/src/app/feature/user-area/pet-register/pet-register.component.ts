@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/core/services/login.service';
 import { PetResgisterService } from 'src/app/core/services/pet-register.service';
-import { User } from 'src/shared/models/user';
+import { User } from 'src/app/shared/models/user';
 
 @Component({
   selector: 'app-pet-register',
@@ -13,6 +13,7 @@ import { User } from 'src/shared/models/user';
 export class PetRegisterComponent implements OnInit {
 
   isTextField!: boolean;
+  user: User;
 
   speciesList = ['Cachorro', 'Gato', 'Pássaro'];
 
@@ -37,7 +38,7 @@ export class PetRegisterComponent implements OnInit {
     is_hosted: new FormControl('', [Validators.required])
   })
 
-  user: User;
+
 
   constructor(
     private readonly router: Router,

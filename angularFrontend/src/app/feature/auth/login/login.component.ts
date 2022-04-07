@@ -1,7 +1,9 @@
+import { ModalService } from 'src/app/core/services/modal.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/core/services/login.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private readonly loginServiceClient: LoginService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly AlertModalService: ModalService
   ) { }
 
   ngOnInit(): void { }
@@ -39,9 +42,15 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('user', JSON.stringify(response.user));
           localStorage.setItem('token', JSON.stringify(response.token));
           console.log("Deu bom");
-          this.redirect();
+          if(response.user.staff){
+            this.router.navigate(['/admin-area']);
+          }else{
+            this.router.navigate(['/user-area/home']);
+          }
         },
         error: (error) => {
+          this.handleError();
+          this.router.navigate(['/auth/login']);
           console.log("Erro ao registrar", error); //definir tipos de erros
         }
       }
@@ -55,8 +64,8 @@ export class LoginComponent implements OnInit {
     this.loginServiceClient.logout()
   }
 
-  redirect() {
-    this.router.navigate(['/user-area/home']);
+  handleError(){
+   this.AlertModalService.showAlertDanger('Usuário ou senha inválidos. Tente novamente');
   }
 
 }

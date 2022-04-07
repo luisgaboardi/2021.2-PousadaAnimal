@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/core/services/login.service';
-import { User } from 'src/shared/models/user';
-import { Pet } from 'src/shared/models/pet';
+import { User } from 'src/app/shared/models/user'; //verificar
+import { Pet } from 'src/app/shared/models/pet'; //verificar
 import { UserPetsService } from 'src/app/core/services/user-pets.service';
+
 
 @Component({
   selector: 'app-home',
@@ -30,6 +31,7 @@ export class HomeUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.getPetData();
   }
 

@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { RegisterPet } from 'src/shared/models/register-pet';
+import { RegisterPet } from 'src/app/shared/models/register-pet';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

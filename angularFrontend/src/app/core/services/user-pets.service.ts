@@ -1,9 +1,9 @@
 import { environment } from './../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from 'src/shared/models/user';
+import { User } from 'src/app/shared/models/user';
 import { Router } from '@angular/router';
-import { Pet } from 'src/shared/models/pet';
+import { Pet } from 'src/app/shared/models/pet';
 import { Observable } from 'rxjs';
 
 @Injectable({

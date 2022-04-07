@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { User } from 'src/shared/models/user';
+import { User } from 'src/app/shared/models/user';
 import { LoginService } from 'src/app/core/services/login.service';
 import { UserPetsService } from 'src/app/core/services/user-pets.service';
-import { Pet } from 'src/shared/models/pet';
+import { Pet } from 'src/app/shared/models/pet';
 
 
 @Component({

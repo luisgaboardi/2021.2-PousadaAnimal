@@ -1,15 +1,12 @@
+import { AuthGuard } from 'src/app/core/auth/auth.guard';
 
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './core/auth/admin.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch:'full'},
-  // {
-  //   path: '',
-  //   loadChildren: () =>
-  //     import('./feature/panel/panel.module').then((x) => x.PanelModule)
-  // },
   {
     path: 'auth',
       loadChildren: () =>
@@ -22,11 +19,13 @@ const routes: Routes = [
   },
   {
     path: 'user-area',
+    canLoad: [AuthGuard],
       loadChildren: () =>
         import('./feature/user-area/user-area.module').then((x)=> x.UserAreaModule)
   },
   {
     path: 'admin-area',
+    canLoad: [AdminGuard],
       loadChildren: () =>
         import('./feature/admin-area/admin-area.module').then((x)=> x.AdminAreaModule)
   },

@@ -1,5 +1,5 @@
 import { environment } from './../../../environments/environment';
-import { RegisterClient } from './../../../shared/models/register-client';
+import { RegisterClient } from 'src/app/shared/models/register-client';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
