@@ -58,36 +58,31 @@
           <input type="text" placeholder="Digite o seu email" formControlName="email">
         </div>
 
-        <div class="col-md-4">
-          <label>Senha</label>
-          <div class="field-wrapper">
-            <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
-            <button type="button" class= "btn-icon" (click)="showPassword()" tabindex="-1">
-              <em [class]="isTextField ? 'btn-icon eye' : 'btn-icon eye-slash'"></em>
-             </button>
+          <div class="col-md-4">
+            <label>Senha</label>
+            <div class="field-wrapper">
+              <input [type]="isTextField ? 'text': 'password'" formControlName="password" placeholder="Digite a sua senha" autocomplete="off">
+              <button type="button" class= "btn-icon" (click)="showPassword()" tabindex="-1">
+                <em [class]="isTextField ? 'btn-icon eye' : 'btn-icon eye-slash'"></em>
+               </button>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <label>Confirme a senha</label>
+            <div class="field-wrapper">
+              <input [type]="isTextField ? 'text': 'password'" formControlName="password2" placeholder="Digite a sua senha" autocomplete="off">
+              <button type="button" class= "btn-icon" (click)="showPassword()" tabindex="-1">
+                <em [class]="isTextField ? 'btn-icon eye' : 'btn-icon eye-slash'"></em>
+               </button>
+            </div>
           </div>
         </div>
 
-        <!-- <div class="col-md-4">
-          <label>Confirme a senha</label>
-          <div class="field-wrapper">
-            <input [type]="isTextField ? 'text': 'password'" placeholder="Digite a sua senha" autocomplete="off">
-            <button type="button" class= "btn-icon" (click)="showPassword()" tabindex="-1">
-              <em [class]="isTextField ? 'btn-icon eye' : 'btn-icon eye-slash'"></em>
-             </button>
-          </div>
-        </div> -->
-      </div>
-
-      <!-- <p class="error-msg" *ngIf="formRegister.get('password2').errors?.['required'] &&
-          (formRegister.get('password2').dirty || formRegister.get('password2').touched)">
-          Por favor, confirme a sua senha
-      </p> -->
-
-      <!-- <p class="error-msg" *ngIf="formRegister.get('password2').errors?.['mustMatch'] && (formRegister.get('password2').dirty || formRegister.get('password2').touched)">
-        As senhas não conferem
-      </p> -->
-
+        <p class="error-msg" *ngIf="formRegister.get('password2').errors?.['mustMatch'] && (formRegister.get('password2').dirty || formRegister.get('password2').touched)">
+          As senhas não conferem
+        </p>
+        
       <div class="col-md-12">
         <button class ="btn btn-custom default"(click)="registerClient()" [disabled]="formRegister.invalid"
           [class]="formRegister.invalid ? 'disabled ' : 'default'">

@@ -13,18 +13,17 @@ export class AuthGuard implements CanLoad, CanActivate{
     private readonly auth: LoginService
   ){}
 
-  canLoad(route: Route, segments: UrlSegment[]): boolean | Observable<boolean> |Promise<boolean> {
-      const token = this.auth.GetToken();
-
-      if(!token){
-        this.router.navigate(['/auth/login']);
-        return false;
-      }
-      return true;
-  }
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+  canLoad(): boolean | Observable<boolean> |Promise<boolean> {
     const token = this.auth.GetToken();
-    if(!token){
+    if(!token ){
+      this.router.navigate(['/auth/login']);
+      return false;
+    }
+    return true;
+}
+  canActivate(): Observable<boolean> | Promise<boolean> | boolean {
+    const token = this.auth.GetToken();
+    if(!token ){
       this.router.navigate(['/auth/login']);
       return false;
     }

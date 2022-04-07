@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PetRegisterComponent } from './pet-register/pet-register.component';
-import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { HomeUserComponent } from './home-user/home-user.component';
+import { AuthGuard } from 'src/app/core/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -16,6 +16,7 @@ const routes: Routes = [
       {
         path: 'cadastro-pet',
         canLoad: [AuthGuard],
+        canActivate: [AuthGuard],
         loadChildren: () => import('./pet-register/pet-register.module').then(m => m.PetRegisterModule),
       },
       {

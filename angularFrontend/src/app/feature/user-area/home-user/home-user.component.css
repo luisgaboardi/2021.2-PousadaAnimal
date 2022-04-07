@@ -1,0 +1,115 @@
+.header{
+    height: 800px;
+}
+
+.banner{
+    margin-top: -3.9%;
+    height: 20%;
+    width: 100%;
+    background-color: #E1F5C4;
+}
+
+.text{
+  text-align: center;
+}
+
+.icon{
+    margin-top: -7%;
+    margin-left: 7%;
+    border-radius: 75px;
+    background: #A7CD2C;
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+    background-image: url(src/assets/icons/icon.jpg);
+}
+
+.edit{
+    margin-top: -3%;
+    margin-left: 80%;
+    border-radius: 4px;
+}
+
+.edit-bottom{
+    background-color: white;
+    border: 2px solid #A7CD2C;
+    border-radius: 5px;
+    color: #000000;
+}
+
+.name{
+    margin-top: -5%;
+    margin-left: 20%;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.bio{
+    margin-left: 10%;
+    margin-top: 5%;
+    font-size: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.line{
+    width:100%;
+    height: 1px;
+    background-color: #E1F5C4;
+}
+
+.pets-descrition{
+    margin-left: 10%;
+    margin-right: 20%;
+    height: 800px;
+    margin-top: 20px;
+    color: #000000;
+    font-size: 15px;
+    border: 2px solid #A7CD2C;
+    border-radius: 8px;
+}
+
+.petList {
+    margin-top: 30px;
+    height: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    background-color: #E1F5C4;
+    border-radius: 5px;
+}
+
+.buttom {
+    background-color: white;
+    border: 1px solid #A7CD2C;
+    border-radius: 5px;
+    color: black;
+    font-size: 12px;
+    margin-top: 6%;
+}
+
+.navbar-right{
+    margin-left: 80%;
+    margin-top: -34%;
+}
+
+.nav-item {
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    background-color: #A7CD2C;
+    border-radius: 5px;
+  }
+
+  .nav-link {
+    margin-top: -20%;
+    color: #0a0a0a;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 35px;
+  }
