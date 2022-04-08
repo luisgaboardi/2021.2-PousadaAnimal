@@ -40,13 +40,15 @@
 
         <div class="col-md-3">
           <label>Data de Nascimento</label>
-          <input type="text" placeholder="DD-MM-AAAA" formControlName=date_of_birth mask="d0-M0-0000">
+          <input type="text" placeholder="DD-MM-AAAA" formControlName=date_of_birth mask="d0/M0/0000">
         </div>
 
         <div class="col-md-2">
           <label>CEP</label>
           <input type="text" placeholder="Digite o seu CEP" formControlName="cep" mask="00.000-000">
         </div>
+
+
 
         <div class="col-md-9">
           <label>Endereço</label>
@@ -82,7 +84,31 @@
         <p class="error-msg" *ngIf="formRegister.get('password2').errors?.['mustMatch'] && (formRegister.get('password2').dirty || formRegister.get('password2').touched)">
           As senhas não conferem
         </p>
-        
+
+        <!-- <div class="error-msg" *ngIf="!formRegister.valid && (formRegister.get('password2').dirty || formRegister.get('password2').touched)">
+          <span>Formulário Incompleto</span>
+        </div> -->
+
+        <div class="error-msg" *ngIf="!formRegister.get('cep').valid && formRegister.get('cep').dirty">
+          <span>Digite o cep corretamente</span>
+        </div>
+
+        <div class="error-msg" *ngIf="!formRegister.get('cpf').valid && formRegister.get('cpf').dirty">
+          <span>Digite o cpf corretamente</span>
+        </div>
+
+        <div class="error-msg" *ngIf="!formRegister.get('phone').valid && formRegister.get('phone').dirty">
+          <span>Digite o telefone corretamente</span>
+        </div>
+
+        <div class="error-msg" *ngIf="!formRegister.get('date_of_birth').valid && formRegister.get('date_of_birth').dirty">
+          <span>Digite a data de nascimento corretamente</span>
+        </div>
+
+        <div class="error-msg" *ngIf="!formRegister.get('email').valid && formRegister.get('email').dirty">
+          <span>Digite o email corretamente</span>
+        </div>
+
       <div class="col-md-12">
         <button class ="btn btn-custom default"(click)="registerClient()" [disabled]="formRegister.invalid"
           [class]="formRegister.invalid ? 'disabled ' : 'default'">

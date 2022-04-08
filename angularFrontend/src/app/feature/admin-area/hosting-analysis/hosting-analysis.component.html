@@ -16,8 +16,8 @@
       <tr *ngFor="let hosting of hostingList">
         <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.owner.first_name}} {{hosting.owner.last_name}}</td> <!-- Pegar nome do dono, não o id -->
         <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{hosting.pet.name}}</td> <!-- Pegar nome do pet, não o id -->
-        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{formatDate(hosting.start_date)}}</td> <!-- Formatar data -->
-        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{formatDate(hosting.end_date)}}</td> <!-- Formatar data -->
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{formatDate(hosting.start_date)}}</td>
+        <td *ngIf="getHostingStatus(hosting) == 'Pendente'">{{formatDate(hosting.end_date)}}</td>
         <td *ngIf="getHostingStatus(hosting) == 'Pendente'">R$ {{hosting.cost}},00</td>
         <td *ngIf="getHostingStatus(hosting) == 'Pendente'">
           <button class="btn btn-sm btn-outline-primary" (click)="openHostingModal(mymodal)">
