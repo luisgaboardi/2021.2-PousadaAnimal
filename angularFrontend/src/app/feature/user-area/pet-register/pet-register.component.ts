@@ -1,3 +1,4 @@
+import { ModalService } from 'src/app/core/services/modal.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -43,7 +44,8 @@ export class PetRegisterComponent implements OnInit {
   constructor(
     private readonly router: Router,
     private readonly petService: PetResgisterService,
-    private readonly loginService: LoginService
+    private readonly loginService: LoginService,
+    private readonly AlertModalService: ModalService
   ) {
     this.user = loginService.GetUser();
   }
@@ -60,13 +62,22 @@ export class PetRegisterComponent implements OnInit {
       this.petService.sendRegisterPet(registerpet).subscribe({
         next: () => {
           console.log("Deu bom");
+          this.handleSucess();
           this.redirect();
         },
         error: (error) => {
+          this.handleError();
           console.log("Erro ao cadastrar", error)
         }
       })
     }
+  }
+
+  handleError(){
+    this.AlertModalService.showAlertDanger('Erro ao cadastrar o pet. Tente novamente!');
+   }
+  handleSucess(){
+    this.AlertModalService.showAlertSucess('Cadastro concluído!');
   }
 
   redirect() {

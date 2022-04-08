@@ -1,3 +1,4 @@
+import { ModalService } from 'src/app/core/services/modal.service';
 import { HostingService } from '../../../core/services/hosting.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -38,6 +39,7 @@ export class HostingComponent implements OnInit {
     private http: HttpClient,
     private readonly loginService: LoginService,
     private readonly userPetsService: UserPetsService,
+    private readonly AlertModalService: ModalService,
   ) {
     this.user = loginService.GetUser();
   }
@@ -85,10 +87,12 @@ export class HostingComponent implements OnInit {
 
       this.hostingService.sendHosting(hosting).subscribe({
         next: () => {
+          this.handleSucess();
           console.log("Deu bom");
           this.redirect();
         },
         error: (error) => {
+          this.handleError();
           console.log("Erro ao agendar", error)
         }
       }
@@ -118,7 +122,12 @@ export class HostingComponent implements OnInit {
     return null;
   }
 
-
+  handleError(){
+    this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
+   }
+  handleSucess(){
+    this.AlertModalService.showAlertSucess('Agendamennto concluído!');
+  }
 
   redirect() {
     this.router.navigate(['/user-area/home']);
