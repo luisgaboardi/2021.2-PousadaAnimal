@@ -5,7 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgxMaskModule } from 'ngx-mask';
 import { HomeAdminComponent } from './home-admin.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -18,9 +17,6 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule,
-    ReactiveFormsModule,
-    NgxMaskModule.forRoot(),
   ]
 })
 export class HomeAdminModule { }

@@ -21,10 +21,10 @@ const routes: Routes = [
         loadChildren: () => import('./hosting-analysis/hosting-analysis.module').then(m => m.HostingAnalysisModule),
       },
       {
-        path: 'home',
+        path: 'home-admin',
         canLoad: [AdminGuard],
         loadChildren: () => import('./home-admin/home-admin.module').then(m => m.HomeAdminModule),
-      }
+      },
     ]
   }
 ]
