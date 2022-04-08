@@ -41,9 +41,8 @@ export class LoginComponent implements OnInit {
         next: (response) => {
           localStorage.setItem('user', JSON.stringify(response.user));
           localStorage.setItem('token', JSON.stringify(response.token));
-          console.log("Deu bom");
           if(response.user.staff){
-            this.router.navigate(['/admin-area/hosting-analysis']);
+            this.router.navigate(['/admin-area/home']);
           }else{
             this.router.navigate(['/user-area/home']);
           }
