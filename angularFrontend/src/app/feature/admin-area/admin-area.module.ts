@@ -1,5 +1,3 @@
-
-
 import { AdminAreaComponent } from './admin-area.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
