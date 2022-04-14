@@ -23,10 +23,11 @@ export class HostingService {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/hosting/`)
   }
 
-  approveHosting(getHosting: GetHosting): Observable<Hosting> {
+  editHosting(getHosting: GetHosting): Observable<Hosting> {
     let hosting:Hosting = {
-      owner: parseInt(getHosting.owner.id),
-      pet: parseInt(getHosting.pet.id),
+      owner: Number(getHosting.owner.id),
+      employee: Number(getHosting.employee.id),
+      pet: Number(getHosting.pet.id),
       start_date: getHosting.start_date,
       end_date: getHosting.end_date,
       cost: getHosting.cost,
@@ -40,6 +41,10 @@ export class HostingService {
 
   getOwner(hosting: GetHosting): Observable<User> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.owner}`)
+  }
+
+  getEmployee(hosting: GetHosting): Observable<User> {
+    return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.employee}`)
   }
 
   getPet(hosting: GetHosting): Observable<Pet> {

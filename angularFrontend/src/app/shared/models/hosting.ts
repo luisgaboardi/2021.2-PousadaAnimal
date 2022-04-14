@@ -3,6 +3,7 @@ import { User } from "./user";
 
 export class Hosting {
   owner: number;
+  employee: number;
   pet: number;
   start_date: string;
   end_date: string;
@@ -14,6 +15,7 @@ export class Hosting {
 export class GetHosting {
   id: string;
   pet: Pet;
+  employee: User;
   start_date: string;
   end_date: string;
   cost: number;

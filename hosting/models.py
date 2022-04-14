@@ -7,11 +7,18 @@ from users.models import User
 class Hosting (models.Model):
     owner = models.ForeignKey(
         User,
+        related_name='owner',
         on_delete=models.CASCADE,
     )
     pet = models.ForeignKey(
         Pet,
         on_delete=models.CASCADE,
+    )
+    employee = models.ForeignKey(
+        User,
+        related_name='employee',
+        on_delete=models.CASCADE,
+        null=True
     )
     start_date = models.DateField()
     end_date = models.DateField()

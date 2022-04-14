@@ -39,7 +39,7 @@ export class HostingAnalysisComponent implements OnInit {
       next: (hostingList) => {
         this.hostingList = hostingList as GetHosting[];
         for (let hosting of this.hostingList) {
-          this.getOwner(hosting);
+          this.getUsers(hosting);
           this.getPet(hosting);
         }
       },
@@ -50,13 +50,23 @@ export class HostingAnalysisComponent implements OnInit {
     )
   }
 
-  getOwner(hosting: GetHosting) {
-    return this.hostingService.getOwner(hosting).subscribe({
-      next: (owner) => {
-        hosting.owner = owner as User;
+  getUsers(hosting: GetHosting) {
+    this.hostingService.getOwner(hosting).subscribe({
+      next: (user) => {
+        hosting.owner = user;
       },
       error: (error) => {
-        console.log("Erro ao pegar dono do pet", error)
+        console.log(`Erro ao pegar dono do pet`, error)
+      }
+    }
+    )
+
+    this.hostingService.getEmployee(hosting).subscribe({
+      next: (user) => {
+        hosting.employee = user;
+      },
+      error: (error) => {
+        console.log(`Erro ao pegar funcionário responsável do pet`, error)
       }
     }
     )
@@ -97,7 +107,7 @@ export class HostingAnalysisComponent implements OnInit {
 
   cancelHosting(hosting: GetHosting) {
     hosting.approved = false;
-    this.hostingService.approveHosting(hosting).subscribe({
+    this.hostingService.editHosting(hosting).subscribe({
       error: (error) => {
         hosting.approved = true;
         console.log("Erro ao cancelar o agendamento", error)
@@ -108,7 +118,8 @@ export class HostingAnalysisComponent implements OnInit {
 
   approveHosting(hosting: GetHosting) {
     hosting.approved = true;
-    this.hostingService.approveHosting(hosting).subscribe({
+    hosting.employee = this.user;
+    this.hostingService.editHosting(hosting).subscribe({
       error: (error) => {
         hosting.approved = false;
         console.log("Erro ao aprovar o agendamento", error)
