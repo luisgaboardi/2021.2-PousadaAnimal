@@ -1,13 +1,8 @@
 from os import system
-migrate_string = 'python3 manage.py migrate'
 
 # Database
-system('python3 manage.py makemigrations users')
-system(migrate_string)
-system('python3 manage.py makemigrations pets')
-system(migrate_string)
-system('python3 manage.py makemigrations hosting')
-system(migrate_string)
+system('python3 manage.py makemigrations users pets hosting message')
+system('python3 manage.py migrate')
 
 # Create example users
 print('Essa operação vai sobrescrever os dados salvos no banco de dados.')
