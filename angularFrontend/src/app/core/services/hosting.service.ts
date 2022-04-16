@@ -23,6 +23,10 @@ export class HostingService {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/hosting/`)
   }
 
+  getUserHostings(user: User): Observable<GetHosting[]> {
+    return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${user.id}/hostings`)
+  }
+
   editHosting(getHosting: GetHosting): Observable<Hosting> {
     let hosting:Hosting = {
       owner: Number(getHosting.owner.id),

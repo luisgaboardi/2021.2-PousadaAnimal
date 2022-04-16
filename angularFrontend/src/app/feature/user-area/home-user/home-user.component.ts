@@ -4,6 +4,8 @@ import { LoginService } from 'src/app/core/services/login.service';
 import { User } from 'src/app/shared/models/user';
 import { Pet } from 'src/app/shared/models/pet';
 import { UserPetsService } from 'src/app/core/services/user-pets.service';
+import { HostingService } from 'src/app/core/services/hosting.service';
+import { GetHosting } from 'src/app/shared/models/hosting';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +15,7 @@ import { UserPetsService } from 'src/app/core/services/user-pets.service';
 export class HomeUserComponent implements OnInit {
 
   petList: Pet[];
+  hostingList: GetHosting[];
   user: User;
 
   formHome: FormGroup = new FormGroup ({
@@ -24,24 +27,87 @@ export class HomeUserComponent implements OnInit {
   constructor(
     private readonly loginService: LoginService,
     private readonly userPetsService: UserPetsService,
+    private readonly hostingService: HostingService,
   ) {
     this.user = loginService.GetUser();
   }
 
   ngOnInit(): void {
     this.getPetData();
+    this.getHostingList();
   }
 
   getPetData() {
     this.userPetsService.getPetData(this.user).subscribe({
       next: (petList) => {
         this.petList = petList;
-        console.log("Deu bom");
       },
       error: (error) => {
         console.log("Erro ao listar", error)
       }
     })
+  }
+
+  getHostingList() {
+    this.hostingService.getUserHostings(this.user).subscribe({
+      next: (hostingList) => {
+        this.hostingList = hostingList as GetHosting[];
+        for (let hosting of this.hostingList) {
+            this.getUsers(hosting);
+            this.getPet(hosting);
+        }
+      },
+      error: (error) => {
+        console.log("Erro ao agendar", error)
+      }
+    }
+    )
+  }
+
+  getUsers(hosting: GetHosting) {
+    this.hostingService.getOwner(hosting).subscribe({
+      next: (user) => {
+        hosting.owner = user;
+      },
+      error: (error) => {
+        console.log(`Erro ao pegar dono do pet`, error)
+      }
+    }
+    )
+
+    this.hostingService.getEmployee(hosting).subscribe({
+      next: (user) => {
+        hosting.employee = user;
+      },
+      error: (error) => {
+        console.log(`Erro ao pegar funcionário responsável do pet`, error)
+      }
+    }
+    )
+  }
+
+  getStatusString(hosting: GetHosting) {
+    if (!hosting.approved) {
+      return "Esperando aprovação";
+    }
+    return "Confirmado";
+  }
+
+  formatDate(dateString:string):string {
+    let dArr = dateString.trim().split("-");  // ex input "2010-01-18"
+    return dArr[2] + "/" + dArr[1] + "/" + dArr[0].substring(2);
+  }
+
+  getPet(hosting: GetHosting) {
+    return this.hostingService.getPet(hosting).subscribe({
+      next: (pet) => {
+        hosting.pet = pet as Pet;
+      },
+      error: (error) => {
+        console.log("Erro ao pegar o pet", error)
+      }
+    }
+    )
   }
 
 }
