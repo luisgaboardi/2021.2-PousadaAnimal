@@ -85,7 +85,6 @@ export class HostingComponent implements OnInit {
   makeHosting() {
     if (this.formHosting.valid) {
       let hosting = Object.assign({}, this.formHosting.value);
-
       this.hostingService.sendHosting(hosting).subscribe({
         next: () => {
           this.handleSucess();

@@ -43,7 +43,7 @@
                         <td><img src="./../../../../assets/images/favicon.png" alt="Pousada Animal" width="80%"
                                 height="80%"></td>
                         <td>{{hosting.pet.name}} - {{formatDate(hosting.start_date)}} até
-                            {{formatDate(hosting.end_date)}} - Funcionário responsável: {{hosting.employee.first_name}}
+                            {{formatDate(hosting.end_date)}} <ng-container *ngIf="hosting.employee != null">- Funcionário responsável: {{hosting.employee.first_name}}</ng-container>
                             - Situação: {{getStatusString(hosting)}}
                         </td>
                         <button class="buttom" href="#">Mais</button>

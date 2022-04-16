@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HostingService } from 'src/app/core/services/hosting.service';
 import { LoginService } from 'src/app/core/services/login.service';
-import { GetHosting } from 'src/app/shared/models/hosting';
+import { Hosting } from 'src/app/shared/models/hosting';
 import { Pet } from 'src/app/shared/models/pet';
 import { User } from 'src/app/shared/models/user';
 
@@ -18,7 +18,7 @@ export class HostingAnalysisComponent implements OnInit {
   user: User;
 
   owner: User;
-  hostingList: GetHosting[];
+  hostingList: Hosting[] | any[];
 
   constructor(
     private readonly hostingService: HostingService,
@@ -36,8 +36,8 @@ export class HostingAnalysisComponent implements OnInit {
 
   getHostingList() {
     this.hostingService.getHostings().subscribe({
-      next: (hostingList) => {
-        this.hostingList = hostingList as GetHosting[];
+      next: (hostingList: any) => {
+        this.hostingList = hostingList as Hosting[];
         for (let hosting of this.hostingList) {
           this.getUsers(hosting);
           this.getPet(hosting);
@@ -50,9 +50,9 @@ export class HostingAnalysisComponent implements OnInit {
     )
   }
 
-  getUsers(hosting: GetHosting) {
+  getUsers(hosting: Hosting) {
     this.hostingService.getOwner(hosting).subscribe({
-      next: (user) => {
+      next: (user: any) => {
         hosting.owner = user;
       },
       error: (error) => {
@@ -60,21 +60,22 @@ export class HostingAnalysisComponent implements OnInit {
       }
     }
     )
-
-    this.hostingService.getEmployee(hosting).subscribe({
-      next: (user) => {
-        hosting.employee = user;
-      },
-      error: (error) => {
-        console.log(`Erro ao pegar funcionário responsável do pet`, error)
+    if (hosting.employee != null) {
+      this.hostingService.getEmployee(hosting).subscribe({
+        next: (user: any) => {
+          hosting.employee = user;
+        },
+        error: (error) => {
+          console.log(`Erro ao pegar funcionário responsável do pet`, error)
+        }
       }
+      )
     }
-    )
   }
 
-  getPet(hosting: GetHosting) {
+  getPet(hosting: Hosting) {
     return this.hostingService.getPet(hosting).subscribe({
-      next: (pet) => {
+      next: (pet: any) => {
         hosting.pet = pet as Pet;
       },
       error: (error) => {
@@ -84,7 +85,7 @@ export class HostingAnalysisComponent implements OnInit {
     )
   }
 
-  getHostingStatus(hosting: GetHosting) {
+  getHostingStatus(hosting: Hosting) {
     let today = new Date();
     let hostingStartDate = new Date(hosting.start_date);
     let hostingEndDate = new Date(hosting.end_date);
@@ -98,37 +99,46 @@ export class HostingAnalysisComponent implements OnInit {
 
   }
 
-  getStatusString(hosting: GetHosting) {
+  getStatusString(hosting: Hosting) {
     if (!hosting.approved) {
       return "Esperando aprovação";
     }
     return "Confirmado";
   }
 
-  cancelHosting(hosting: GetHosting) {
-    hosting.approved = false;
-    this.hostingService.editHosting(hosting).subscribe({
+  cancelHosting(hosting: Hosting) {
+    let sendHosting: Hosting = { ...hosting };
+    sendHosting.approved = false;
+    sendHosting.employee = this.user.id;
+    sendHosting.owner = hosting.owner["id"] as string;
+    sendHosting.pet = hosting.pet["id"] as string;
+    this.hostingService.editHosting(sendHosting).subscribe({
       error: (error) => {
-        hosting.approved = true;
+        sendHosting.approved = true;
         console.log("Erro ao cancelar o agendamento", error)
       }
     }
     )
+    hosting.approved = false;
   }
 
-  approveHosting(hosting: GetHosting) {
-    hosting.approved = true;
-    hosting.employee = this.user;
-    this.hostingService.editHosting(hosting).subscribe({
+  approveHosting(hosting: Hosting) {
+    let sendHosting: Hosting = { ...hosting };
+    sendHosting.approved = true;
+    sendHosting.employee = this.user.id;
+    sendHosting.owner = hosting.owner["id"] as string;
+    sendHosting.pet = hosting.pet["id"] as string;
+    this.hostingService.editHosting(sendHosting).subscribe({
       error: (error) => {
-        hosting.approved = false;
+        sendHosting.approved = false;
         console.log("Erro ao aprovar o agendamento", error)
       }
     }
     )
+    hosting.approved = true;
   }
 
-  formatDate(dateString):string {
+  formatDate(dateString): string {
     let dArr = dateString.trim().split("-");  // ex input "2010-01-18"
     return dArr[2] + "/" + dArr[1] + "/" + dArr[0].substring(2);
   }

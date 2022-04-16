@@ -1,5 +1,5 @@
 import { environment } from './../../../environments/environment';
-import { GetHosting, Hosting } from 'src/app/shared/models/hosting'; //verificar
+import { Hosting } from 'src/app/shared/models/hosting'; //verificar
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -19,39 +19,29 @@ export class HostingService {
     )
   }
 
-  getHostings(): Observable<GetHosting[]> {
+  getHostings(): Observable<Hosting[]> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/hosting/`)
   }
 
-  getUserHostings(user: User): Observable<GetHosting[]> {
+  getUserHostings(user: User): Observable<Hosting[]> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${user.id}/hostings`)
   }
 
-  editHosting(getHosting: GetHosting): Observable<Hosting> {
-    let hosting:Hosting = {
-      owner: Number(getHosting.owner.id),
-      employee: Number(getHosting.employee.id),
-      pet: Number(getHosting.pet.id),
-      start_date: getHosting.start_date,
-      end_date: getHosting.end_date,
-      cost: getHosting.cost,
-      observations: getHosting.observations,
-      approved: getHosting.approved
-    }
+  editHosting(hosting: Hosting): Observable<Hosting> {
     return this.http.put<any>(
-      `${environment.endPointPousadaAnimal}/hosting/${getHosting.id}/`, hosting
+      `${environment.endPointPousadaAnimal}/hosting/${hosting.id}/`, hosting
     )
   }
 
-  getOwner(hosting: GetHosting): Observable<User> {
+  getOwner(hosting: Hosting): Observable<User> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.owner}`)
   }
 
-  getEmployee(hosting: GetHosting): Observable<User> {
+  getEmployee(hosting: Hosting): Observable<User> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.employee}`)
   }
 
-  getPet(hosting: GetHosting): Observable<Pet> {
+  getPet(hosting: Hosting): Observable<Pet> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/pets/${hosting.pet}`)
   }
 
