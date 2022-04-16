@@ -11,7 +11,6 @@ class Message (models.Model):
     )
     hosting = models.ForeignKey(
         Hosting,
-        related_name='messages',
         on_delete=models.CASCADE,
     )
     time_sent = models.DateTimeField()

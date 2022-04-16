@@ -79,12 +79,6 @@ class UserPets(generics.RetrieveAPIView):
     """
     Get user pets detail by pk.
     """
-    def get_object(self, pk):
-        try:
-            return User.objects.get(pk=pk)
-        except User.DoesNotExist:
-            raise Http404
-
     def get(self, request, pk, format=None):
         pets = self.queryset.filter(owner=pk)
         serializer = PetSerializer(pets, many=True)
@@ -95,12 +89,6 @@ class UserHostings(generics.RetrieveAPIView):
     """
     Get user hostings by pk.
     """
-    def get_object(self, pk):
-        try:
-            return User.objects.get(pk=pk)
-        except User.DoesNotExist:
-            raise Http404
-
     def get(self, request, pk, format=None):
         hostings = self.queryset.filter(owner=pk)
         serializer = HostingSerializer(hostings, many=True)
