@@ -46,7 +46,9 @@
                             {{formatDate(hosting.end_date)}} <ng-container *ngIf="hosting.employee != null">- Funcionário responsável: {{hosting.employee.first_name}}</ng-container>
                             - Situação: {{getStatusString(hosting)}}
                         </td>
-                        <button class="buttom" href="#">Mais</button>
+                        <button class="buttom">
+                            <a [routerLink]="['../hosting', hosting.id]">Mais</a>
+                        </button>
                     </li>
                 </ul>
             </div>

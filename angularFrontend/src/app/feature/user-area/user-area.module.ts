@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PetRegisterComponent } from './pet-register/pet-register.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
+import { HostingMonitoringComponent } from './hosting-monitoring/hosting-monitoring.component';
 
 const routes: Routes = [
   {
@@ -28,13 +29,18 @@ const routes: Routes = [
         path: 'hosting',
         canLoad: [AuthGuard],
         loadChildren: () => import('./hosting/hosting.module').then(m => m.HostingModule),
+      },
+      {
+        path: 'hosting/:id',
+        canLoad: [AuthGuard],
+        component: HostingMonitoringComponent,
       }
     ]
   }
 ]
 
 @NgModule({
-  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent],
+  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent, HostingMonitoringComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
