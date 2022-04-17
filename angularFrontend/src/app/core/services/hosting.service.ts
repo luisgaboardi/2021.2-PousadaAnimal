@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/shared/models/user';
 import { Pet } from 'src/app/shared/models/pet';
+import { Message } from 'src/app/shared/models/message';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +44,10 @@ export class HostingService {
 
   getPet(hosting: Hosting): Observable<Pet> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/pets/${hosting.pet}`)
+  }
+
+  getHostingMessages(hosting: Hosting): Observable<Message[]> {
+    return this.http.get<any>(`${environment.endPointPousadaAnimal}/hosting/${hosting.id}/messages`)
   }
 
 }
