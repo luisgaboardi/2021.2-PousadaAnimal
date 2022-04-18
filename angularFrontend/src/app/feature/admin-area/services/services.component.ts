@@ -18,7 +18,7 @@ export class ServicesComponent implements OnInit {
     cost:  new FormControl('',[Validators.required]),
    });
 
-   servicesList: GetRegisterServices[];
+   servicesList: GetRegisterServices[] = [];
 
    constructor(
     private readonly serviceRegister: Register,
@@ -68,6 +68,6 @@ export class ServicesComponent implements OnInit {
   }
 
   redirect() {
-    this.router.navigate(['/admin-area/home-area']);
+    this.router.navigate(['/admin-area/services']);
   }
 }
