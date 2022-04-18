@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } fro
 import { Router } from '@angular/router';
 import { ModalService } from 'src/app/core/services/modal.service';
 import { Register } from 'src/app/core/services/service-register.service';
+import { GetRegisterServices } from 'src/app/shared/models/register-service';
 
 @Component({
   selector: 'app-services',
@@ -17,7 +18,7 @@ export class ServicesComponent implements OnInit {
     cost:  new FormControl('',[Validators.required]),
    });
 
-   //ServicesList: GetServices[];
+   servicesList: GetRegisterServices[];
 
    constructor(
     private readonly serviceRegister: Register,
@@ -26,6 +27,7 @@ export class ServicesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //this.getRegisterService()
   }
 
   registerService() {
@@ -46,6 +48,18 @@ export class ServicesComponent implements OnInit {
     }
   }
 
+  getRegisterService() {
+    this.serviceRegister.getServices().subscribe({
+      next: (servicesList) => {
+        this.servicesList = servicesList;
+        console.log("Deu bom");
+      },
+      error: (error) => {
+        console.log("Erro ao listar", error)
+      }
+    })
+  }
+
   handleError(){
     this.AlertModalService.showAlertDanger('Erro ao cadastrar serviço. Tente novamente!');
    }
@@ -54,6 +68,6 @@ export class ServicesComponent implements OnInit {
   }
 
   redirect() {
-    this.router.navigate(['/user-area/home']);
+    this.router.navigate(['/admin-area/home-area']);
   }
 }

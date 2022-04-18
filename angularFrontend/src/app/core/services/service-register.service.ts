@@ -1,5 +1,5 @@
 import { environment } from './../../../environments/environment';
-import { RegisterService } from 'src/app/shared/models/register-service';
+import { RegisterService, GetRegisterServices } from 'src/app/shared/models/register-service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,5 +15,11 @@ export class Register {
     return this.http.post<any>(
       `${environment.endPointPousadaAnimal}/services/`, newService
     )
+  }
+
+  getServices(): Observable<GetRegisterServices[]> {
+    return this.http.get<any>(
+      `${environment.endPointPousadaAnimal}/services/`
+      )
   }
 }

@@ -22,7 +22,20 @@
         </button>
     </div>
 
-    <div class = "delete">
-        delete
+    <div class = "views">
+        <h4>Serviços Registrados</h4>
+        <div *ngIf= "servicesList.length > 0" class="servicesDescrition">
+            <ul>
+                <li class="servicesList" *ngFor="let service of servicesList">
+                    <td>{{service.name}} - {{service.descrition}} - {{service.cost}}</td>
+                    <button class="buttom" href="#">Editar</button>
+                    <button class="buttom" href="#">Excluir</button>
+                </li>
+            </ul>
+        </div>
+
+        <div *ngIf= "servicesList.length === 0" class="servicesDescrition" >
+            <h5 style="text-align: center;">Ainda não há serviços cadastrados.</h5>
+        </div>
     </div>
 </div>

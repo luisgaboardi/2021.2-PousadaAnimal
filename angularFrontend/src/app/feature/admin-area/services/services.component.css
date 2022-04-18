@@ -60,3 +60,13 @@
     float: right;
     margin-top: 1%;
   }
+
+  .views {
+    margin-top: 10%;
+    border: 2px solid #dbf0ac;
+    border-radius: 4px;
+  }
+
+  .views h4 {
+    text-align: center;
+}
