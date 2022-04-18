@@ -1,0 +1,28 @@
+<div class = "services">
+    <div class = "register" [formGroup]="formServiceRegister">
+        <h4>Registrar Serviço</h4>
+        <div class = "name">
+            <label>Nome</label>
+            <input type="text" formControlName="name">
+        </div>
+        
+        <div class = "descrition">
+            <label>Descrição</label>
+            <textarea type="text" formControlName="descrition"></textarea>
+        </div>
+        
+        <div class = "cost">
+            <label>Preço</label>
+            <input type="number" formControlName="cost">
+        </div>
+
+        <button class ="btn" (click)="registerService()" [disabled]="formServiceRegister.invalid"
+        [class]="formServiceRegister.invalid ? 'disabled ' : 'default'">
+        Registrar
+        </button>
+    </div>
+
+    <div class = "delete">
+        delete
+    </div>
+</div>

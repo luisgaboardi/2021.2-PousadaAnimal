@@ -1,0 +1,62 @@
+.services{
+    min-width: 550px;
+    width: 70%;
+    margin: auto;
+  }
+  
+  .register{
+    margin-top: 3%;
+    border: 2px solid #dbf0ac;
+    border-radius: 4px;
+  }
+
+  .register h4 {
+      text-align: center;
+  }
+
+  .register label {
+    margin-top: 15px;
+    width: 100%;
+    font-weight: 500;
+    color:black;
+    line-height: 1;
+    text-align: left;
+    margin-left: 5%;
+  }
+
+  .register input[type='text']{
+    width: 50%;
+    height: 48px;
+    background-color: #f5fff7;
+    border: 1px solid #dbf0ac;
+    border-radius: 4px;
+    outline: none;
+    margin-left: 5%;
+    margin-bottom: 5px;
+  }
+
+  .register input[type='number']{
+    width: 10%;
+    height: 48px;
+    background-color: #f5fff7;
+    border: 1px solid #dbf0ac;
+    border-radius: 4px;
+    outline: none;
+    margin-left: 5%;
+    margin-bottom: 5px;
+  }
+
+  .register textarea {
+    margin-left: 5%;
+    width: 80%;
+    height: 70px;
+    background-color: #f5fff7;
+    border: 1px solid #dbf0ac;
+    border-radius: 4px;
+  }
+
+  .btn {
+    background-color: #cee891;
+    float: right;
+    margin-top: 1%;
+  }

@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HostingAnalysisComponent } from './hosting-analysis/hosting-analysis.component';
 import { AdminGuard } from 'src/app/core/auth/admin.guard';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
+import { ServicesComponent } from './services/services.component';
 
 const routes: Routes = [
   {
@@ -23,12 +24,17 @@ const routes: Routes = [
         canLoad: [AdminGuard],
         loadChildren: () => import('./home-admin/home-admin.module').then(m => m.HomeAdminModule),
       },
+      {
+        path: 'services',
+        canLoad: [AdminGuard],
+        loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
+      },
     ]
   }
 ]
 
 @NgModule({
-  declarations: [AdminAreaComponent, HostingAnalysisComponent, HomeAdminComponent],
+  declarations: [AdminAreaComponent, HostingAnalysisComponent, HomeAdminComponent, ServicesComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
