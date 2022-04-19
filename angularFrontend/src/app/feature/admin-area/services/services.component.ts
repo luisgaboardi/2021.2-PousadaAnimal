@@ -27,7 +27,7 @@ export class ServicesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    //this.getRegisterService()
+    this.getRegisterService()
   }
 
   registerService() {
@@ -56,6 +56,17 @@ export class ServicesComponent implements OnInit {
       },
       error: (error) => {
         console.log("Erro ao listar", error)
+      }
+    })
+  }
+
+  deleteService(service: GetRegisterServices) {
+    this.serviceRegister.deleteService(service).subscribe({
+      next: () => {
+        console.log("Deu bom");
+      },
+      error: (error) => {
+        console.log("Erro ao deletar", error)
       }
     })
   }

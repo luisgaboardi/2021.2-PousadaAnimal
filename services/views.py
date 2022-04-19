@@ -42,3 +42,8 @@ class ServiceDetail(generics.RetrieveAPIView):
         service = self.get_object(pk)
         serializer = ServiceSerializer(service)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def delete (self, request, pk):
+        service = self.get_object(pk)
+        service.delete()
+        return Response('/', status=status.HTTP_200_OK)

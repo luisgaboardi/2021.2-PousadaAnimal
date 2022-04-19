@@ -22,4 +22,10 @@ export class Register {
       `${environment.endPointPousadaAnimal}/services/`
       )
   }
+
+  deleteService(getService: GetRegisterServices): Observable<GetRegisterServices[]> {
+    return this.http.delete<any>(
+      `${environment.endPointPousadaAnimal}/services/${getService.id}/`,
+      )
+  }
 }
