@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('user', JSON.stringify(response.user));
           localStorage.setItem('token', JSON.stringify(response.token));
           if(response.user.staff){
-            this.router.navigate(['/admin-area/home']);
+            this.router.navigate(['/admin-area/home-admin']);
           }else{
             this.router.navigate(['/user-area/home']);
           }
