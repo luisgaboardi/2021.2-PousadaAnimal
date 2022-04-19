@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'users',
     'pets',
     'hosting',
+    'message',
+    'services',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',

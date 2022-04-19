@@ -5,9 +5,9 @@
             <div class="icon">
             </div>
             <!-- <ul> -->
-                <div class="edit" >
-                    <button class="edit-bottom" href="#">Editar Perfil</button>
-                </div>
+            <div class="edit">
+                <button class="edit-bottom" href="#">Editar Perfil</button>
+            </div>
             <!-- </ul> -->
             <div class="name">
                 {{user.first_name + " " + user.last_name}}
@@ -16,39 +16,66 @@
                 <h5>Seja bem-vindo!</h5>
             </div>
             <div class="line"></div>
-            <div *ngIf= "petList.length > 0 "class="pets-descrition">
+            <div *ngIf="petList.length > 0" class="pets-descrition">
                 <h2 class="text">Seus Pets</h2>
                 <ul>
-                  <li class="petList" *ngFor="let pet of petList">
-                    <td><img src="./../../../../assets/images/favicon.png" alt="Pousada Animal" width="80%" height="80%"></td>
-                    <td>{{pet.name}} - {{pet.species}} - {{pet.breed}} - {{pet.gender}} - {{pet.size}} - {{pet.age}} anos - {{pet.colour}} - {{pet.weight}}kg - {{pet.temperament}}</td>
-                    <button class="buttom" href="#">Editar</button>
-                    <button class="buttom" href="#">Excluir</button>
-                </li>
+                    <li class="petList" *ngFor="let pet of petList">
+                        <td><img src="./../../../../assets/images/favicon.png" alt="Pousada Animal" width="80%"
+                                height="80%"></td>
+                        <td>{{pet.name}} - {{pet.species}} - {{pet.breed}} - {{pet.gender}} - {{pet.size}} - {{pet.age}}
+                            anos - {{pet.colour}} - {{pet.weight}}kg - {{pet.temperament}}</td>
+                        <button class="buttom" href="#">Editar</button>
+                        <button class="buttom" href="#">Excluir</button>
+                    </li>
                 </ul>
             </div>
 
-            <div *ngIf= "petList.length === 0" class="pets-descrition" >
+            <div *ngIf="petList.length === 0" class="pets-descrition">
                 <h2 class="text" style="text-align: center;">Seus Pets</h2>
-                <h5 style="text-align: center;">Você ainda não tem pets cadastrados, por favor, registre um no botão ao lado!</h5>
+                <h5 style="text-align: center;">Você ainda não tem pets cadastrados, por favor, registre um no botão ao
+                    lado!</h5>
             </div>
+
+            <div *ngIf="hostingList.length > 0 " class="pets-descrition">
+                <h2 class="text">Suas Hospedagens</h2>
+                <ul>
+                    <li class="petList" *ngFor="let hosting of hostingList">
+                        <td><img src="./../../../../assets/images/favicon.png" alt="Pousada Animal" width="80%"
+                                height="80%"></td>
+                        <td>{{hosting.pet.name}} - {{formatDate(hosting.start_date)}} até
+                            {{formatDate(hosting.end_date)}} <ng-container *ngIf="hosting.employee != null">-
+                                Funcionário responsável: {{hosting.employee.first_name}}</ng-container>
+                            - Situação: {{getStatusString(hosting)}}
+                        </td>
+                        <button class="buttom">
+                            <a [routerLink]="['../hosting', hosting.id]">Mais</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div *ngIf="hostingList.length === 0" class="pets-descrition">
+                <h2 class="text" style="text-align: center;">Suas Hospedagens</h2>
+                <h5 style="text-align: center;">Você ainda não tem nenhum pet hospedado, por favor, faça um agendamento
+                    no botão ao lado!</h5>
+            </div>
+
         </div>
         <div class="navbar-right">
             <ul>
                 <!-- <li class="nav-item" >
                     <a class="nav-link" href="#">Seus Pets</a>
                 </li> -->
-                <li class="nav-item" >
+                <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/user-area/cadastro-pet']">Registrar Pet</a>
                 </li>
-                <li class="nav-item" >
+                <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/user-area/hosting']">Hospedar Pet</a>
                 </li>
-                <li class="nav-item" >
+                <li class="nav-item">
                     <a class="nav-link" href="#">Status do Pet</a>
                 </li>
             </ul>
         </div>
     </div>
 </div>
-

@@ -1,5 +1,7 @@
 from datetime import datetime
 from django.http import Http404
+from hosting.models import Hosting
+from hosting.serializers import HostingSerializer
 from pets.models import Pet
 from pets.serializers import PetSerializer
 from djangoBackend.settings import DEBUG
@@ -77,13 +79,17 @@ class UserPets(generics.RetrieveAPIView):
     """
     Get user pets detail by pk.
     """
-    def get_object(self, pk):
-        try:
-            return User.objects.get(pk=pk)
-        except User.DoesNotExist:
-            raise Http404
-
     def get(self, request, pk, format=None):
         pets = self.queryset.filter(owner=pk)
         serializer = PetSerializer(pets, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class UserHostings(generics.RetrieveAPIView):
+    queryset = Hosting.objects.all()
+    """
+    Get user hostings by pk.
+    """
+    def get(self, request, pk, format=None):
+        hostings = self.queryset.filter(owner=pk)
+        serializer = HostingSerializer(hostings, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)

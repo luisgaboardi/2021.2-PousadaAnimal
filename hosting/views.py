@@ -1,14 +1,14 @@
 from datetime import datetime
 from django.http import Http404
 from hosting.serializers import HostingSerializer
+from message.serializers import MessageSerializer
 from pets.models import Pet
-from rest_framework import generics
+from message.models import Message
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from hosting.models import Hosting
-
-from djangoBackend.settings import DEBUG
+from django.db.models import Q
 
 
 class HostingList(APIView):
@@ -73,3 +73,13 @@ class HostingDetail(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class HostingMessages(APIView):
+    queryset = Message.objects.all()
+    """
+    Get user hostings by pk.
+    """
+    def get(self, request, pk, format=None):
+        messages = self.queryset.filter(hosting=pk)
+        serializer = MessageSerializer(messages, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

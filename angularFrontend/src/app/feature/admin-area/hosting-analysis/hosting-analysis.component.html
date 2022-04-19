@@ -98,6 +98,8 @@
               <p>{{hosting.observations}}</p>
               <h5>Status</h5>
               <p>{{getStatusString(hosting)}}</p>
+              <h5>Funcionário Responsável</h5>
+              <p>{{hosting.employee.first_name}}</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore'); cancelHosting(hosting)">Cancelar</button>

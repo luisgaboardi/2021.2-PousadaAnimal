@@ -24,6 +24,7 @@ export class HostingComponent implements OnInit {
   formHosting: FormGroup = new FormGroup({
     owner: new FormControl('', [Validators.required]),
     pet: new FormControl('', [Validators.required]),
+    employee: new FormControl(''),
     start_date: new FormControl('', [Validators.required]),
     end_date: new FormControl('', [Validators.required]),
     cost: new FormControl('', [Validators.required]),
@@ -84,7 +85,6 @@ export class HostingComponent implements OnInit {
   makeHosting() {
     if (this.formHosting.valid) {
       let hosting = Object.assign({}, this.formHosting.value);
-
       this.hostingService.sendHosting(hosting).subscribe({
         next: () => {
           this.handleSucess();
