@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
           if(response.user.staff){
             this.router.navigate(['/admin-area/home-admin']);
           }else{
-            this.router.navigate(['/user-area/home']);
+            this.router.navigate(['/user-area/home-user']);
           }
         },
         error: (error) => {

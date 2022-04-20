@@ -21,7 +21,7 @@ const routes: Routes = [
         loadChildren: () => import('./pet-register/pet-register.module').then(m => m.PetRegisterModule),
       },
       {
-        path: 'home',
+        path: 'home-user',
         canLoad: [AuthGuard],
         loadChildren: () => import('./home-user/home-user.module').then(m => m.HomeUserModule),
       },
