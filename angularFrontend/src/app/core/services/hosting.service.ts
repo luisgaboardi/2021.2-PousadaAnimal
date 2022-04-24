@@ -50,5 +50,9 @@ export class HostingService {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/hosting/${hosting.id}/messages`)
   }
 
+  sendHostingMessages(newMessage: any): Observable<Message[]> {
+    return this.http.put<Message[]>(`${environment.endPointPousadaAnimal}/hosting/${newMessage.id}/messages`, newMessage)
+  }
+
 }
 
