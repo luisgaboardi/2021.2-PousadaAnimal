@@ -18,23 +18,27 @@
         </div>
 
         <div class="col-md-6">
-          <label>Check-in</label>
-          <input type="text" placeholder="DD-MM-AAAA" (change)="setCost()" formControlName=start_date  mask="d0-M0-0000">
+          <label>Entrada</label>
+          <input type="text" placeholder="DD/MM/AAAA" (change)="setCost()" formControlName=start_date  mask="d0/M0/0000">
         </div>
 
         <div class="col-md-6">
-          <label>Check-out</label>
-          <input type="text" placeholder="DD-MM-AAAA" formControlName=end_date  mask="d0-M0-0000" (change)="setCost()">
+          <label>Saída</label>
+          <input type="text" placeholder="DD/MM/AAAA" formControlName=end_date  mask="d0/M0/0000" (change)="setCost()">
         </div>
+
+        <!-- <div class="error-msg" *ngIf="messageError == true && (formHosting.get('start_date').dirty || formHosting.get('start_date').touched)">
+          <span>A data de entrada deve ser maior que a de saída</span>
+        </div> -->
 
         <div class="col-md-12">
           <label>Observações</label>
           <input type="text" placeholder="Informações Importantes" formControlName="observations">
         </div>
 
-        <div class="col-md-12">
-          <label>Valor Total</label>
-          {{formHosting.controls['cost'].value}}
+        <div class="col-md-12" (change)="setCost()">
+          <a *ngIf="formHosting.value.cost > 0">Valor Total: R${{formHosting.value.cost}},00</a>
+          <a *ngIf="formHosting.value.cost == 0">Valor Total: R$ 0</a>
         </div>
 
         <div class="col-md-12">

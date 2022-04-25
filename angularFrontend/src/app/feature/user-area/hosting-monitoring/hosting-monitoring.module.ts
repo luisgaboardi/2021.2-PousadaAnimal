@@ -15,7 +15,7 @@ const routes: Routes = [
 const mask: Partial<IConfig> = {validation: true};
 
 @NgModule({
-  declarations: [HostingMonitoringComponent],
+  declarations: [],
   imports: [
     CommonModule,
     FormsModule,

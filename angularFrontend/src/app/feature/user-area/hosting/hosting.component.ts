@@ -20,6 +20,7 @@ export class HostingComponent implements OnInit {
   petList: Pet[];
 
   dayCost:number = 50;
+  messageError = false;
 
   formHosting: FormGroup = new FormGroup({
     owner: new FormControl('', [Validators.required]),
@@ -69,17 +70,25 @@ export class HostingComponent implements OnInit {
   }
 
   setCost() {
-    if (this.checkDate() && this.formHosting.controls['pet'].valid) {
+    debugger
+    if (this.formHosting.controls['pet'].valid) {
       let currentPet:Pet;
       this.petList.forEach(pet => {
         if (pet.id == this.formHosting.controls['pet'].value) {
           currentPet = pet;
         }
       });
-      this.formHosting.controls['cost'].setValue((currentPet.weight + this.dayCost) * this.checkDate());
-      return `R$ ${(currentPet.weight + this.dayCost) * this.checkDate()},00`;
+      let price = (currentPet.weight/10 + this.dayCost) * this.checkDate()
+      if (this.checkDate() == 0){
+        price = currentPet.weight/10 + this.dayCost;
+      }
+      this.formHosting.controls['cost'].setValue(price);
+      console.log("price", price);
+      console.log("value", this.formHosting.controls['cost'].setValue(price));
+      // return `R$ ${(currentPet.weight/10 + this.dayCost) * this.checkDate()},00`;
+      // return this.formHosting.controls['cost'].setValue(price);
     }
-    return ""
+    // return ""
   }
 
   makeHosting() {
@@ -101,6 +110,7 @@ export class HostingComponent implements OnInit {
   }
 
   checkDate() {
+    const DAY = 24 * 60 * 60 * 1000;
     let startDate:Date;
     let endDate:Date;
     if (this.formHosting.controls['start_date'].valid && this.formHosting.controls['end_date'].valid) {
@@ -110,17 +120,47 @@ export class HostingComponent implements OnInit {
       let endDate_str = [end.substring(0, 2), '-', end.substring(2, 4), '-', end.substring(4)].reverse();
       startDate = new Date(startDate_str.join(''));
       endDate = new Date(endDate_str.join(''));
+    //   let d1 = new Date(this.formHosting.controls['start_date'].value);
+    // let d2 = new Date (this.formHosting.controls['end_date'].value);
 
-      if (startDate > endDate) {
-        alert("A data do Check-out deve ser maior que a do check-in");
+      let m1 = startDate.getTime();
+      let m2 = endDate.getTime();
+      let result = m2 - m1;
+      let dias = result/ DAY;
+      let myDate = new Date();
+
+      if(myDate > (startDate || endDate)){
+        alert('As datas devem ser maiores que a de hoje');
         this.formHosting.controls['start_date'].setValue(null);
         this.formHosting.controls['end_date'].setValue(null);
-        return null;
       }
-      return (endDate.getDate() - startDate.getDate());
+
+      if (startDate > endDate) {
+        alert('A data de entrada deve ser maior que a de saída');
+        this.formHosting.controls['start_date'].setValue(null);
+        this.formHosting.controls['end_date'].setValue(null);
+      }
+      // endDate.getDate() - startDate.getDate()
+      return (dias);
     }
     return null;
   }
+
+  // getData(){
+  //   const DAY = 24 * 60 * 60 * 1000;
+
+  //   let d1 = new Date(this.formHosting.controls['start_date'].value);
+  //   let d2 = new Date (this.formHosting.controls['end_date'].value);
+
+  //   console.log("entrada", d1);
+
+  //   let m1 = d1.getTime();
+  //   let m2 = d2.getTime();
+
+  //   let result = m2 - m1;
+
+  //   let dias = result/ DAY;
+  // }
 
   handleError(){
     this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
