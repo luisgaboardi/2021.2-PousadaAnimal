@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/core/services/login.service';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +11,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  @BlockUI() blockUI: NgBlockUI;
 
   isTextField!: boolean;
 
@@ -35,6 +36,7 @@ export class LoginComponent implements OnInit {
   loginClient() {
     console.log("Fazer login")
     if(this.formLogin.valid){
+      this.blockUI.start();
       let login = Object.assign({}, this.formLogin.value);
 
       this.loginServiceClient.sendLoginClient(login).subscribe({
@@ -46,8 +48,10 @@ export class LoginComponent implements OnInit {
           }else{
             this.router.navigate(['/user-area/home-user']);
           }
+          this.blockUI.stop();
         },
         error: (error) => {
+          this.blockUI.stop();
           this.handleError();
           this.router.navigate(['/auth/login']);
           console.log("Erro ao registrar", error); //definir tipos de erros
