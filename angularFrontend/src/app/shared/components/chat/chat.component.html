@@ -3,25 +3,33 @@
         <h1>Acompanhamento de Estadia</h1>
     </div>
     <div class="chat-section">
-        <h2>Chat com o cuidador</h2>
+        <h2 *ngIf="user.admin">Chat com o cliente</h2>
+        <h2 *ngIf="!user.admin">Chat com o cuidador</h2>
         <div class="chat-area">
-            <div *ngFor="let message of messageList">
-                <div style="color: blue;" *ngIf="message.user['id'] == user.id">
-                    <h4>{{message.user["first_name"]}}</h4>
-                    <p>{{message.time_sent}}: {{message.content}}</p>
-                </div>
-                <div style="color: orange;" *ngIf="message.user['id'] != user.id">
-                    <h4>{{message.user["first_name"]}}</h4>
-                    <p>{{message.time_sent}}: {{message.content}}</p>
-                </div>
+            <div *ngIf="messageList.length === 0">
+                <p *ngIf="user.admin" style="text-align: center;">Você ainda não trocou mensagens com o cliente do pet</p>
+                <p *ngIf="!user.admin" style="text-align: center;">Você ainda não trocou mensagens com o cuidador do seu pet</p>
             </div>
+            <ng-container *ngIf="messageList.length > 0">
+                <div *ngFor="let message of messageList.reverse()">
+                    <div style="color: blue;" *ngIf="message.user['id'] == user.id">
+                        <h4>{{message.user["first_name"]}}</h4>
+                        <p>{{message.time_sent}}: {{message.content}}</p>
+                    </div>
+                    <div style="color: orange;" *ngIf="message.user['id'] != user.id">
+                        <h4>{{message.user["first_name"]}}</h4>
+                        <p>{{message.time_sent}}: {{message.content}}</p>
+                    </div>
+                </div>
+            </ng-container>
         </div>
         <div class="user-interaction text-right">
-            <div class="input-group">
-                <textarea class="form-control"></textarea>
+            <div class="input-group" [formGroup]="formMessage">
+                <textarea formControlName="content" class="form-control"></textarea>
             </div>
-            <button type="button" class="btn btn-dark btn-sm">
-                <a [routerLink]="['/admin-area/hosting/{{message.hosting}}']">Enviar</a>
+            <button type="button" (click)="sendMessage()" class="btn btn-dark btn-sm">
+                Enviar
+                <!-- <a (click)="sendMessage" [routerLink]="['../', messageList[0].hosting]"></a> -->
             </button>
         </div>
     </div>

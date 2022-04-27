@@ -1,6 +1,7 @@
-import { HashLocationStrategy } from '@angular/common';
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HostingService } from 'src/app/core/services/hosting.service';
@@ -19,8 +20,15 @@ export class ChatComponent implements OnInit {
 
   user: User;
   hosting: Hosting;
-  messageList: Message[];
+  messageList: Message[] = [];
   id: number;
+
+  formMessage: FormGroup = new FormGroup({
+    user: new FormControl(null),
+    hosting: new FormControl(null),
+    content: new FormControl('', [Validators.required]),
+    time_sent: new FormControl(''),
+  })
 
   constructor(
     private readonly hostingService: HostingService,
@@ -101,7 +109,7 @@ export class ChatComponent implements OnInit {
   }
 
   getPet(hosting: Hosting) {
-    return this.hostingService.getPet(hosting).subscribe({
+    this.hostingService.getPet(hosting).subscribe({
       next: (pet: any) => {
         hosting.pet = pet as Pet;
       },
@@ -115,7 +123,7 @@ export class ChatComponent implements OnInit {
   getHostingMessages(hosting: Hosting) {
     this.hostingService.getHostingMessages(hosting).subscribe({
       next: (messageList: Message[]) => {
-        this.messageList = [...messageList];
+        this.messageList = messageList.reverse().slice(0, 10);
         for (let message of this.messageList) {
           this.hostingService.getUserFromId(message.user).subscribe({
             next: (user: User) => {
@@ -133,4 +141,29 @@ export class ChatComponent implements OnInit {
       }
     })
   }
+
+  sendMessage() {
+    this.formMessage.value.time_sent = "2022-05-01T23:59";
+    this.formMessage.value.user = this.user.id;
+    this.formMessage.value.hosting = this.hosting.id;
+
+    if (this.formMessage.valid) {
+      let messageSubmit = Object.assign({}, this.formMessage.value);
+
+      this.hostingService.sendHostingMessages(messageSubmit, this.hosting.id).subscribe({
+        next: (data: any) => {
+          this.messageList = data;
+          window.location.reload()
+        },
+        error: (error) => {
+          console.log("Erro ao enviar", error);
+        }
+      })
+    }
+  }
+
+  redirect() {
+
+  }
+
 }
