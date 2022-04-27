@@ -7,8 +7,6 @@ import { PetRegisterComponent } from './pet-register/pet-register.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { HostingMonitoringComponent } from './hosting-monitoring/hosting-monitoring.component';
-import { PaymentComponent } from './payment/payment.component';
-
 
 const routes: Routes = [
   {
@@ -35,21 +33,14 @@ const routes: Routes = [
       {
         path: 'hosting/:id',
         canLoad: [AuthGuard],
-        loadChildren: () => import('src/app/shared/components/chat/chat.module').then(m => m.ChatModule),
-        //component: HostingMonitoringComponent,
-      },
-      {
-        path: 'payment',
-        canLoad: [AuthGuard],
-        loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule),
+        component: HostingMonitoringComponent,
       }
     ]
   }
 ]
 
 @NgModule({
-
-  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent, HostingMonitoringComponent, PaymentComponent],
+  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent, HostingMonitoringComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

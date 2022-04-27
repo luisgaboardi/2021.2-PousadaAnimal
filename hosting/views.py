@@ -77,17 +77,9 @@ class HostingDetail(APIView):
 class HostingMessages(APIView):
     queryset = Message.objects.all()
     """
-    Get hostings messages by pk.
+    Get user hostings by pk.
     """
     def get(self, request, pk, format=None):
         messages = self.queryset.filter(hosting=pk)
         serializer = MessageSerializer(messages, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
-
-    def post(self, request, pk, format=None):
-        print(request.data)
-        serializer = MessageSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
