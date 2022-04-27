@@ -103,6 +103,10 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-dark" (click)="modal.close('ignore'); cancelHosting(hosting)">Cancelar</button>
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('ok')">
+                <a [routerLink]="['../hosting', hosting.id]">Chat</a>
+              </button>
+              
               <button type="button" class="btn btn-outline-dark" (click)="modal.close('ok')">Ok</button>
             </div>
           </ng-template>

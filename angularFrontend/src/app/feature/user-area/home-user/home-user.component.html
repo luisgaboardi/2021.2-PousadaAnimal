@@ -48,8 +48,14 @@
                             - Situação: {{getStatusString(hosting)}}
                         </td>
                         <button class="buttom">
-                            <a [routerLink]="['../hosting', hosting.id]">Mais</a>
+                            <a [routerLink]="['../hosting', hosting.id]">Chat</a>
                         </button>
+                          <button class="buttom">
+                            <a [routerLink]="['']">Serviços</a>
+                        </button>
+                        <button class="buttom">
+                          <a [routerLink]="['/user-area/payment']"> Pagamento</a>
+                      </button>
                     </li>
                 </ul>
             </div>
@@ -63,18 +69,15 @@
         </div>
         <div class="navbar-right">
             <ul>
-                <!-- <li class="nav-item" >
-                    <a class="nav-link" href="#">Seus Pets</a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/user-area/cadastro-pet']">Registrar Pet</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/user-area/hosting']">Hospedar Pet</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="#">Status do Pet</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

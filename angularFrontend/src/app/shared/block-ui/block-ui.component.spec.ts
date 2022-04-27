@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HostingMonitoringComponent } from './hosting-monitoring.component';
+import { BlockUiComponent } from './block-ui.component';
 
-describe('HostingMonitoringComponent', () => {
-  let component: HostingMonitoringComponent;
-  let fixture: ComponentFixture<HostingMonitoringComponent>;
+describe('BlockUiComponent', () => {
+  let component: BlockUiComponent;
+  let fixture: ComponentFixture<BlockUiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HostingMonitoringComponent ]
+      declarations: [ BlockUiComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HostingMonitoringComponent);
+    fixture = TestBed.createComponent(BlockUiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

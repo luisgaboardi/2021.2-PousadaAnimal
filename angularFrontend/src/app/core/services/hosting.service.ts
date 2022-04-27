@@ -38,6 +38,10 @@ export class HostingService {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.owner}`)
   }
 
+  getUserFromId(id: User | string): Observable<User> {
+    return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${id}`)
+  }
+
   getEmployee(hosting: Hosting): Observable<User> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.employee}`)
   }
@@ -48,6 +52,10 @@ export class HostingService {
 
   getHostingMessages(hosting: Hosting): Observable<Message[]> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/hosting/${hosting.id}/messages`)
+  }
+
+  sendHostingMessages(newMessage: any, hostingId: any): Observable<Message> {
+    return this.http.post<any>(`${environment.endPointPousadaAnimal}/hosting/${hostingId}/messages`, newMessage)
   }
 
 }
