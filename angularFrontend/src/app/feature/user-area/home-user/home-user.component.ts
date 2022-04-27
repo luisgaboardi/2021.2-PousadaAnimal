@@ -1,3 +1,4 @@
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from 'src/app/core/services/login.service';
@@ -13,6 +14,7 @@ import { Hosting } from 'src/app/shared/models/hosting';
   styleUrls: ['./home-user.component.css']
 })
 export class HomeUserComponent implements OnInit {
+  @BlockUI() blockUI: NgBlockUI;
 
   petList: Pet[] | any[] = [];
   hostingList: Hosting[] | any[] = [];
@@ -65,22 +67,28 @@ export class HomeUserComponent implements OnInit {
   }
 
   getUsers(hosting: Hosting) {
+    this.blockUI.start();
     this.hostingService.getOwner(hosting).subscribe({
       next: (user) => {
+        this.blockUI.stop();
         hosting.owner = user;
       },
       error: (error) => {
+        this.blockUI.stop();
         console.log(`Erro ao pegar dono do pet`, error)
       }
     }
     )
 
     if (hosting.employee != null) {
+      this.blockUI.start();
       this.hostingService.getEmployee(hosting).subscribe({
         next: (user) => {
+          this.blockUI.stop();
           hosting.employee = user;
         },
         error: (error) => {
+          this.blockUI.stop();
           console.log(`Erro ao pegar funcionário responsável do pet`, error)
         }
       }
@@ -102,11 +110,14 @@ export class HomeUserComponent implements OnInit {
   }
 
   getPet(hosting: Hosting) {
+    this.blockUI.start();
     return this.hostingService.getPet(hosting).subscribe({
       next: (pet) => {
+        this.blockUI.stop();
         hosting.pet = pet as Pet;
       },
       error: (error) => {
+        this.blockUI.stop();
         console.log("Erro ao pegar o pet", error)
       }
     }
