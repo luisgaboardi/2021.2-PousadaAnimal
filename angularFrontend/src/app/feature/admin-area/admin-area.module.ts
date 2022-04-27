@@ -7,6 +7,7 @@ import { HostingAnalysisComponent } from './hosting-analysis/hosting-analysis.co
 import { AdminGuard } from 'src/app/core/auth/admin.guard';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { ServicesComponent } from './services/services.component';
+import { ChatComponent } from 'src/app/shared/components/chat/chat.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,11 @@ const routes: Routes = [
         canLoad: [AdminGuard],
         loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
       },
+      {
+        path: 'hosting/:id',
+        canLoad: [AdminGuard],
+        loadChildren: () => import('src/app/shared/components/chat/chat.module').then(m => m.ChatModule),
+      }
     ]
   }
 ]

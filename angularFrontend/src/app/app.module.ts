@@ -15,12 +15,13 @@ import { NavBarComponent } from './feature/nav-bar/nav-bar.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BlockUIModule } from 'ng-block-ui';
+import { ChatComponent } from './shared/components/chat/chat.component';
 
 
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
-  declarations: [AppComponent,NavBarComponent],
+  declarations: [AppComponent, NavBarComponent, ChatComponent],
 
   imports: [
     ReactiveFormsModule,

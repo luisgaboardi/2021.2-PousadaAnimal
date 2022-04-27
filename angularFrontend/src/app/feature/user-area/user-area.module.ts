@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PetRegisterComponent } from './pet-register/pet-register.component';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
-import { HostingMonitoringComponent } from './hosting-monitoring/hosting-monitoring.component';
 
 const routes: Routes = [
   {
@@ -33,14 +32,14 @@ const routes: Routes = [
       {
         path: 'hosting/:id',
         canLoad: [AuthGuard],
-        component: HostingMonitoringComponent,
+        loadChildren: () => import('src/app/shared/components/chat/chat.module').then(m => m.ChatModule),
       }
     ]
   }
 ]
 
 @NgModule({
-  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent, HostingMonitoringComponent],
+  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

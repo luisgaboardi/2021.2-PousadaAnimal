@@ -38,6 +38,10 @@ export class HostingService {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.owner}`)
   }
 
+  getUserFromId(id: User | string): Observable<User> {
+    return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${id}`)
+  }
+
   getEmployee(hosting: Hosting): Observable<User> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.employee}`)
   }

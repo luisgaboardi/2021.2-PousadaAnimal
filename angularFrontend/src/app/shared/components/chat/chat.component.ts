@@ -11,11 +11,11 @@ import { Pet } from 'src/app/shared/models/pet';
 import { User } from 'src/app/shared/models/user';
 
 @Component({
-  selector: 'app-hosting-monitoring',
-  templateUrl: './hosting-monitoring.component.html',
-  styleUrls: ['./hosting-monitoring.component.css']
+  selector: 'app-chat',
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.css']
 })
-export class HostingMonitoringComponent implements OnInit {
+export class ChatComponent implements OnInit {
 
   user: User;
   hosting: Hosting;
@@ -36,20 +36,39 @@ export class HostingMonitoringComponent implements OnInit {
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.getHosting();
-    this.getHostingMessages();
   }
 
   getHosting() {
+    if (this.user.staff) {
+      this.hostingService.getHostings().subscribe({
+        next: (hostingList: any) => {
+          for (let hosting of hostingList) {
+            if (hosting.id == this.id) {
+              this.hosting = { ...hosting };
+              this.getUsers(this.hosting);
+              this.getPet(this.hosting);
+              this.getHostingMessages(this.hosting);
+              break;
+            }
+          }
+        },
+        error: (error) => {
+          console.log("Erro ao agendar", error)
+        }
+      }
+      )
+    }
     this.hostingService.getUserHostings(this.user).subscribe({
       next: (hostingList: any) => {
         for (let hosting of hostingList) {
           if (hosting.id == this.id) {
             this.hosting = { ...hosting };
+            this.getUsers(this.hosting);
+            this.getPet(this.hosting);
+            this.getHostingMessages(this.hosting);
             break;
           }
         }
-        this.getUsers(this.hosting);
-        this.getPet(this.hosting);
       },
       error: (error) => {
         console.log("Erro ao agendar", error)
@@ -60,8 +79,8 @@ export class HostingMonitoringComponent implements OnInit {
 
   getUsers(hosting: Hosting) {
     this.hostingService.getOwner(hosting).subscribe({
-      next: (user: any) => {
-        hosting.owner = user;
+      next: (user: User) => {
+        hosting.owner = user as User;
       },
       error: (error) => {
         console.log(`Erro ao pegar dono do pet`, error)
@@ -93,11 +112,21 @@ export class HostingMonitoringComponent implements OnInit {
     )
   }
 
-  getHostingMessages() {
-    this.hostingService.getHostingMessages(this.hosting).subscribe({
-      next: (messageList: any) => {
-        console.log(messageList);
-        this.messageList = messageList;
+  getHostingMessages(hosting: Hosting) {
+    this.hostingService.getHostingMessages(hosting).subscribe({
+      next: (messageList: Message[]) => {
+        this.messageList = [...messageList];
+        for (let message of this.messageList) {
+          this.hostingService.getUserFromId(message.user).subscribe({
+            next: (user: User) => {
+              message.user = user;
+            },
+            error: (error) => {
+              console.log(`Erro ao pegar remetente da mensagem`, error)
+            }
+          }
+          )
+        }
       },
       error: (error) => {
         console.log("Erro ao carregar as mensagens", error)

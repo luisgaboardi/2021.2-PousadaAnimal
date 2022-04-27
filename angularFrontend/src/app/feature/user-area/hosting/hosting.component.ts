@@ -146,30 +146,14 @@ export class HostingComponent implements OnInit {
     return null;
   }
 
-  // getData(){
-  //   const DAY = 24 * 60 * 60 * 1000;
-
-  //   let d1 = new Date(this.formHosting.controls['start_date'].value);
-  //   let d2 = new Date (this.formHosting.controls['end_date'].value);
-
-  //   console.log("entrada", d1);
-
-  //   let m1 = d1.getTime();
-  //   let m2 = d2.getTime();
-
-  //   let result = m2 - m1;
-
-  //   let dias = result/ DAY;
-  // }
-
   handleError(){
     this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
    }
   handleSucess(){
-    this.AlertModalService.showAlertSucess('Agendamennto concluído!');
+    this.AlertModalService.showAlertSucess('Agendamento concluído!');
   }
 
   redirect() {
-    this.router.navigate(['/user-area/home']);
+    this.router.navigate(['/user-area/home-user']);
   }
 }

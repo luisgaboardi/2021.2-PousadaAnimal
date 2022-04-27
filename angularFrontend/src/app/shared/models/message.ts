@@ -4,7 +4,7 @@ import { Hosting } from "./hosting";
 export class Message {
     id: number;
     time_sent: string;
-    user: number | User;
-    hosting: number | Hosting;
+    user: string | User;
+    hosting: Hosting | number;
     content: string;
 }

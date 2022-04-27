@@ -7,19 +7,25 @@
     min-width: 600px;
 }
 
+h2 {
+    margin-bottom: 30px;
+}
+
 .hosting-details {
 
 }
 
 .chat-section {
-    /* padding: 0 15px; */
+    padding: 0 15px;
 }
 
 .chat-area {
-
-    height: 100px;
+    min-height: 100px;
+    padding: 10px 15px;
+    border: 1px solid gray;
+    border-radius: 15px;
 }
 
-.user-interaction {
+/* .user-interaction {
     
-}
+} */
