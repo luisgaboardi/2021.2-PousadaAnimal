@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { LoginService } from 'src/app/core/services/login.service';
 import { PetResgisterService } from 'src/app/core/services/pet-register.service';
 import { User } from 'src/app/shared/models/user';
-import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 @Component({
   selector: 'app-pet-register',
@@ -13,7 +12,7 @@ import { BlockUI, NgBlockUI } from 'ng-block-ui';
   styleUrls: ['./pet-register.component.css']
 })
 export class PetRegisterComponent implements OnInit {
-  @BlockUI() blockUI: NgBlockUI;
+
   isTextField!: boolean;
   user: User;
 
@@ -59,17 +58,14 @@ export class PetRegisterComponent implements OnInit {
   registerPet() {
     console.log("Fazer cadastro de pet")
     if (this.formPetRegister.valid) {
-      this.blockUI.start();
       let registerpet = Object.assign({}, this.formPetRegister.value);
       this.petService.sendRegisterPet(registerpet).subscribe({
         next: () => {
           console.log("Deu bom");
-          this.blockUI.stop();
           this.handleSucess();
           this.redirect();
         },
         error: (error) => {
-          this.blockUI.stop();
           this.handleError();
           console.log("Erro ao cadastrar", error)
         }

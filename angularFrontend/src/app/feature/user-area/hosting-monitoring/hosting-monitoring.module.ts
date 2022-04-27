@@ -3,19 +3,19 @@ import { CommonModule } from '@angular/common';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { ChatComponent } from './chat.component';
+import { HostingMonitoringComponent } from './hosting-monitoring.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ChatComponent
+    component: HostingMonitoringComponent
   }
 ];
 
 const mask: Partial<IConfig> = {validation: true};
 
 @NgModule({
-  declarations: [],
+  declarations: [HostingMonitoringComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -24,4 +24,4 @@ const mask: Partial<IConfig> = {validation: true};
     NgxMaskModule.forRoot(mask),
   ]
 })
-export class ChatModule { }
+export class HostingMonitoringModule { }
