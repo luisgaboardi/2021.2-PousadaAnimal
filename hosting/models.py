@@ -22,7 +22,7 @@ class Hosting (models.Model):
     )
     start_date = models.DateField()
     end_date = models.DateField()
-    observations = models.CharField(max_length=255)
+    observations = models.CharField(max_length=255, null=True, blank=True)
     cost = models.FloatField()
     approved = models.BooleanField(default=False)
 

@@ -9,7 +9,6 @@ import { LoginService } from 'src/app/core/services/login.service';
 import { UserPetsService } from 'src/app/core/services/user-pets.service';
 import { Pet } from 'src/app/shared/models/pet';
 
-
 @Component({
   selector: 'app-hosting',
   templateUrl: './hosting.component.html',
@@ -18,7 +17,7 @@ import { Pet } from 'src/app/shared/models/pet';
 export class HostingComponent implements OnInit {
 
   petList: Pet[];
-
+  step: number = 0;
   dayCost:number = 50;
   messageError = false;
 
@@ -29,7 +28,7 @@ export class HostingComponent implements OnInit {
     start_date: new FormControl('', [Validators.required]),
     end_date: new FormControl('', [Validators.required]),
     cost: new FormControl('', [Validators.required]),
-    observations: new FormControl('', [Validators.required]),
+    observations: new FormControl('',),
     approved: new FormControl('', [Validators.required]),
   })
 
@@ -70,7 +69,6 @@ export class HostingComponent implements OnInit {
   }
 
   setCost() {
-    debugger
     if (this.formHosting.controls['pet'].valid) {
       let currentPet:Pet;
       this.petList.forEach(pet => {
@@ -91,26 +89,8 @@ export class HostingComponent implements OnInit {
     // return ""
   }
 
-  makeHosting() {
-    if (this.formHosting.valid) {
-      let hosting = Object.assign({}, this.formHosting.value);
-      this.hostingService.sendHosting(hosting).subscribe({
-        next: () => {
-          this.handleSucess();
-          console.log("Deu bom");
-          this.redirect();
-        },
-        error: (error) => {
-          this.handleError();
-          console.log("Erro ao agendar", error)
-        }
-      }
-      )
-    }
-  }
-
   checkDate() {
-    const DAY = 24 * 60 * 60 * 1000;
+    const day = 24 * 60 * 60 * 1000;
     let startDate:Date;
     let endDate:Date;
     if (this.formHosting.controls['start_date'].valid && this.formHosting.controls['end_date'].valid) {
@@ -126,8 +106,17 @@ export class HostingComponent implements OnInit {
       let m1 = startDate.getTime();
       let m2 = endDate.getTime();
       let result = m2 - m1;
-      let dias = result/ DAY;
+      let dias = result/ day;
       let myDate = new Date();
+      let dateyear = myDate.getTime();
+      let yearStart = (m1 - dateyear)/day;
+      let yearEnd = (m2 - dateyear)/day;
+
+      if((yearStart || yearEnd)>365){
+        alert('As datas não podem ser de mais de um ano');
+        this.formHosting.controls['start_date'].setValue(null);
+        this.formHosting.controls['end_date'].setValue(null);
+      }
 
       if(myDate > (startDate || endDate)){
         alert('As datas devem ser maiores que a de hoje');
@@ -140,36 +129,35 @@ export class HostingComponent implements OnInit {
         this.formHosting.controls['start_date'].setValue(null);
         this.formHosting.controls['end_date'].setValue(null);
       }
-      // endDate.getDate() - startDate.getDate()
+
       return (dias);
     }
     return null;
   }
 
-  // getData(){
-  //   const DAY = 24 * 60 * 60 * 1000;
+  makeHosting() {
+    if (this.formHosting.valid) {
+      let hosting = Object.assign({}, this.formHosting.value);
+      this.hostingService.sendHosting(hosting).subscribe({
+        next: () => {
+          this.handleSucess();
+          console.log("Deu bom");
+          this.step = 1;
+        },
+        error: (error) => {
+          this.handleError();
+          console.log("Erro ao agendar", error)
+        }
+      }
+      )
+    }
+  }
 
-  //   let d1 = new Date(this.formHosting.controls['start_date'].value);
-  //   let d2 = new Date (this.formHosting.controls['end_date'].value);
-
-  //   console.log("entrada", d1);
-
-  //   let m1 = d1.getTime();
-  //   let m2 = d2.getTime();
-
-  //   let result = m2 - m1;
-
-  //   let dias = result/ DAY;
-  // }
 
   handleError(){
     this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
    }
   handleSucess(){
-    this.AlertModalService.showAlertSucess('Agendamennto concluído!');
+    this.AlertModalService.showAlertSucess('Agendamento concluído!');
   }
 
-  redirect() {
-    this.router.navigate(['/user-area/home']);
-  }
-}

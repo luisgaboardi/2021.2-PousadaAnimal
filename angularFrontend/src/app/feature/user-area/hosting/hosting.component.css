@@ -3,7 +3,9 @@
   margin: 0 -15px;
   justify-content: center;
 }
-
+.separate{
+  margin-top: 5%;
+}
 .container {
   width: 30%;
   min-width: 350px;
@@ -47,11 +49,18 @@
 }
 
 .btn {
-    background-color: #bada5f;
-    margin-top: 30px;
-    float: right;
+  background-color: #BADA5F;
+  border-radius: 10px;
+  width: 40%;
+  margin: 0 auto;
+  margin-block-end: 3%;
 }
 
+/* .btn {
+  background-color: #bada5f;
+  margin-top: 30px;
+  float: right;
+} */
 .error-msg{
   color: red;
   padding: 10px 35px;

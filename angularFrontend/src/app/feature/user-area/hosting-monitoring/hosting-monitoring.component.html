@@ -1,23 +1,52 @@
-<div class="container">
-    <div class="hosting-details">
-        <h1>Acompanhamento de Estadia</h1>
-        <h2>Detalhes</h2>
-        <!-- <p>{{hosting | json}}</p> -->
+<div class="hosting" [formGroup]="formMessage">
+    <div class="container">
+      <div class="hosting-details">
+          <label>Acompanhamento da estadia</label>
+      </div>
+          <label>Chat com o cuidador</label>
 
+          <!-- <div class="messaging"> -->
+            <div class="inbox_msg">
+              <div class="mesgs">
+                <div class="msg_history">
+                  <ng-container *ngFor="let message of messageList">
+                  <!-- <ul> -->
+                    <div class="message" >
+                      <h6> {{ message.user }} - {{ message.data }}</h6>
+                      <div class="incoming_msg_img">
+                        <!-- <h5>Laís</h5> -->
+                          <h6> {{message.user}}- {{message.data}}</h6>
+                      </div>
 
-    </div>
-    <div class="chat-section">
-        <h2>Chat com o cuidador</h2>
-        <div class="chat-area">
-            <div *ngFor="let message of messageList">
-                {{message | json}}
+                      <div class="incoming_msg">
+                        <div class="received_msg">
+                          <div class="received_withd_msg">
+                            <!-- <p>{{ message.content}}</p> -->
+                            <p>{{message.content}}<p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <!-- </ul> -->
+                </ng-container>
+                </div>
+                <div class="row g-3" >
+                  <div class="input-group">
+                      <textarea class="form-control" formControlName="content"
+                      [(ngModel)]="newMessage" ></textarea>
+                  </div>
+                  <div>
+                    <button type='button' class="btn btn-custom default" (click)="sendMessage()">
+                      Enviar
+                    </button>
+                  </div>
+
+              </div>
+
+              </div>
+
             </div>
-        </div>
-        <div class="user-interaction text-right">
-            <div class="input-group">
-                <textarea class="form-control"></textarea>
-            </div>
-            <button type="button" class="btn btn-primary btn-sm float-right">Enviar</button>
-        </div>
-    </div>
+          <!-- </div> -->
+  </div>
 </div>
+
