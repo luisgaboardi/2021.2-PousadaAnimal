@@ -11,37 +11,22 @@ import { Pet } from 'src/app/shared/models/pet';
 import { User } from 'src/app/shared/models/user';
 
 @Component({
-  selector: 'app-hosting-monitoring',
-  templateUrl: './hosting-monitoring.component.html',
-  styleUrls: ['./hosting-monitoring.component.css']
+  selector: 'app-chat',
+  templateUrl: './chat.component.html',
+  styleUrls: ['./chat.component.css']
 })
-export class HostingMonitoringComponent implements OnInit {
+export class ChatComponent implements OnInit {
 
   user: User;
   hosting: Hosting;
-  // messageList: Message[];
-  newMessage = '';
+  messageList: Message[] = [];
   id: number;
 
-  messageLi: ['chora', 'chorei'];
-  messageList: [
-    {
-    user: 'Laís',
-    content: 'conjunto das palavras escritas, em livro, folheto, documento etc. (p.opos. a comentários, aditamentos, sumário etc.)',
-    data: '25/08/2022',
-    },
-    {
-      user: 'FeijÃO',
-      content: 'livro, folheto, documento etc.',
-      data: '26/08/2022',
-    },
-  ];
-
   formMessage: FormGroup = new FormGroup({
-    time_sent: new FormControl(''),
     user: new FormControl(null),
     hosting: new FormControl(null),
     content: new FormControl('', [Validators.required]),
+    time_sent: new FormControl(''),
   })
 
   constructor(
@@ -61,36 +46,48 @@ export class HostingMonitoringComponent implements OnInit {
   }
 
   getHosting() {
-    console.log("1",this.hosting);
+    if (this.user.staff) {
+      this.hostingService.getHostings().subscribe({
+        next: (hostingList: any) => {
+          for (let hosting of hostingList) {
+            if (hosting.id == this.id) {
+              this.hosting = { ...hosting };
+              this.getUsers(this.hosting);
+              this.getPet(this.hosting);
+              this.getHostingMessages(this.hosting);
+              break;
+            }
+          }
+        },
+        error: (error) => {
+          console.log("Erro ao agendar", error)
+        }
+      }
+      )
+    }
     this.hostingService.getUserHostings(this.user).subscribe({
       next: (hostingList: any) => {
         for (let hosting of hostingList) {
           if (hosting.id == this.id) {
             this.hosting = { ...hosting };
-            console.log("hosting", this.hosting);
+            this.getUsers(this.hosting);
+            this.getPet(this.hosting);
+            this.getHostingMessages(this.hosting);
             break;
           }
         }
-        console.log("TESTe", this.hosting);
-        this.getUsers(this.hosting);
-        this.getPet(this.hosting);
-        this.getHostingMessages();
-        console.log("TEte", this.hosting);
       },
       error: (error) => {
         console.log("Erro ao agendar", error)
       }
     }
     )
-    console.log("2",this.hosting);
   }
 
   getUsers(hosting: Hosting) {
-    console.log("3",this.hosting);
     this.hostingService.getOwner(hosting).subscribe({
-      next: (user: any) => {
-        hosting.owner = user;
-        console.log("Sucesso user", this.hosting);
+      next: (user: User) => {
+        hosting.owner = user as User;
       },
       error: (error) => {
         console.log(`Erro ao pegar dono do pet`, error)
@@ -101,7 +98,6 @@ export class HostingMonitoringComponent implements OnInit {
       this.hostingService.getEmployee(hosting).subscribe({
         next: (user: any) => {
           hosting.employee = user;
-          console.log("Sucesso employee", this.hosting);
         },
         error: (error) => {
           console.log(`Erro ao pegar funcionário responsável do pet`, error)
@@ -109,30 +105,35 @@ export class HostingMonitoringComponent implements OnInit {
       }
       )
     }
-    console.log("4",this.hosting);
   }
 
   getPet(hosting: Hosting) {
-    console.log("5",this.hosting);
     this.hostingService.getPet(hosting).subscribe({
       next: (pet: any) => {
         hosting.pet = pet as Pet;
-        console.log("Sucesso pet", this.hosting);
       },
       error: (error) => {
         console.log("Erro ao pegar o pet", error)
       }
     }
     )
-    console.log("6",this.hosting);
   }
 
-  getHostingMessages() {
-    console.log("7",this.hosting);
-    this.hostingService.getHostingMessages(this.hosting).subscribe({
-      next: (messageList: any) => {
-        this.messageList = messageList;
-        console.log("messages get",this.messageList);
+  getHostingMessages(hosting: Hosting) {
+    this.hostingService.getHostingMessages(hosting).subscribe({
+      next: (messageList: Message[]) => {
+        this.messageList = messageList.reverse().slice(0, 10);
+        for (let message of this.messageList) {
+          this.hostingService.getUserFromId(message.user).subscribe({
+            next: (user: User) => {
+              message.user = user;
+            },
+            error: (error) => {
+              console.log(`Erro ao pegar remetente da mensagem`, error)
+            }
+          }
+          )
+        }
       },
       error: (error) => {
         console.log("Erro ao carregar as mensagens", error)
@@ -140,26 +141,28 @@ export class HostingMonitoringComponent implements OnInit {
     })
   }
 
-  sendMessage(){
-    this.formMessage.value.id= this.hosting.id;
-    this.formMessage.value.time_sent = new Date;
-    this.formMessage.value.user= this.user;
-    this.formMessage.value.Hosting= this.hosting;
-    console.log("tu",this.formMessage.value.Hosting);
+  sendMessage() {
+    this.formMessage.value.time_sent = "2022-05-01T23:59";
+    this.formMessage.value.user = this.user.id;
+    this.formMessage.value.hosting = this.hosting.id;
 
-    if(this.formMessage.valid){
+    if (this.formMessage.valid) {
       let messageSubmit = Object.assign({}, this.formMessage.value);
 
-      this.hostingService.sendHostingMessages(messageSubmit).subscribe({
-        next: (data: any) =>{
+      this.hostingService.sendHostingMessages(messageSubmit, this.hosting.id).subscribe({
+        next: (data: any) => {
           this.messageList = data;
-          console.log("messages send",this.messageList);
+          window.location.reload()
         },
-        error: (error) =>{
+        error: (error) => {
           console.log("Erro ao enviar", error);
         }
       })
     }
+  }
+
+  redirect() {
+
   }
 
 }

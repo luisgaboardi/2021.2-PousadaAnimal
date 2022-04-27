@@ -17,6 +17,10 @@
     margin-top: 2%;
 }
 
+h2 {
+    margin-bottom: 30px;
+}
+
 .hosting-details {
   margin-bottom: 1.4375em;
   font-size: 1.625rem;
@@ -66,10 +70,17 @@
 }
 .user-interaction {
   margin-top: 1rem;
-                /* width: 150px; */
-                /* border: 1px solid black; */
+}
 
-  /* padding-bottom: 10; */
+.chat-section {
+    padding: 0 15px;
+}
+
+.chat-area {
+    min-height: 100px;
+    padding: 10px 15px;
+    border: 1px solid gray;
+    border-radius: 15px;
 }
 
 .date{

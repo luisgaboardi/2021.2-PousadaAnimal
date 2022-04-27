@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HostingMonitoringComponent } from './hosting-monitoring.component';
+import { ChatComponent } from './chat.component';
 
-describe('HostingMonitoringComponent', () => {
-  let component: HostingMonitoringComponent;
-  let fixture: ComponentFixture<HostingMonitoringComponent>;
+describe('ChatComponent', () => {
+  let component: ChatComponent;
+  let fixture: ComponentFixture<ChatComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HostingMonitoringComponent ]
+      declarations: [ ChatComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HostingMonitoringComponent);
+    fixture = TestBed.createComponent(ChatComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -9,6 +9,7 @@ import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { HostingMonitoringComponent } from './hosting-monitoring/hosting-monitoring.component';
 import { PaymentComponent } from './payment/payment.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -34,7 +35,8 @@ const routes: Routes = [
       {
         path: 'hosting/:id',
         canLoad: [AuthGuard],
-        component: HostingMonitoringComponent,
+        loadChildren: () => import('src/app/shared/components/chat/chat.module').then(m => m.ChatModule),
+        //component: HostingMonitoringComponent,
       },
       {
         path: 'payment',
@@ -46,6 +48,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
+
   declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent, HostingMonitoringComponent, PaymentComponent],
   imports: [
     CommonModule,
