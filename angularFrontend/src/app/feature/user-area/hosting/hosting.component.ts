@@ -8,8 +8,6 @@ import { User } from 'src/app/shared/models/user';
 import { LoginService } from 'src/app/core/services/login.service';
 import { UserPetsService } from 'src/app/core/services/user-pets.service';
 import { Pet } from 'src/app/shared/models/pet';
-import { identity } from 'rxjs';
-
 
 @Component({
   selector: 'app-hosting',
@@ -19,7 +17,7 @@ import { identity } from 'rxjs';
 export class HostingComponent implements OnInit {
 
   petList: Pet[];
-
+  step: number = 0;
   dayCost:number = 50;
   messageError = false;
 
@@ -30,7 +28,7 @@ export class HostingComponent implements OnInit {
     start_date: new FormControl('', [Validators.required]),
     end_date: new FormControl('', [Validators.required]),
     cost: new FormControl('', [Validators.required]),
-    observations: new FormControl('', [Validators.required]),
+    observations: new FormControl('',),
     approved: new FormControl('', [Validators.required]),
   })
 
@@ -91,24 +89,6 @@ export class HostingComponent implements OnInit {
     // return ""
   }
 
-  makeHosting() {
-    if (this.formHosting.valid) {
-      let hosting = Object.assign({}, this.formHosting.value);
-      this.hostingService.sendHosting(hosting).subscribe({
-        next: () => {
-          this.handleSucess();
-          console.log("Deu bom");
-          this.redirect();
-        },
-        error: (error) => {
-          this.handleError();
-          console.log("Erro ao agendar", error)
-        }
-      }
-      )
-    }
-  }
-
   checkDate() {
     const day = 24 * 60 * 60 * 1000;
     let startDate:Date;
@@ -155,6 +135,25 @@ export class HostingComponent implements OnInit {
     return null;
   }
 
+  makeHosting() {
+    if (this.formHosting.valid) {
+      let hosting = Object.assign({}, this.formHosting.value);
+      this.hostingService.sendHosting(hosting).subscribe({
+        next: () => {
+          this.handleSucess();
+          console.log("Deu bom");
+          this.step = 1;
+        },
+        error: (error) => {
+          this.handleError();
+          console.log("Erro ao agendar", error)
+        }
+      }
+      )
+    }
+  }
+
+
   handleError(){
     this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
    }
@@ -162,7 +161,7 @@ export class HostingComponent implements OnInit {
     this.AlertModalService.showAlertSucess('Agendamennto concluído!');
   }
 
-  redirect() {
-    this.router.navigate(['/user-area/home']);
-  }
+  // redirect() {
+  //   this.router.navigate(['/user-area/home']);
+  // }
 }

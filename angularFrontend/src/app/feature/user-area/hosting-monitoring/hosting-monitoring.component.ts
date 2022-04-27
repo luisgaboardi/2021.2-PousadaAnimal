@@ -7,7 +7,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HostingService } from 'src/app/core/services/hosting.service';
 import { LoginService } from 'src/app/core/services/login.service';
 import { Hosting } from 'src/app/shared/models/hosting';
-import { Message } from 'src/app/shared/models/message';
 import { Pet } from 'src/app/shared/models/pet';
 import { User } from 'src/app/shared/models/user';
 
