@@ -161,3 +161,4 @@ export class HostingComponent implements OnInit {
     this.AlertModalService.showAlertSucess('Agendamento concluído!');
   }
 
+}
