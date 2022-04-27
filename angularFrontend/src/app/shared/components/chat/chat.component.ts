@@ -9,6 +9,7 @@ import { LoginService } from 'src/app/core/services/login.service';
 import { Hosting } from 'src/app/shared/models/hosting';
 import { Pet } from 'src/app/shared/models/pet';
 import { User } from 'src/app/shared/models/user';
+import { Message } from '../../models/message';
 
 @Component({
   selector: 'app-chat',
