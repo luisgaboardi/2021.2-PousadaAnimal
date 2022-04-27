@@ -128,6 +128,7 @@ export class ChatComponent implements OnInit {
           this.hostingService.getUserFromId(message.user).subscribe({
             next: (user: User) => {
               message.user = user;
+              message.time_sent = new Date(message.time_sent).toLocaleString('pt-BR');
             },
             error: (error) => {
               console.log(`Erro ao pegar remetente da mensagem`, error)
@@ -143,7 +144,8 @@ export class ChatComponent implements OnInit {
   }
 
   sendMessage() {
-    this.formMessage.value.time_sent = "2022-05-01T23:59";
+    let currentDateTime: Date = new Date();
+    this.formMessage.value.time_sent = currentDateTime.toISOString();
     this.formMessage.value.user = this.user.id;
     this.formMessage.value.hosting = this.hosting.id;
 
