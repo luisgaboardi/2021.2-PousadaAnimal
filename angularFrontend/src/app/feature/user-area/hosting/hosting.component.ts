@@ -76,17 +76,14 @@ export class HostingComponent implements OnInit {
           currentPet = pet;
         }
       });
-      let price = (currentPet.weight/10 + this.dayCost) * this.checkDate()
+      let price = ((currentPet.weight*2) + this.dayCost) * this.checkDate()
       if (this.checkDate() == 0){
-        price = currentPet.weight/10 + this.dayCost;
+        price = (currentPet.weight + this.dayCost);
       }
       this.formHosting.controls['cost'].setValue(price);
       console.log("price", price);
       console.log("value", this.formHosting.controls['cost'].setValue(price));
-      // return `R$ ${(currentPet.weight/10 + this.dayCost) * this.checkDate()},00`;
-      // return this.formHosting.controls['cost'].setValue(price);
     }
-    // return ""
   }
 
   checkDate() {
@@ -100,8 +97,6 @@ export class HostingComponent implements OnInit {
       let endDate_str = [end.substring(0, 2), '-', end.substring(2, 4), '-', end.substring(4)].reverse();
       startDate = new Date(startDate_str.join(''));
       endDate = new Date(endDate_str.join(''));
-    //   let d1 = new Date(this.formHosting.controls['start_date'].value);
-    // let d2 = new Date (this.formHosting.controls['end_date'].value);
 
       let m1 = startDate.getTime();
       let m2 = endDate.getTime();

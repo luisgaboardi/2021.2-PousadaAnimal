@@ -1,0 +1,39 @@
+.payment {
+  height: auto;
+  margin: 0 -15px;
+  justify-content: center;
+}
+.container {
+  width: 30%;
+  min-width: 350px;
+  max-width: 1128px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 3px solid #bada5f;
+  border-radius: 10px;
+  padding: 50px 30px;
+  margin-top: 5%;
+}
+.form-select{
+  border: 1px solid #bada5f;
+  background-color: #f5fff7;
+  width: 100%;
+  height: 46px;
+}
+
+.btn-bottom {
+  border: 2px solid #bada5f;
+  border-radius: 5px;
+  color: #000000;
+  margin: 0 auto;
+}
+
+.btn {
+  margin-top: 5%;
+  background-color: #BADA5F;
+  border-radius: 10px;
+  width: 40%;
+  /* margin: 0 auto; */
+  margin-block-end: 1%;
+  margin-inline: auto;
+}

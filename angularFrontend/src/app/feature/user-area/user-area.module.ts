@@ -35,10 +35,9 @@ const routes: Routes = [
         path: 'hosting/:id',
         canLoad: [AuthGuard],
         loadChildren: () => import('src/app/shared/components/chat/chat.module').then(m => m.ChatModule),
-        //component: HostingMonitoringComponent,
       },
       {
-        path: 'payment',
+        path: 'payment/:id',
         canLoad: [AuthGuard],
         loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule),
       }

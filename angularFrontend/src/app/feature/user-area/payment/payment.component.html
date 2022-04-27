@@ -1,1 +1,28 @@
-<p>payment works!</p>
+<div class="payment"  [formGroup]="formPay">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-12 text-center">
+        <h2>Escolha do meio de pagamento</h2>
+      </div>
+    <div class="col-md-12">
+      <label>Forma de pagamento</label>
+      <select class="form-select" formControlName="payment">
+        <option value="" disabled>Escolha a forma de pagamento desejada</option>
+        <option value="debit">Débito</option>
+        <option value="credit">Crédito</option>
+        <option value="pix">Pix</option>
+        <option value="transfer">Transferência bancária</option>
+      </select>
+    </div>
+    <br>
+    <button class="btn btn btn-custom default" (click)="save()" [routerLink]="['']">
+      Salvar
+    </button>
+
+    <!-- <div *ngIf="ValidatePayment()"> </div> -->
+  </div>
+  </div>
+</div>
+
+
+
