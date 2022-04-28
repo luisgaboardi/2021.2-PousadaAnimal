@@ -20,6 +20,7 @@ export class HostingComponent implements OnInit {
   step: number = 0;
   dayCost:number = 50;
   messageError = false;
+  id: string;
 
   formHosting: FormGroup = new FormGroup({
     owner: new FormControl('', [Validators.required]),
@@ -134,7 +135,8 @@ export class HostingComponent implements OnInit {
     if (this.formHosting.valid) {
       let hosting = Object.assign({}, this.formHosting.value);
       this.hostingService.sendHosting(hosting).subscribe({
-        next: () => {
+        next: (data) => {
+          this.id = data.id;
           this.handleSucess();
           console.log("Deu bom");
           this.step = 1;

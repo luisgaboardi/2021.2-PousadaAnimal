@@ -2,8 +2,10 @@ from datetime import datetime
 from django.http import Http404
 from hosting.serializers import HostingSerializer
 from message.serializers import MessageSerializer
+from payment.serializers import PaymentSerializer
 from pets.models import Pet
 from message.models import Message
+from payment.models import Payment
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -91,3 +93,22 @@ class HostingMessages(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class HostingPayment(APIView):
+    queryset = Payment.objects.all()
+    """
+    Get payment by pk.
+    """
+    def get(self, request, pk, format=None):
+        payment = self.queryset.filter(hosting=pk)
+        serializer = PaymentSerializer(payment, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, pk, format=None):
+        print(request.data)
+        serializer = PaymentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+

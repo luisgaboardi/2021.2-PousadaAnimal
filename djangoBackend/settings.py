@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'pets',
     'hosting',
     'message',
+    'payment',
     'services',
     'rest_framework',
     'rest_framework.authtoken',

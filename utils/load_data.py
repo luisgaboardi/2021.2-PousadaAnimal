@@ -1,7 +1,7 @@
 from os import system
 
 # Database
-system('python3 manage.py makemigrations users pets hosting message')
+system('python3 manage.py makemigrations users pets hosting message payment')
 system('python3 manage.py migrate')
 
 # Create example users

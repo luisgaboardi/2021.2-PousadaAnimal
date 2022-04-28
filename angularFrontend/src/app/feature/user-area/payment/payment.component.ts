@@ -17,7 +17,8 @@ export class PaymentComponent implements OnInit {
   hosting: any;
   id: number;
   formPay: FormGroup = new FormGroup({
-    payment: new FormControl('', Validators.required)
+    namePayment: new FormControl('', Validators.required),
+    hosting: new FormControl(null),
   });
   constructor(
     public readonly PaymentService: HostingService,
@@ -46,16 +47,48 @@ export class PaymentComponent implements OnInit {
   //     }
   //     )
   //   }
+  pix(){
+    if(this.formPay.value.namePayment == "pix"){
+      return true;
+    }
+    return false;
+  }
+
+  transfer(){
+    if(this.formPay.value.namePayment == "transfer"){
+      return true;
+    }
+    return false;
+  }
+  other(){
+    if(this.formPay.value.namePayment == "debit" || this.formPay.value.namePayment == "credit" ){
+      return true;
+    }
+    return false;
+  }
 
   save(){
+    this.formPay.value.hosting = this.id;
+    console.log(this.id);
     if(this.formPay.valid){
       let register = Object.assign({}, this.formPay.value);
-      this.PaymentService.postPayment(register, this.hosting).subscribe({
-
+      console.log(register);
+      this.PaymentService.postPayment(register, this.id).subscribe({
+        next: () => {
+          this.handleSucess()
+        },
+        error: (error) =>{
+          this.handleError();
+          console.log("Erro!", error)
+        }
       })
     }
   }
-  // validatePayment(){
-  //   if(this)
-  // }
+  handleError(){
+    this.AlertModalService.showAlertDanger('Erro ao escolher pagamento. Tente novamente!');
+   }
+  handleSucess(){
+    this.AlertModalService.showAlertSucess('Concluído!');
+  }
+
 }
