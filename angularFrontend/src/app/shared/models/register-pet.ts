@@ -1,4 +1,4 @@
-import { RegisterHosting } from "./register-hosting";
+import { RegisterHosting } from "./register-hosting"
 
 export class RegisterPet{
   name: string;

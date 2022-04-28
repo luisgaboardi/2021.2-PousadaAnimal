@@ -113,4 +113,15 @@ export class HomeUserComponent implements OnInit {
     )
   }
 
+  deletePet(pet: Pet) {
+    this.userPetsService.deletePet(pet).subscribe({
+      next: () => {
+        console.log("Deu bom");
+      },
+      error: (error) => {
+        console.log("Erro ao deletar", error)
+      }
+    })
+  }
+
 }
