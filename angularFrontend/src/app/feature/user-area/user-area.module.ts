@@ -9,6 +9,7 @@ import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { PetServiceComponent } from './pet-service/pet-service.component';
 import { PaymentComponent } from './payment/payment.component';
 import { HostingMonitoringComponent } from './hosting-monitoring/hosting-monitoring.component';
+import { ChatComponent } from 'src/app/shared/components/chat/chat.component';
 
 const routes: Routes = [
   {
@@ -53,7 +54,7 @@ const routes: Routes = [
 
 @NgModule({
 
-  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent, PaymentComponent, PetServiceComponent],
+  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent, PaymentComponent, PetServiceComponent, ChatComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

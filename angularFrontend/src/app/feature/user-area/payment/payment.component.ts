@@ -76,6 +76,7 @@ export class PaymentComponent implements OnInit {
       this.PaymentService.postPayment(register, this.id).subscribe({
         next: () => {
           this.handleSucess()
+          this.router.navigate(['/user-area/home-user']);
         },
         error: (error) =>{
           this.handleError();

@@ -123,7 +123,7 @@ export class HostingComponent implements OnInit {
           this.id = data.id;
           this.handleSucess();
           console.log("Deu bom");
-          this.redirect();
+          this.step = 1;
         },
         error: (error) => {
           this.handleError();
@@ -187,5 +187,6 @@ export class HostingComponent implements OnInit {
 
       return (dias);
     }
+    return 0;
   }
 }

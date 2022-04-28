@@ -1,26 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IConfig, NgxMaskModule } from 'ngx-mask';
+import { PaymentComponent } from './payment.component';
+import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-import { ChatComponent } from './chat.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 const routes: Routes = [
   {
     path: '',
-    component: ChatComponent
+    component: PaymentComponent
   }
 ];
 
-const mask: Partial<IConfig> = {validation: true};
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    FormsModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    NgxMaskModule.forRoot(mask),
+    NgxMaskModule.forRoot(),
   ]
 })
-export class ChatModule { }
+export class PaymentModule { }

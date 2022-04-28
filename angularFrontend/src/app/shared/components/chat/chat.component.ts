@@ -1,7 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HostingService } from 'src/app/core/services/hosting.service';
@@ -36,7 +36,8 @@ export class ChatComponent implements OnInit {
     private http: HttpClient,
     private readonly loginService: LoginService,
     private modalService: NgbModal,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
   ) {
     this.user = loginService.GetUser();
   }
