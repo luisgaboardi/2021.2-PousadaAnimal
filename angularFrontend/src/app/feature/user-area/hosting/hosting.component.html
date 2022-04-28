@@ -20,12 +20,12 @@
 
         <div class="col-md-6">
           <label>Check-in</label>
-          <input type="text" placeholder="DD-MM-AAAA" (change)="setCost()" formControlName=start_date  mask="d0-M0-0000">
+          <input type="text" placeholder="DD/MM/AAAA" (change)="setCost()" formControlName=start_date  mask="d0/M0/0000">
         </div>
 
         <div class="col-md-6">
           <label>Check-out</label>
-          <input type="text" placeholder="DD-MM-AAAA" formControlName=end_date  mask="d0-M0-0000" (change)="setCost()">
+          <input type="text" placeholder="DD/MM/AAAA" formControlName=end_date  mask="d0/M0/0000" (change)="setCost()">
         </div>
 
         <div class="col-md-12">
@@ -52,6 +52,9 @@
           </button>
           <button class="btn btn-custom default" [routerLink]="['/user-area/payment', id]">
             Definir Pagamento
+          </button>
+          <button class="btn btn-custom default" [routerLink]="['/user-area/home-user']">
+            Prosseguir
           </button>
         </div>
     </div>

@@ -31,9 +31,10 @@ system('rm -r message/__pycache__')
 system('rm -r payment/migrations')
 system('rm -r payment/__pycache__')
 
-# app
-system('rm -r djangoBackend/__pycache__')
-
 #service
 system('rm -r service/migrations')
 system('rm -r service/__pycache__')
+
+# app
+system('rm -r djangoBackend/__pycache__')
+

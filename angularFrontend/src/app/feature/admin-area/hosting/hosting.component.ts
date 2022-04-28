@@ -40,7 +40,7 @@ export class HostingComponent implements OnInit {
         next: () => {
           console.log("Deu bom");
           this.handleSucess();
-          this.redirect();
+          window.location.reload();
         },
         error: (error) => {
           this.handleError();

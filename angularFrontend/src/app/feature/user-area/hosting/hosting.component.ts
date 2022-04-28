@@ -138,7 +138,7 @@ export class HostingComponent implements OnInit {
     this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
    }
   handleSucess(){
-    this.AlertModalService.showAlertSucess('Agendamennto concluído!');
+    this.AlertModalService.showAlertSucess('Agendamento concluído!');
   }
 
 
