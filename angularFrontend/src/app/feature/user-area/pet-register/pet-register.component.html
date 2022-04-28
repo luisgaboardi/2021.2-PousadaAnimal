@@ -15,7 +15,7 @@
                 <label>Espécie - Tamanho</label>
                 <select class="form-select" formControlName="host">
                     <option value="" disabled>Selecione</option>
-                    <option *ngFor="let hosting of HostingList " value="{{hosting}}">
+                    <option *ngFor="let hosting of HostingList " value="{{hosting.id}}">
                     {{hosting.species}} - {{hosting.size}}
                     </option>
                 </select>

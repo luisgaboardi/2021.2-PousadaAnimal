@@ -53,7 +53,7 @@ export class PetRegisterComponent implements OnInit {
   ngOnInit(): void {
     this.formPetRegister.controls['owner'].setValue(this.user.id);
     this.formPetRegister.controls['is_hosted'].setValue(false);
-    this.getRegisterHosting()
+    this.getRegisterHosting();
   }
 
   registerPet() {
@@ -69,6 +69,7 @@ export class PetRegisterComponent implements OnInit {
         error: (error) => {
           this.handleError();
           console.log("Erro ao cadastrar", error)
+          this.redirect();
         }
       })
     }
@@ -94,6 +95,6 @@ export class PetRegisterComponent implements OnInit {
   }
 
   redirect() {
-    this.router.navigate(['/user-area/home']);
+    this.router.navigate(['/user-area/home-user']);
   }
 }

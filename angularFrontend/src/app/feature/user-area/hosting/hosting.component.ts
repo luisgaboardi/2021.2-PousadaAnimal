@@ -8,6 +8,7 @@ import { User } from 'src/app/shared/models/user';
 import { LoginService } from 'src/app/core/services/login.service';
 import { UserPetsService } from 'src/app/core/services/user-pets.service';
 import { Pet } from 'src/app/shared/models/pet';
+import { RegisterHosting } from 'src/app/shared/models/register-hosting';
 
 
 @Component({

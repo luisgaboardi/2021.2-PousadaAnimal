@@ -1,6 +1,8 @@
+import { RegisterHosting } from "./register-hosting";
+
 export class RegisterPet{
   name: string;
-  host: string;
+  host: string | RegisterHosting;
   breed: string;
   gender: string;
   colour: string;
