@@ -9,7 +9,7 @@
 
         <div class="col-md-12">
           <label>Pet</label>
-          <select class="form-select" formControlName="pet">
+          <select class="form-select" formControlName="pet" (change)="setCost()">
             <option value="" disabled>Selecione</option>
             <option *ngFor="let pet of petList" value="{{pet.id}}">
               {{pet.name}}

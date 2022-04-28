@@ -7,6 +7,7 @@ import { HostingAnalysisComponent } from './hosting-analysis/hosting-analysis.co
 import { AdminGuard } from 'src/app/core/auth/admin.guard';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { ServicesComponent } from './services/services.component';
+import { HostingComponent } from './hosting/hosting.component';
 
 const routes: Routes = [
   {
@@ -29,12 +30,17 @@ const routes: Routes = [
         canLoad: [AdminGuard],
         loadChildren: () => import('./services/services.module').then(m => m.ServicesModule),
       },
+      {
+        path: 'hosting',
+        canLoad: [AdminGuard],
+        loadChildren: () => import('./hosting/hosting.module').then(m => m.HostingModule),
+      },
     ]
   }
 ]
 
 @NgModule({
-  declarations: [AdminAreaComponent, HostingAnalysisComponent, HomeAdminComponent, ServicesComponent],
+  declarations: [AdminAreaComponent, HostingAnalysisComponent, HomeAdminComponent, ServicesComponent, HostingComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

@@ -8,7 +8,8 @@ import { User } from 'src/app/shared/models/user';
 import { LoginService } from 'src/app/core/services/login.service';
 import { UserPetsService } from 'src/app/core/services/user-pets.service';
 import { Pet } from 'src/app/shared/models/pet';
-
+import { RegisterHost } from 'src/app/core/services/hosting-register';
+import { RegisterHosting } from 'src/app/shared/models/register-hosting';
 
 @Component({
   selector: 'app-hosting',
@@ -18,6 +19,9 @@ import { Pet } from 'src/app/shared/models/pet';
 export class HostingComponent implements OnInit {
 
   petList: Pet[];
+  hostingList:  RegisterHosting[];
+  currentPet : Pet;
+  currentHost : RegisterHosting;
 
   dayCost:number = 50;
 
@@ -41,6 +45,7 @@ export class HostingComponent implements OnInit {
     private readonly loginService: LoginService,
     private readonly userPetsService: UserPetsService,
     private readonly AlertModalService: ModalService,
+    private readonly hosting: RegisterHost,
   ) {
     this.user = loginService.GetUser();
   }
@@ -48,6 +53,7 @@ export class HostingComponent implements OnInit {
   ngOnInit(): void {
     this.getPetData();
     this.setFormValues();
+    this.getHostingData();
   }
 
   setFormValues() {
@@ -68,18 +74,41 @@ export class HostingComponent implements OnInit {
     )
   }
 
+  getHostingData() {
+    this.hosting.getHosts().subscribe({
+      next: (hostingList) => {
+        this.hostingList = hostingList;
+        console.log("Deu bom");
+      },
+      error: (error) => {
+        console.log("Erro ao agendar", error)
+      }
+    }
+    )
+  }
+
   setCost() {
+    let dayCost : number;
     if (this.checkDate() && this.formHosting.controls['pet'].valid) {
-      let currentPet:Pet;
       this.petList.forEach(pet => {
         if (pet.id == this.formHosting.controls['pet'].value) {
-          currentPet = pet;
+          this.currentPet = pet;
+          dayCost = this.getHosting(pet.id);
         }
       });
-      this.formHosting.controls['cost'].setValue((currentPet.weight + this.dayCost) * this.checkDate());
-      return `R$ ${(currentPet.weight + this.dayCost) * this.checkDate()},00`;
+      this.formHosting.controls['cost'].setValue(dayCost * this.checkDate());
+      return `R$ ${dayCost * this.checkDate()},00`;
     }
     return ""
+  }
+
+  getHosting(id) {
+    this.hostingList.forEach(host => {
+      if (host.id == id) {
+        this.currentHost = host;
+      }
+    });
+    return this.currentHost.cost;
   }
 
   makeHosting() {
@@ -130,6 +159,6 @@ export class HostingComponent implements OnInit {
   }
 
   redirect() {
-    this.router.navigate(['/user-area/home']);
+    this.router.navigate(['/user-area/home-user']);
   }
 }

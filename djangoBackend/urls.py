@@ -23,5 +23,7 @@ urlpatterns = [
     path('', include('pets.urls')),
     path('', include('hosting.urls')),
     path('', include('services.urls')),
+    path('', include('host.urls')),
+
     path('admin/', admin.site.urls),
 ]
