@@ -3,7 +3,7 @@ import { RegisterHosting } from "./register-hosting";
 export class Pet {
     id: string;
     name: string;
-    host: string | RegisterHosting;
+    host: string | RegisterHosting | number;
     gender: string;
     breed: string;
     colour: string;
