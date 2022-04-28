@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'hosting',
     'message',
     'services',
+    'host',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',

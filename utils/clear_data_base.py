@@ -15,6 +15,14 @@ system('rm -r pets/__pycache__')
 system('rm -r hosting/migrations')
 system('rm -r hosting/__pycache__')
 
+#services
+system('rm -r services/migrations')
+system('rm -r services/__pycache__')
+
+#host
+system('rm -r host/migrations')
+system('rm -r host/__pycache__')
+
 #message
 system('rm -r message/migrations')
 system('rm -r message/__pycache__')

@@ -14,7 +14,6 @@ import { NavBarComponent } from './feature/nav-bar/nav-bar.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
-
 export let options: Partial<IConfig> | (() => Partial<IConfig>);
 
 @NgModule({
