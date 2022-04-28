@@ -1,64 +1,3 @@
-<!-- <div class="hosting">
-  <div class="container">
-    <div class="hosting-form input" [formGroup]="formHosting">
-
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h2>Agendamento de Hospedagem</h2>
-        </div>
-
-        <div *ngIf="step === 0" >
-          <div class="col-md-12">
-            <label>Pet</label>
-            <select class="form-select" formControlName="pet">
-              <option value="" disabled>Selecione</option>
-              <option *ngFor="let pet of petList" value="{{pet.id}}">
-                {{pet.name}}
-              </option>
-            </select>
-          </div>
-
-          <div class="col-md-6">
-            <label>Entrada</label>
-            <input type="text" placeholder="DD/MM/AAAA" (change)="setCost()" formControlName=start_date  mask="d0/M0/0000">
-          </div>
-
-          <div class="col-md-6">
-            <label>Saída</label>
-            <input type="text" placeholder="DD/MM/AAAA" formControlName=end_date  mask="d0/M0/0000" (change)="setCost()">
-          </div>
-
-          <div class="col-md-12">
-            <label>Observações</label>
-            <input type="text" placeholder="Informações Importantes" formControlName="observations">
-          </div>
-
-          <div class="col-md-12" (change)="setCost()">
-            <a *ngIf="formHosting.value.cost > 0">Valor Total: R${{formHosting.value.cost}},00</a>
-            <a *ngIf="formHosting.value.cost == 0">Valor Total: R$ 0</a>
-          </div>
-
-          <div class="col-md-12">
-            <button class ="btn btn-custom default" (click)="makeHosting()" [disabled]="formHosting.invalid"
-              [class]="formHosting.invalid ? 'btn btn-custom disabled ' : 'btn btn-custom default'">
-              Cadastrar
-            </button>
-          </div>
-        </div>
-    </div>
-    <div class="row g-3 separate" *ngIf="step === 1">
-      <h5 class="text-center">Pré-agendamento realizado com sucesso!</h5>
-      <h6 class="separate text-center">Deseja escolher mais algum serviço ou definir a forma de pagamento?</h6>
-      <button class="botton btn-custom default" [routerLink]="['']">
-        Adicionar Serviços
-      </button>
-      <button class="botton btn-custom default" [routerLink]="['/user-area/payment']">
-        Definir Pagamento
-      </button>
-    </div>
-  </div>
-</div>
- -->
 
  <div class="hosting">
   <div class="container">
@@ -99,16 +38,14 @@
         </div>
 
         <div class="col-md-12" (change)="setCost()">
-          <a *ngIf="formHosting.value.cost > 0">Valor Total: R${{formHosting.value.cost}},00</a>
+          <a *ngIf="formHosting.value.cost > 0">Valor Total: R${{formHosting.value.cost}}</a>
           <a *ngIf="formHosting.value.cost == 0">Valor Total: R$ 0</a>
         </div>
 
-        <div class="col-md-12">
           <button class ="btn btn-custom default" (click)="makeHosting()" [disabled]="formHosting.invalid"
             [class]="formHosting.invalid ? 'btn btn-custom disabled ' : 'btn btn-custom default'">
-            Cadastrar
+            Salvar
           </button>
-        </div>
       </div>
         <div class="row g-3 text-center" *ngIf="step === 1">
           <h2>Agendamento de Hospedagem</h2>
@@ -117,7 +54,7 @@
           <button class="btn btn-custom default" [routerLink]="['']">
             Adicionar Serviços
           </button>
-          <button class="btn btn-custom default" [routerLink]="['/user-area/payment']">
+          <button class="btn btn-custom default" [routerLink]="['/user-area/payment', id]">
             Definir Pagamento
           </button>
         </div>

@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { User } from 'src/app/shared/models/user';
 import { Pet } from 'src/app/shared/models/pet';
 import { Message } from 'src/app/shared/models/message';
+import { Payment } from 'src/app/shared/models/payment';
 
 @Injectable({
   providedIn: 'root'
@@ -57,6 +58,8 @@ export class HostingService {
   sendHostingMessages(newMessage: any, hostingId: any): Observable<Message> {
     return this.http.post<any>(`${environment.endPointPousadaAnimal}/hosting/${hostingId}/messages`, newMessage)
   }
-
+  postPayment(payment:any, hostingId: any ):Observable<Payment[]>{
+    return this.http.post<any>(`${environment.endPointPousadaAnimal}/payment/${hostingId}/`, payment)
+  }
 }
 

@@ -1,1 +1,31 @@
-<p>payment works!</p>
+<div class="payment"  [formGroup]="formPay">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-12 text-center">
+        <h2>Escolha do meio de pagamento</h2>
+      </div>
+    <div class="col-md-12">
+      <label>Forma de pagamento</label>
+      <select class="form-select" formControlName="namePayment">
+        <option value="" disabled>Escolha a forma de pagamento desejada</option>
+        <option value="debit">Débito</option>
+        <option value="credit">Crédito</option>
+        <option value="pix">Pix</option>
+        <option value="transfer">Transferência bancária</option>
+      </select>
+    </div>
+    <br>
+    <p *ngIf="pix()" class="text-center"> O pix da nossa pousada é: pousadaanimal@email.com </p>
+    <p *ngIf="transfer()" class="text-center"> Os dados de conta bancária são: Banco: 123, Agência: 4321, Conta: 54321-1  </p>
+    <p *ngIf="other()" class="text-center">O funcionário mandará um email com o link de pagamento</p>
+    <button class="btn btn btn-custom default" (click)="save()">
+      Salvar
+    </button>
+
+    <!-- <div *ngIf="ValidatePayment()"> </div> -->
+  </div>
+  </div>
+</div>
+
+
+
