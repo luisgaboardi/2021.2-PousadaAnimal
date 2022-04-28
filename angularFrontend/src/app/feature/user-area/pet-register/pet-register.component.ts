@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { LoginService } from 'src/app/core/services/login.service';
 import { PetResgisterService } from 'src/app/core/services/pet-register.service';
 import { User } from 'src/app/shared/models/user';
+import { RegisterHosting } from 'src/app/shared/models/register-hosting';
+import { RegisterHost } from 'src/app/core/services/hosting-register';
 
 @Component({
   selector: 'app-pet-register',
@@ -16,21 +18,18 @@ export class PetRegisterComponent implements OnInit {
   isTextField!: boolean;
   user: User;
 
-  speciesList = ['Cachorro', 'Gato', 'Pássaro'];
-
   genderList = ['Macho', 'Fêmea'];
 
   temperamentList = ['Calmo', 'Ansioso', 'Nervoso'];
 
-  sizeList = ['Pequeno', 'Médio', 'Grande'];
+  HostingList: RegisterHosting[] = [];
 
   formPetRegister: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
-    species: new FormControl('', [Validators.required]),
     breed: new FormControl('', [Validators.required]),
     gender: new FormControl('', [Validators.required]),
     colour: new FormControl('', [Validators.required]),
-    size: new FormControl('', [Validators.required]),
+    host: new FormControl('', [Validators.required]),
     age: new FormControl('', [Validators.required]),
     weight: new FormControl('', [Validators.required]),
     medicalConditions: new FormControl(''),
@@ -42,6 +41,7 @@ export class PetRegisterComponent implements OnInit {
 
 
   constructor(
+    private readonly hostingRegister: RegisterHost,
     private readonly router: Router,
     private readonly petService: PetResgisterService,
     private readonly loginService: LoginService,
@@ -53,6 +53,7 @@ export class PetRegisterComponent implements OnInit {
   ngOnInit(): void {
     this.formPetRegister.controls['owner'].setValue(this.user.id);
     this.formPetRegister.controls['is_hosted'].setValue(false);
+    this.getRegisterHosting()
   }
 
   registerPet() {
@@ -71,6 +72,18 @@ export class PetRegisterComponent implements OnInit {
         }
       })
     }
+  }
+
+  getRegisterHosting() {
+    this.hostingRegister.getHosts().subscribe({
+      next: (HostingList) => {
+        this.HostingList = HostingList;
+        console.log("Deu bom");
+      },
+      error: (error) => {
+        console.log("Erro ao listar", error)
+      }
+    })
   }
 
   handleError(){

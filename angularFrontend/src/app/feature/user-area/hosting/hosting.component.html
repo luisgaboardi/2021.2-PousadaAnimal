@@ -17,6 +17,16 @@
           </select>
         </div>
 
+        <div class="col-md-12">
+          <label>Hospedagem</label>
+          <select class="form-select" formControlName="pet">
+            <option value="" disabled>Selecione</option>
+            <option *ngFor="let pet of petList" value="{{pet.id}}">
+              {{pet.name}}
+            </option>
+          </select>
+        </div>
+
         <div class="col-md-6">
           <label>Check-in</label>
           <input type="text" placeholder="DD-MM-AAAA" (change)="setCost()" formControlName=start_date  mask="d0-M0-0000">
