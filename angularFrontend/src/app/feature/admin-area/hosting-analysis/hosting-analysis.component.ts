@@ -120,6 +120,7 @@ export class HostingAnalysisComponent implements OnInit {
     }
     )
     hosting.approved = false;
+    window.location.reload();
   }
 
   approveHosting(hosting: Hosting) {
@@ -136,6 +137,7 @@ export class HostingAnalysisComponent implements OnInit {
     }
     )
     hosting.approved = true;
+    window.location.reload();
   }
 
   formatDate(dateString): string {

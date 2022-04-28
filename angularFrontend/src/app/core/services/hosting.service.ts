@@ -21,45 +21,40 @@ export class HostingService {
       `${environment.endPointPousadaAnimal}/hosting/`, newHosting
     )
   }
-
   getHostings(): Observable<Hosting[]> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/hosting/`)
   }
-
   getUserHostings(user: User): Observable<Hosting[]> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${user.id}/hostings`)
   }
-
   editHosting(hosting: Hosting): Observable<Hosting> {
     return this.http.put<any>(
       `${environment.endPointPousadaAnimal}/hosting/${hosting.id}/`, hosting
     )
   }
-
   getOwner(hosting: Hosting): Observable<User> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.owner}`)
   }
-
   getEmployee(hosting: Hosting): Observable<User> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.employee}`)
   }
-
   getPet(hosting: Hosting): Observable<Pet> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/pets/${hosting.pet}`)
   }
-
   getHostingMessages(hosting: Hosting): Observable<Message[]> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/hosting/${hosting.id}/messages`)
   }
-
   sendHostingMessages(newMessage: any, hostingId: any): Observable<Message> {
     return this.http.post<any>(`${environment.endPointPousadaAnimal}/hosting/${hostingId}/messages`, newMessage)
   }
-  postPayment(payment:any, hostingId: any ):Observable<Payment[]>{
+  postPayment(payment: any, hostingId: any): Observable<Payment[]> {
     return this.http.post<any>(`${environment.endPointPousadaAnimal}/payment/${hostingId}/`, payment)
   }
   putService(petService: any, hostingId: any): Observable<GetRegisterServices> {
     return this.http.put<any>(`${environment.endPointPousadaAnimal}/hosting/${hostingId}/`, petService)
+  }
+  getUserFromId(id: User | string): Observable<User> {
+    return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${id}`)
   }
 }
 

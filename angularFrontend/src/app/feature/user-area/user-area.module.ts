@@ -54,7 +54,7 @@ const routes: Routes = [
 
 @NgModule({
 
-  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent, PaymentComponent, PetServiceComponent, ChatComponent],
+  declarations: [UserAreaComponent, PetRegisterComponent, HomeUserComponent, PaymentComponent, PetServiceComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

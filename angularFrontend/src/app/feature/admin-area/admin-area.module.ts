@@ -35,6 +35,11 @@ const routes: Routes = [
         canLoad: [AdminGuard],
         loadChildren: () => import('./hosting/hosting.module').then(m => m.HostingModule),
       },
+      {
+        path: 'hosting/:id',
+        canLoad: [AdminGuard],
+        loadChildren: () => import('src/app/shared/components/chat/chat.module').then(m => m.ChatModule),
+      },
     ]
   }
 ]

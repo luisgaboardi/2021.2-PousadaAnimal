@@ -1,7 +1,7 @@
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HostingService } from 'src/app/core/services/hosting.service';
@@ -36,8 +36,7 @@ export class ChatComponent implements OnInit {
     private http: HttpClient,
     private readonly loginService: LoginService,
     private modalService: NgbModal,
-    private route: ActivatedRoute,
-    private fb: FormBuilder,
+    private route: ActivatedRoute
   ) {
     this.user = loginService.GetUser();
   }
@@ -125,7 +124,7 @@ export class ChatComponent implements OnInit {
     this.hostingService.getHostingMessages(hosting).subscribe({
       next: (messageList: Message[]) => {
         this.messageList = messageList.reverse().slice(0, 10);
-        /*for (let message of this.messageList) {
+        for (let message of this.messageList) {
           this.hostingService.getUserFromId(message.user).subscribe({
             next: (user: User) => {
               message.user = user;
@@ -136,7 +135,7 @@ export class ChatComponent implements OnInit {
             }
           }
           )
-        }*/
+        }
       },
       error: (error) => {
         console.log("Erro ao carregar as mensagens", error)
@@ -164,9 +163,4 @@ export class ChatComponent implements OnInit {
       })
     }
   }
-
-  redirect() {
-
-  }
-
 }
