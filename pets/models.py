@@ -1,14 +1,14 @@
 from django.db import models
 from users.models import User
+from host.models import Host
 
 # Create your models here.
 class Pet (models.Model):
     name = models.CharField(max_length=30)
-    species = models.CharField(max_length=30)
+    host = models.ForeignKey(Host, related_name='pets', on_delete=models.CASCADE)
     gender = models.CharField(max_length=10)
     breed = models.CharField(max_length=30)
     colour = models.CharField(max_length=30)
-    size =  models.CharField(max_length=30)
     age = models.SmallIntegerField()
     weight = models.FloatField()
     medical_conditions = models.TextField(null=True, blank=True, max_length=255)

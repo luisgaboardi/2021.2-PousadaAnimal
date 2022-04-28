@@ -38,7 +38,7 @@ export class ServicesComponent implements OnInit {
         next: () => {
           console.log("Deu bom");
           this.handleSucess();
-          this.redirect();
+          window.location.reload();
         },
         error: (error) => {
           this.handleError();
@@ -75,7 +75,7 @@ export class ServicesComponent implements OnInit {
     this.AlertModalService.showAlertDanger('Erro ao cadastrar serviço. Tente novamente!');
    }
   handleSucess(){
-    this.AlertModalService.showAlertSucess('Cadastro concluído!');
+    this.AlertModalService.showAlertSucess('Cadastro de Serviço concluído!');
   }
 
   redirect() {

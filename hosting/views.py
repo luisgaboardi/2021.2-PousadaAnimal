@@ -79,7 +79,7 @@ class HostingDetail(APIView):
 class HostingMessages(APIView):
     queryset = Message.objects.all()
     """
-    Get hostings messages by pk.
+    Get user hostings by pk.
     """
     def get(self, request, pk, format=None):
         messages = self.queryset.filter(hosting=pk)

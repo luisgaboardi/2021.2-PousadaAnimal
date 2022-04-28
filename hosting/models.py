@@ -1,5 +1,6 @@
 from django.db import models
 from pets.models import Pet
+from services.models import Service
 from users.models import User
 
 # Create your models here.
@@ -20,9 +21,11 @@ class Hosting (models.Model):
         on_delete=models.CASCADE,
         null=True
     )
+    services = models.ManyToManyField(Service, blank=True)
+    
     start_date = models.DateField()
     end_date = models.DateField()
-    observations = models.CharField(max_length=255, null=True, blank=True)
+    observations = models.CharField(max_length=255)
     cost = models.FloatField()
     approved = models.BooleanField(default=False)
 

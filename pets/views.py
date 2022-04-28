@@ -43,3 +43,8 @@ class PetDetail(generics.RetrieveAPIView):
         pet = self.get_object(pk)
         serializer = PetSerializer(pet)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def delete (self, request, pk):
+        pet = self.get_object(pk)
+        pet.delete()
+        return Response('/', status=status.HTTP_200_OK)

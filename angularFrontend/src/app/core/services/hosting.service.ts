@@ -7,6 +7,7 @@ import { User } from 'src/app/shared/models/user';
 import { Pet } from 'src/app/shared/models/pet';
 import { Message } from 'src/app/shared/models/message';
 import { Payment } from 'src/app/shared/models/payment';
+import { GetRegisterServices } from 'src/app/shared/models/register-service';
 
 @Injectable({
   providedIn: 'root'
@@ -39,10 +40,6 @@ export class HostingService {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.owner}`)
   }
 
-  getUserFromId(id: User | string): Observable<User> {
-    return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${id}`)
-  }
-
   getEmployee(hosting: Hosting): Observable<User> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${hosting.employee}`)
   }
@@ -60,6 +57,9 @@ export class HostingService {
   }
   postPayment(payment:any, hostingId: any ):Observable<Payment[]>{
     return this.http.post<any>(`${environment.endPointPousadaAnimal}/payment/${hostingId}/`, payment)
+  }
+  putService(petService: any, hostingId: any): Observable<GetRegisterServices> {
+    return this.http.put<any>(`${environment.endPointPousadaAnimal}/hosting/${hostingId}/`, petService)
   }
 }
 

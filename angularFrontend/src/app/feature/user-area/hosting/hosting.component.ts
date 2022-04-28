@@ -8,6 +8,8 @@ import { User } from 'src/app/shared/models/user';
 import { LoginService } from 'src/app/core/services/login.service';
 import { UserPetsService } from 'src/app/core/services/user-pets.service';
 import { Pet } from 'src/app/shared/models/pet';
+import { RegisterHost } from 'src/app/core/services/hosting-register';
+import { RegisterHosting } from 'src/app/shared/models/register-hosting';
 
 @Component({
   selector: 'app-hosting',
@@ -17,10 +19,14 @@ import { Pet } from 'src/app/shared/models/pet';
 export class HostingComponent implements OnInit {
 
   petList: Pet[];
-  step: number = 0;
+  hostingList:  RegisterHosting[];
+  currentPet : Pet;
+  currentHost : RegisterHosting;
+
   dayCost:number = 50;
   messageError = false;
   id: string;
+  step: number = 0;
 
   formHosting: FormGroup = new FormGroup({
     owner: new FormControl('', [Validators.required]),
@@ -29,7 +35,7 @@ export class HostingComponent implements OnInit {
     start_date: new FormControl('', [Validators.required]),
     end_date: new FormControl('', [Validators.required]),
     cost: new FormControl('', [Validators.required]),
-    observations: new FormControl('',),
+    observations: new FormControl('', [Validators.required]),
     approved: new FormControl('', [Validators.required]),
   })
 
@@ -42,6 +48,7 @@ export class HostingComponent implements OnInit {
     private readonly loginService: LoginService,
     private readonly userPetsService: UserPetsService,
     private readonly AlertModalService: ModalService,
+    private readonly hosting: RegisterHost,
   ) {
     this.user = loginService.GetUser();
   }
@@ -49,6 +56,7 @@ export class HostingComponent implements OnInit {
   ngOnInit(): void {
     this.getPetData();
     this.setFormValues();
+    this.getHostingData();
   }
 
   setFormValues() {
@@ -69,22 +77,73 @@ export class HostingComponent implements OnInit {
     )
   }
 
+  getHostingData() {
+    this.hosting.getHosts().subscribe({
+      next: (hostingList) => {
+        this.hostingList = hostingList;
+        console.log("Deu bom");
+      },
+      error: (error) => {
+        console.log("Erro ao agendar", error)
+      }
+    }
+    )
+  }
+
   setCost() {
+    let dayCost : number;
     if (this.formHosting.controls['pet'].valid) {
-      let currentPet:Pet;
       this.petList.forEach(pet => {
         if (pet.id == this.formHosting.controls['pet'].value) {
-          currentPet = pet;
+          this.currentPet = pet;
+          dayCost = this.getHosting(pet.host);
         }
       });
-      let price = ((currentPet.weight*2) + this.dayCost) * this.checkDate()
-      if (this.checkDate() == 0){
-        price = (currentPet.weight + this.dayCost);
-      }
-      this.formHosting.controls['cost'].setValue(price);
-      console.log("price", price);
-      console.log("value", this.formHosting.controls['cost'].setValue(price));
+      this.formHosting.controls['cost'].setValue(dayCost * this.checkDate());
+      return `R$ ${dayCost * this.checkDate()},00`;
     }
+    return ""
+  }
+
+  getHosting(id) {
+    this.hostingList.forEach(host => {
+      if (host.id == id) {
+        this.currentHost = host;
+      }
+    });
+    console.log(this.currentHost.cost);
+    return this.currentHost.cost;
+  }
+
+  makeHosting() {
+    if (this.formHosting.valid) {
+      let hosting = Object.assign({}, this.formHosting.value);
+      this.hostingService.sendHosting(hosting).subscribe({
+        next: (data) => {
+          this.id = data.id;
+          this.handleSucess();
+          console.log("Deu bom");
+          this.redirect();
+        },
+        error: (error) => {
+          this.handleError();
+          console.log("Erro ao agendar", error)
+        }
+      }
+      )
+    }
+  }
+
+  handleError(){
+    this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
+   }
+  handleSucess(){
+    this.AlertModalService.showAlertSucess('Agendamennto concluído!');
+  }
+
+
+  redirect() {
+    this.router.navigate(['/user-area/home-user']);
   }
 
   checkDate() {
@@ -128,34 +187,5 @@ export class HostingComponent implements OnInit {
 
       return (dias);
     }
-    return null;
   }
-
-  makeHosting() {
-    if (this.formHosting.valid) {
-      let hosting = Object.assign({}, this.formHosting.value);
-      this.hostingService.sendHosting(hosting).subscribe({
-        next: (data) => {
-          this.id = data.id;
-          this.handleSucess();
-          console.log("Deu bom");
-          this.step = 1;
-        },
-        error: (error) => {
-          this.handleError();
-          console.log("Erro ao agendar", error)
-        }
-      }
-      )
-    }
-  }
-
-
-  handleError(){
-    this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
-   }
-  handleSucess(){
-    this.AlertModalService.showAlertSucess('Agendamento concluído!');
-  }
-
 }

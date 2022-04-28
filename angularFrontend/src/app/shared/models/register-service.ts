@@ -8,4 +8,5 @@ export class  GetRegisterServices{
     name: string;
     descrition: string;
     cost: number;
+    chosen: boolean;
 }

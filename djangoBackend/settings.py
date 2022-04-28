@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'message',
     'payment',
     'services',
+    'host',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',

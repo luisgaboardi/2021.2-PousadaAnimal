@@ -10,7 +10,7 @@
 
         <div class="col-md-12">
           <label>Pet</label>
-          <select class="form-select" formControlName="pet">
+          <select class="form-select" formControlName="pet" (change)="setCost()">
             <option value="" disabled>Selecione</option>
             <option *ngFor="let pet of petList" value="{{pet.id}}">
               {{pet.name}}
@@ -19,18 +19,14 @@
         </div>
 
         <div class="col-md-6">
-          <label>Entrada</label>
-          <input type="text" placeholder="DD/MM/AAAA" (change)="setCost()" formControlName=start_date  mask="d0/M0/0000">
+          <label>Check-in</label>
+          <input type="text" placeholder="DD-MM-AAAA" (change)="setCost()" formControlName=start_date  mask="d0-M0-0000">
         </div>
 
         <div class="col-md-6">
-          <label>Saída</label>
-          <input type="text" placeholder="DD/MM/AAAA" formControlName=end_date  mask="d0/M0/0000" (change)="setCost()">
+          <label>Check-out</label>
+          <input type="text" placeholder="DD-MM-AAAA" formControlName=end_date  mask="d0-M0-0000" (change)="setCost()">
         </div>
-
-        <!-- <div class="error-msg" *ngIf="messageError == true && (formHosting.get('start_date').dirty || formHosting.get('start_date').touched)">
-          <span>A data de entrada deve ser maior que a de saída</span>
-        </div> -->
 
         <div class="col-md-12">
           <label>Observações</label>
@@ -51,7 +47,7 @@
           <h2>Agendamento de Hospedagem</h2>
           <h5>Pré-agendamento realizado com sucesso!</h5>
           <h6 class="separate">Deseja escolher mais algum serviço ou definir a forma de pagamento?</h6>
-          <button class="btn btn-custom default" [routerLink]="['']">
+          <button class="btn btn-custom default" [routerLink]="['/user-area/pet-service', id]">
             Adicionar Serviços
           </button>
           <button class="btn btn-custom default" [routerLink]="['/user-area/payment', id]">
@@ -61,3 +57,4 @@
     </div>
   </div>
 </div>
+

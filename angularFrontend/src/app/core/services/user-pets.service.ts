@@ -16,4 +16,10 @@ export class UserPetsService {
   getPetData(user:User): Observable<Pet[]> {
     return this.http.get<any>(`${environment.endPointPousadaAnimal}/users/${user.id}/pets`)
   }
+
+  deletePet(pet: Pet): Observable<Pet[]> {
+    return this.http.delete<any>(
+      `${environment.endPointPousadaAnimal}/pets/${pet.id}/`,
+      )
+  }
 }

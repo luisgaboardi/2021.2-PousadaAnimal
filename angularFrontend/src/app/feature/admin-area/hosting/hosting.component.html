@@ -1,0 +1,43 @@
+<div class = "hosting">
+    <div class = "register" [formGroup]="formHostingRegister">
+        <h4>Registrar Hospedagem</h4>
+        <div class = "species">
+            <label>Espécie</label>
+            <input type="text" formControlName="species">
+        </div>
+        
+        <div class = "size">
+            <label>Tamanho</label>
+            <select class="form-select" formControlName="size">
+                <option value="" disabled>Selecione</option>
+                <option *ngFor="let size of sizeList" value="{{size}}">
+                {{size}}
+                </option>
+            </select>
+        </div>
+        
+        <div class = "cost">
+            <label>Preço</label>
+            <input type="number" formControlName="cost">
+        </div>
+
+        <button class ="btn"  (click)="registerHost()" [disabled]="formHostingRegister.invalid"
+        [class]="formHostingRegister.invalid ? 'disabled ' : 'default'">Registrar</button>
+    </div>
+
+    <div class = "views">
+        <h4>Hospedagens Registrados</h4>
+        <div *ngIf= "HostingList.length > 0">
+            <ul>
+                <li class="list" *ngFor="let host of HostingList">
+                    <td>{{host.species}} - {{host.size}} - {{host.cost}}</td>
+                    <button class="btn-2"(click)="deleteHost(host)">Excluir</button>
+                </li>
+            </ul>
+        </div>
+
+        <div *ngIf= "HostingList.length === 0">
+            <h5 style="text-align: center;">Ainda não há Hospedagens cadastradas.</h5>
+        </div>
+    </div>
+</div>

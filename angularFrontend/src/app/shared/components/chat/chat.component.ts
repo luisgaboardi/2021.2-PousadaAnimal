@@ -124,7 +124,7 @@ export class ChatComponent implements OnInit {
     this.hostingService.getHostingMessages(hosting).subscribe({
       next: (messageList: Message[]) => {
         this.messageList = messageList.reverse().slice(0, 10);
-        for (let message of this.messageList) {
+        /*for (let message of this.messageList) {
           this.hostingService.getUserFromId(message.user).subscribe({
             next: (user: User) => {
               message.user = user;
@@ -135,7 +135,7 @@ export class ChatComponent implements OnInit {
             }
           }
           )
-        }
+        }*/
       },
       error: (error) => {
         console.log("Erro ao carregar as mensagens", error)

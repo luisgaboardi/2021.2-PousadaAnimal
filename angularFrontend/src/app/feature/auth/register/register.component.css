@@ -47,6 +47,7 @@
   border-radius: 10px;
   padding: 10px 0 35px 0;
   margin-bottom: 60px;
+  margin-top: 3%;
 }
 
 h2 {
@@ -116,6 +117,11 @@ h2 {
 }
 
 .error-msg{
+  /* display:none;
+  background: #f1f1f1; */
   color: red;
+  /* position: relative;
+  padding: 20px;
+  margin-top: 10px; */
   padding: 10px 35px;
 }

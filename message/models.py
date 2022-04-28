@@ -13,7 +13,7 @@ class Message (models.Model):
         Hosting,
         on_delete=models.CASCADE,
     )
-    time_sent = models.DateTimeField(blank=True, null=True)
+    time_sent = models.DateTimeField()
     content = models.CharField(max_length=255)
 
     def __str__(self):

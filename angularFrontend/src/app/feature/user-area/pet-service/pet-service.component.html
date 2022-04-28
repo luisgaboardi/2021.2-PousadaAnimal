@@ -1,0 +1,30 @@
+<div class="container col-md-12">
+  <h2>Serviços</h2>
+  <h4>Lista dos serviços prestados pela Pousada</h4>
+  <table class="styled-table col-md-12">
+    <thead>
+      <tr>
+        <th>Serviço</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let service of servicesList">
+        <td>{{service.name}}</td> <!-- Pegar nome do dono, não o id -->
+        <td>{{service.descrition}}</td> <!-- Pegar nome do pet, não o id -->
+        <td>R${{service.cost}},00</td>
+        <td [formGroup]="formServiceRegister">
+          <input type="checkbox" name="{{service.chosen}}" formControlName="chosen" (click)="chooseService(service)">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class ="btn btn-custom default" (click)="save()">
+    Salvar
+  </button>
+  <div class="col-md-12">
+  </div>
+
+</div>
