@@ -89,11 +89,11 @@ export class HostingComponent implements OnInit {
 
   setCost() {
     let dayCost : number;
-    if (this.checkDate() && this.formHosting.controls['pet'].valid) {
+    if (this.formHosting.controls['pet'].valid) {
       this.petList.forEach(pet => {
         if (pet.id == this.formHosting.controls['pet'].value) {
           this.currentPet = pet;
-          dayCost = this.getHosting(pet.id);
+          dayCost = this.getHosting(pet.host);
         }
       });
       this.formHosting.controls['cost'].setValue(dayCost * this.checkDate());
@@ -108,6 +108,7 @@ export class HostingComponent implements OnInit {
         this.currentHost = host;
       }
     });
+    console.log(this.currentHost.cost);
     return this.currentHost.cost;
   }
 
