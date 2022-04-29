@@ -19,6 +19,7 @@ mkdocs==1.2.3
 mkdocs-material==8.1.8
 mkdocs-material-extensions==1.0.3
 packaging==21.3
+pkg_resources==0.0.0
 psycopg2-binary==2.9.3
 pycodestyle==2.8.0
 Pygments==2.11.2
