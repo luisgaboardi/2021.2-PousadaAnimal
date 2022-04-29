@@ -24,6 +24,9 @@ export class HostingComponent implements OnInit {
   currentHost : RegisterHosting;
 
   dayCost:number = 50;
+  messageError = false;
+  id: string;
+  step: number = 0;
 
   formHosting: FormGroup = new FormGroup({
     owner: new FormControl('', [Validators.required]),
@@ -116,10 +119,11 @@ export class HostingComponent implements OnInit {
     if (this.formHosting.valid) {
       let hosting = Object.assign({}, this.formHosting.value);
       this.hostingService.sendHosting(hosting).subscribe({
-        next: () => {
+        next: (data) => {
+          this.id = data.id;
           this.handleSucess();
           console.log("Deu bom");
-          this.redirect();
+          this.step = 1;
         },
         error: (error) => {
           this.handleError();
@@ -130,7 +134,20 @@ export class HostingComponent implements OnInit {
     }
   }
 
+  handleError(){
+    this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
+   }
+  handleSucess(){
+    this.AlertModalService.showAlertSucess('Agendamento concluído!');
+  }
+
+
+  redirect() {
+    this.router.navigate(['/user-area/home-user']);
+  }
+
   checkDate() {
+    const day = 24 * 60 * 60 * 1000;
     let startDate:Date;
     let endDate:Date;
     if (this.formHosting.controls['start_date'].valid && this.formHosting.controls['end_date'].valid) {
@@ -141,25 +158,35 @@ export class HostingComponent implements OnInit {
       startDate = new Date(startDate_str.join(''));
       endDate = new Date(endDate_str.join(''));
 
-      if (startDate > endDate) {
-        alert("A data do Check-out deve ser maior que a do check-in");
+      let m1 = startDate.getTime();
+      let m2 = endDate.getTime();
+      let result = m2 - m1;
+      let dias = result/ day;
+      let myDate = new Date();
+      let dateyear = myDate.getTime();
+      let yearStart = (m1 - dateyear)/day;
+      let yearEnd = (m2 - dateyear)/day;
+
+      if((yearStart || yearEnd)>365){
+        alert('As datas não podem ser de mais de um ano');
         this.formHosting.controls['start_date'].setValue(null);
         this.formHosting.controls['end_date'].setValue(null);
-        return null;
       }
-      return (endDate.getDate() - startDate.getDate());
+
+      if(myDate > (startDate || endDate)){
+        alert('As datas devem ser maiores que a de hoje');
+        this.formHosting.controls['start_date'].setValue(null);
+        this.formHosting.controls['end_date'].setValue(null);
+      }
+
+      if (startDate > endDate) {
+        alert('A data de entrada deve ser maior que a de saída');
+        this.formHosting.controls['start_date'].setValue(null);
+        this.formHosting.controls['end_date'].setValue(null);
+      }
+
+      return (dias);
     }
-    return null;
-  }
-
-  handleError(){
-    this.AlertModalService.showAlertDanger('Erro ao agendar. Tente novamente!');
-   }
-  handleSucess(){
-    this.AlertModalService.showAlertSucess('Agendamennto concluído!');
-  }
-
-  redirect() {
-    this.router.navigate(['/user-area/home-user']);
+    return 0;
   }
 }

@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'pets',
     'hosting',
     'message',
+    'payment',
     'services',
     'host',
     'rest_framework',

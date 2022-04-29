@@ -46,4 +46,4 @@ class ServiceDetail(generics.RetrieveAPIView):
     def delete (self, request, pk):
         service = self.get_object(pk)
         service.delete()
-        return Response('/', status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_200_OK)

@@ -13,17 +13,13 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" [routerLink]="['/home']" routerLinkActive="header-link-active">
           <a class="nav-link" >Home
-            <!-- <span class="sr-only">(página atual)</span> -->
           </a>
         </li>
         <li class="nav-item" [routerLink]="['/auth/login']" routerLinkActive="header-link-active">
           <a class="nav-link" >Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Serviços</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sobre</a>
+          <a class="nav-link" [routerLink]="['/home']">Sobre</a>
         </li>
       </ul>
     </div>
@@ -44,16 +40,13 @@
 
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active" [routerLink]="['/user-area/home']" routerLinkActive="header-link-active">
+          <li class="nav-item active" [routerLink]="['/user-area/home-user']" routerLinkActive="header-link-active">
             <a class="nav-link" >Área do Usuário
               <!-- <span class="sr-only">(página atual)</span> -->
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Serviços</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sobre</a>
+            <a class="nav-link"[routerLink]="['/user-area/home-user']">Sobre</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" (click)="logout()">Logout</a>

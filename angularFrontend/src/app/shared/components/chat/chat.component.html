@@ -1,0 +1,34 @@
+<div class="container">
+    <h2 *ngIf="user.admin">Conversa com o cliente</h2>
+    <h2 *ngIf="!user.admin">Conversa com o cuidador</h2>
+    <div class="chat-section">
+        <div class="message-area">
+            <div *ngIf="messageList.length === 0">
+                <p *ngIf="user.admin" style="text-align: center;">Você ainda não trocou mensagens com o cliente do pet</p>
+                <p *ngIf="!user.admin" style="text-align: center;">Você ainda não trocou mensagens com o cuidador do seu pet</p>
+            </div>
+            <ng-container *ngIf="messageList.length > 0">
+                <div *ngFor="let message of messageList.reverse()">
+                    <div class="sent-messages" *ngIf="message.user['id'] == user.id">
+                        <h4>{{message.user["first_name"]}}</h4>
+                        <p>{{message.content}}</p>
+                        <p class="time">{{message.time_sent}}</p>
+                    </div>
+                    <div class="recieved-messages" *ngIf="message.user['id'] != user.id">
+                        <h4>{{message.user["first_name"]}}</h4>
+                        <p>{{message.content}}</p>
+                        <p class="time">{{message.time_sent}}</p>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <div class="user-interaction">
+            <div class="input-group" [formGroup]="formMessage">
+                <textarea formControlName="content" class="form-control"></textarea>
+            </div>
+            <button type="button" (click)="sendMessage()" class="btn btn-dark btn-sm">
+                Enviar
+            </button>
+        </div>
+    </div>
+</div>

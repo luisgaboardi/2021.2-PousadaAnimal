@@ -38,6 +38,16 @@
   width: 100%;
   height: 46px;
 }
+.btn {
+  background-color: #BADA5F;
+  border-radius: 10px;
+  width: 40%;
+  margin-top: 5%;
+  /* margin: 0 auto; */
+  margin-block-end: 1%;
+  margin-inline: auto;
+
+}
 
 .btn-bottom {
   border: 2px solid #bada5f;
@@ -46,6 +56,10 @@
   margin: 0 auto;
 }
 
+.error-msg{
+  color: red;
+  padding: 10px 35px;
+}
 .btn {
     background-color: #bada5f;
     margin-top: 30px;

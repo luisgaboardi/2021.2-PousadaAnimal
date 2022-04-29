@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ng-block-ui": "^3.0.2",
+    "primeng": "^13.3.3"
+  }
+}

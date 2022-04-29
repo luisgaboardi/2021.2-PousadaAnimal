@@ -1,0 +1,63 @@
+.container {
+	border: 3px solid #A7CD2C;
+	border-radius: 10px;
+	width: 50%;
+	margin-top: 30px;
+}
+
+h2 {
+	padding: 10px 0;
+}
+
+h4 {
+	padding-top: 20px;
+}
+
+.sent-messages {
+	color: rgb(59, 67, 159);
+}
+
+.recieved-messages {
+	color: rgb(86, 143, 61);
+}
+
+.time {
+	font-size: small;
+	float: right;
+}
+
+.form-control {
+	resize: none;
+	height: 70px;
+	border-color: #BADA5F;
+}
+
+.btn {
+	background-color: #BADA5F;
+	border-radius: 10px;
+	font-size: 17px;
+	width: 15%;
+	margin-block-end: 3%;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+.user-interaction {
+	margin-top: 1rem;
+}
+
+.message-area {
+	min-height: 100px;
+	max-height: 450px;
+	overflow-y: scroll;
+	padding: 0 15px 40px 15px;
+	border: 1px solid gray;
+	border-radius: 15px;
+}
+
+button {
+	margin-top: 15px;
+}
