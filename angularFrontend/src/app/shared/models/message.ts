@@ -5,6 +5,6 @@ export class Message {
     id: number;
     time_sent: string;
     user: string | User;
-    hosting: Hosting | number;
+    hosting: number | Hosting;
     content: string;
 }

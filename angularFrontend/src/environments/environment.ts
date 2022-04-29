@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  // endPointPousadaAnimal: 'https://pousada-animal.herokuapp.com'
   endPointPousadaAnimal: 'http://localhost:8000',
 };
 

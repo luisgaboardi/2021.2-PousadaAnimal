@@ -8,8 +8,6 @@ import { HomeUserComponent } from './home-user/home-user.component';
 import { AuthGuard } from 'src/app/core/auth/auth.guard';
 import { PetServiceComponent } from './pet-service/pet-service.component';
 import { PaymentComponent } from './payment/payment.component';
-import { HostingMonitoringComponent } from './hosting-monitoring/hosting-monitoring.component';
-import { ChatComponent } from 'src/app/shared/components/chat/chat.component';
 
 const routes: Routes = [
   {
